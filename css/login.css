@@ -1,0 +1,39 @@
+.wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+.formarea{
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    padding: .7rem;
+    /* flex: 1 0 25%; */
+    background-color:rgba(0,0,0,.1);
+    outline: none;
+    border: 2px solid white;
+    /* box-shadow: 0  0 5px black; */
+    transition: all .5s;
+    width: 25%;
+}
+.button:hover{
+    border-color: #5BC0DE;
+    background-color: white;
+}
+#log-in{
+    /* flex: 1 0 20%; */
+    width: 15%;
+}
+#log-in:active{
+    background-color: #428BCA;
+}
