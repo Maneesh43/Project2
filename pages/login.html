@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
+  
     <title>Life Line</title>
 </head>
 <body>
@@ -13,22 +14,20 @@
     <main>
         
         <div class="wrapper">
-          <div class="title">
-            <h1>Lifeline</h1>
-          </div>
-          <div class="logoarea">
-
-          </div>
+            <div class="title">
+                <h1>Lifeline</h1>
+            </div>
+            <div class="logoarea">
+            </div>
             <div class="formarea">
-              <button type="button" id="login-page" class="button login-button">Login</button>
-              <button type="button" id="register-page" class="button register-button">Register</button>
-              <button type="button" id="google-signin" class="button google-signin">Google</button>
-              <button type="button" id="sign-out">signout</button>
+                    <label for="email-input" ></label>
+                    <input type="email" id="email-input" placeholder="enter your email" class="button">
+    
+                <label for="password-input"></label>
+                <input type="password" id="password-input" placeholder="enter your password" class="button">
+                <button type="button" id="log-in" class="button"> login </button>
             </div>
         </div>
-
-        <!-- scripts -->
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         
         <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -36,8 +35,9 @@
              <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
              <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
              <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-             <script src="scripts/projectscript.js"></script>
-        <script src="scripts/app1.js"></script>
+             <script src="../scripts/projectscript.js"></script>
+             <script src="../scripts/login.js"></script>
+                 
       </body>
     </main>
     <footer></footer>
