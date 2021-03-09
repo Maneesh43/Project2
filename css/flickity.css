@@ -8,11 +8,48 @@ body { font-family: sans-serif; }
 
 .carousel-cell {
   width: 66%;
-  height: 200px;
-  margin-right: 10px;
+  height: 6rem;
   background: #8C8;
   border-radius: 5px;
   counter-increment: gallery-cell;
+  color: white;
+  margin-right: .5rem;
 }
-
+.carousel-cell p{
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  margin: 2.2rem 0;
+}
 /* cell number */
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+}
+ul li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color:white;
+}
+.bingmap a{
+  color: black;
+  text-decoration: underline;
+}
+ul{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+li{
+  flex: 1 0 10%;
+}
+footer{
+  margin-top: auto;
+  text-align: center;
+  background-color: #1c39dd;
+}

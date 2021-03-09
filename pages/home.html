@@ -7,20 +7,36 @@
 
 <!-- JavaScript -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 <link rel="stylesheet" href="../css/flickity.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-<!-- carousel -->
-    <div class="carousel" data-flickity='{ "autoPlay": true }'>
-        <div class="carousel-cell">
-        </div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-      </div>
-    
+    <header></header>
+    <nav></nav>
+    <main>
+        <div class="carousel" data-flickity='{ "autoPlay": 1500 }'>
+            <div class="carousel-cell"><p>hello</p>
+            </div>
+            <div class="carousel-cell"><p>this</p></div>
+            <div class="carousel-cell"><p>is</p></div>
+            <div class="carousel-cell"><p>not</p> </div>
+            <div class="carousel-cell"><p>working </p></div>
+          </div>
+          <div class="bingmap">
+           <p>map will be here</p>
+           <a href="https://github.com/heremaps/maps-api-for-javascript-examples/tree/master/map-at-specified-location">Fork here maps code from here</a>
+       </div>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Vaccination</a></li>
+            <li><a href="#">Updates</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </footer>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         
@@ -31,6 +47,6 @@
          <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
          <script src="../scripts/projectscript.js"></script>
          <script src="../scripts/home.js"></script>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 </body>
 </html>
