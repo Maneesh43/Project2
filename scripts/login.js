@@ -19,8 +19,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
-    alert(user);
-    window.location.href='pages/home.html';
+    console.log(user);
+    window.location.href='home.html';
     // ...
   })
   .catch((error) => {
