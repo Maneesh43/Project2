@@ -1,5 +1,4 @@
-      
-      
+           
 var firebaseConfig = {
     apiKey: "AIzaSyDz8gMsudf-0GvB1bOD5mECj-UCaPigrWQ",
    authDomain: "fir-p-4e04e.firebaseapp.com",

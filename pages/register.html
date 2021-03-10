@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/register.css">
-    <title>Register</title>
-  </head>
-  <body>
-    <header></header>
-    <nav></nav>
-    <main>
-      <div class="reg1"></div>
-      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css">
+  <title>Register</title>
+</head>
 
-      <!-- TODO: Add SDKs for Firebase products that you want to use
+<body>
+
+  <header>
+    <div class="logoarea"></div>
+    <div class="title">
+      <h1>Lifeline</h1>
+    </div>
+    <nav></nav>
+  </header>
+
+
+
+  <main>
+
+    <div class="wrapper">
+
+      <div class="title"></div>
+
+     
+
+      <div class="formarea">
+        <input type="email" id="useremail" class="input" placeholder="enter your email address">
+        <input type="password" id="userpassword" class="input" placeholder="enter your password">
+        <div class="rememberme"><input type="checkbox" class="input inputcheckbox" id="chckbox">
+          <label for="chckbox">Remember me</label>
+        </div>
+        <button type="button" class="button buttonregister" id="register">register</button>
+      </div>
+
+    </div>
+    <!-- firestore scripts -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-     <script src="../scripts/projectscript.js"></script>
+    <script src="../scripts/projectscript.js"></script>
+    <script src="../scripts/register.js"></script>
+  </main>
 
+  <footer></footer>
 
-     <!-- <script>
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-        db.collection("users")
-          .add({
-            first: "Ada",
-            last: "Lovelace",
-            born: 1815,
-          })
-          .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch((error) => {
-            console.error("Error adding document: ", error);
-          });
-      </script> -->
+</body>
 
-      
-    </main>
-    <footer></footer>
-  </body>
 </html>

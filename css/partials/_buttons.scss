@@ -1,0 +1,16 @@
+.button{
+    padding: 0.5rem;
+    width: 50%;
+    transition : all .5s;
+    outline:none;
+    background-color: rgba(0,0,0,.1);
+    border: 2px solid transparent;
+    margin-bottom: 1rem;
+
+}
+.button:hover{
+// border-color: $color-hover-border ;    
+background-color: $color-active;
+color: white;
+}
+

@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
-  
-    <title>Life Line</title>
+    <link rel="stylesheet" href="../style.css">
+    <title></title>
 </head>
+
 <body>
-    <header></header>
-    <nav></nav>
+    <header>
+        <div class="title">
+            <h1>Lifeline</h1>
+        </div>
+        <nav></nav>
+    </header>
+
+
+
     <main>
-        
         <div class="wrapper">
-            <div class="title">
-                <h1>Lifeline</h1>
-            </div>
-            <div class="logoarea">
-            </div>
+
+            <div class="logoarea"></div>
+            
             <div class="formarea">
-                    <label for="email-input" ></label>
-                    <input type="email" id="email-input" placeholder="enter your email" class="button">
-    
+                <label for="email-input"></label>
+                <input type="email" id="email-input" placeholder="enter your email" class="input">
                 <label for="password-input"></label>
-                <input type="password" id="password-input" placeholder="enter your password" class="button">
+                <input type="password" id="password-input" placeholder="enter your password" class="input">
                 <button type="button" id="log-in" class="button"> login </button>
             </div>
+
         </div>
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-        
+
         <!-- TODO: Add SDKs for Firebase products that you want to use
              https://firebase.google.com/docs/web/setup#available-libraries -->
-             <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-             <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
-             <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-             <script src="../scripts/projectscript.js"></script>
-             <script src="../scripts/login.js"></script>
-                 
-      </body>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+        <script src="../scripts/projectscript.js"></script>
+        <script src="../scripts/login.js"></script>
+
     </main>
     <footer></footer>
 </body>
+
 </html>

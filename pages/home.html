@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- JavaScript -->
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
-<link rel="stylesheet" href="../css/flickity.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
 </head>
+
+
 <body>
-    <header></header>
-    <nav></nav>
+  
+    <header>
+        <nav>
+
+            <div class="carousel homehome" data-flickity='{ "autoPlay": 1500 }'>
+                <div class="carousel-cell"><p>hello</p>
+                </div>
+                <div class="carousel-cell"><p>this</p></div>
+                <div class="carousel-cell"><p>is</p></div>
+                <div class="carousel-cell"><p>not</p> </div>
+                <div class="carousel-cell"><p>working </p></div>
+              </div>
+        </nav>
+        <div class="title"></div>
+        <div class="logoarea"></div>
+    </header>
+  
     <main>
-        <div class="carousel" data-flickity='{ "autoPlay": 1500 }'>
-            <div class="carousel-cell"><p>hello</p>
-            </div>
-            <div class="carousel-cell"><p>this</p></div>
-            <div class="carousel-cell"><p>is</p></div>
-            <div class="carousel-cell"><p>not</p> </div>
-            <div class="carousel-cell"><p>working </p></div>
-          </div>
+        <div class="msgbanner">Hello<span>&times</span></div>
           <div class="bingmap">
            <p>map will be here</p>
            <a href="https://github.com/heremaps/maps-api-for-javascript-examples/tree/master/map-at-specified-location">Fork here maps code from here</a>
        </div>
     </main>
-    <footer>
+    <footer class="footerhome">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="#">Vaccination</a></li>
             <li><a href="#">Updates</a></li>
             <li><a href="#">FAQ</a></li>

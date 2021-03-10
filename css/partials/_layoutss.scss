@@ -1,0 +1,104 @@
+
+/* Global layout */
+body{
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+header{
+    width: 100%;
+}
+header h1{
+    text-align: center;
+}
+main{
+    width: 100%;
+}
+footer{
+    width: 100%;
+}
+.formarea{
+    text-align: center;
+}
+
+.msgbanner{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    background-color: lightgreen;
+    padding: 1rem;
+    width: 40%;
+}
+.msgbanner span{
+    display: none;
+
+}
+.rememberme{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding-bottom: 1rem;
+}
+#chckbox{
+    width: auto;
+    margin-bottom: 0;
+}
+
+
+/*  */
+
+
+/* Index.html layout */
+
+
+
+/*       */
+
+
+
+
+
+/* Login.html layout */
+
+
+
+
+/*  */
+
+
+
+
+
+/* Home page styling */
+
+
+.footerhome ul{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    padding:.5rem 0;
+    margin: 0;
+    padding: 0 1rem;
+    background-color: $color-active;  
+}
+.footerhome ul li{
+flex: 1 0 15%;
+}
+.footerhome li{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem;
+}
+.footerhome li a{
+    align-self:center;
+    color: white;
+}
+
+
+/*  */
+
+
