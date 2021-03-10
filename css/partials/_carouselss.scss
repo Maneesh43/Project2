@@ -1,0 +1,20 @@
+.carousel {
+    background: #EEE;
+    padding-top: .2rem;
+  }
+  
+  .carousel-cell {
+    width: 66%;
+    height: 6rem;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: gallery-cell;
+    color: white;
+    margin-right: .5rem;
+  }
+  .carousel-cell p{
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    margin: 2.2rem 0;
+  }

@@ -1,0 +1,14 @@
+.input{
+width: 80%;
+margin-bottom: 1rem;
+background-color: rgba(0,0,0,.1);
+padding: 0.5rem;
+outline: none;
+border: 2px solid transparent;
+transition: all .5s;
+height: 25px;
+}
+.input:hover{
+    border-color: $color-hover-border ; 
+    background-color: #fff;   
+    }

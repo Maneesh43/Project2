@@ -1,57 +1,29 @@
+
+
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in.
-    // alert("success");
-    alert("success");
+    console.log(user.displayName);
+    console.log("user signedin");
   } else {
     // No user is signed in.
-    alert("login fail");
+    // alert("login fail");
+    console.log("login failed");
   }
 });
-// document.querySelector('#b2').addEventListener('click',()=>{
-
-//  let a=document.querySelector('.form1 input:nth-of-type(1)').value;
-//  let a1=document.querySelector('.form1 input:nth-of-type(2)').value;
-// firebase.auth().createUserWithEmailAndPassword(a, a1)
-//  .then((userCredential) => {
-//    // Signed in 
-//    var user = userCredential.user;
-//    alert("Welcome"+user.email);
-//    window.location.href('pages/login.html')
-//    // ...
-//  })
-//  .catch((error) => {
-//    var errorCode = error.code;
-//    var errorMessage = error.message;
-//    alert(errorMessage);
-//    // 
-//  });
-//  window.location.href('pages/register.html');
-// })
-
-// document.querySelector('#b1').addEventListener('click',()=>{
-//   let a=document.querySelector('.form1 input:nth-of-type(1)').value;
-//   let a1=document.querySelector('.form1 input:nth-of-type(2)').value;
-//   firebase.auth().signInWithEmailAndPassword(a, a1)
-// .then((userCredential) => {
-//   // Signed in
-//   var user = userCredential.user;
-//   alert(user);
-//   // ...
-// })
-// .catch((error) => {
-//   var errorCode = error.code;
-//   var errorMessage = error.message;
-//   alert(errorMessage);
-// });
-// })
 
 
-//sigin page redirect here//
+
+
+
 
 document.querySelector('#login-page').addEventListener('click',()=>{
   window.location.href='pages/login.html';
 })
+
+
+
+
 
 //redirect page redirect here//
 
@@ -90,6 +62,9 @@ firebase.auth()
 
 
 })
+
+
+
 
 //signout
 
