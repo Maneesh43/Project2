@@ -405,9 +405,19 @@ h1, h2, h3, h4, h5, h6 {
   height: 25px;
 }
 
-.input:hover {
+.input:hover, .select:hover {
   border-color: #5BC0DE;
   background-color: #fff;
+}
+
+.select {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: 2px solid transparent;
+}
+
+.showlabel {
+  margin-bottom: 1rem;
 }
 
 /* 6.Variables================================================*/
@@ -605,6 +615,36 @@ footer {
 
 .locationdiv {
   margin-bottom: 1rem;
+}
+
+.personaldetails {
+  width: calc(80% + 1rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  gap: .5rem;
+}
+
+.personaldetails .select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 20%;
+          flex: 1 0 20%;
+}
+
+.locationdiv {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  gap: .5rem;
 }
 
 /*  */

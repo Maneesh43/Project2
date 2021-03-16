@@ -122,6 +122,7 @@ justify-content: space-between;
     flex-flow: column nowrap;
     justify-content:space-between;
     align-items: center;
+
 }
 .vaccine_register main{
     height:100%;
@@ -132,8 +133,22 @@ justify-content: space-between;
 .locationdiv{
     margin-bottom: 1rem;
 }
-
-.vaccine_register_formarea{
-  
+.personaldetails{
+    width: calc(80% + 1rem);
+    display: flex;
+    flex-flow: row nowrap;
+    gap:.5rem;
+    .select{
+        flex: 1 0 20%;
+    }
 }
+
+.locationdiv{
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap:.5rem;
+}
+
+
 /*  */
