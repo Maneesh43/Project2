@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,IAAI,EAAE,aAAa;EACnB,SAAS,EAAE,UAAU;EACrB,MAAM,EAAE,GAAG;EACX,QAAQ,EAAE,MAAM;EAChB,QAAQ,EAAE,QAAQ;EAClB,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,GAAG;CACX",
+    "sources": [
+        "css/partials/accessibility.scss"
+    ],
+    "names": [],
+    "file": "accessibility.css"
+}

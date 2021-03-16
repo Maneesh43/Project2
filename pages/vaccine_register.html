@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title></title>
+</head>
+
+<body class="vaccine_register" id="vaccine_register">
+    <header>
+      
+        <nav></nav>
+        <div class="logoarea"></div>
+    </header>
+
+
+
+    <main>
+        <div class="wrapper vaccine_register_wrapper">
+           
+
+            <div class="formarea vaccine_register_formarea">
+                <h2>Vaccine Registration form</h2>
+                <label for="name" class="hidelabel">Enter your Full name</label>
+                <input type="text" id="name" placeholder="please enter your fullname" class="input vaccine_register_input"></label>
+
+                <label for="age" class="hidelabel">Enter your age</label>
+                <input type="text" id="age" class="input vaccine_register_input" placeholder="please enter your age"></label>
+
+                <label for="diseaseinfo">Do you have any chronc diseases</label>
+                <select name="selectdisease" id="diseaseinfo" >
+                    <option value="yes">Yes</option>
+                    <option value="No" selected>No</option>
+                </select>
+
+
+                <label for="diseaseinfoprevious">Did you get a vaccine shot previously?</label>
+                <select name="selectdiseaseprevious" id="diseaseinfoprevious" >
+                    <option value="yes">Yes</option>
+                    <option value="No" selected>No</option>
+                </select>
+
+                <div class="locationdiv">
+                    <label for="locationtext" class="hidelabel">Enter your location</label>
+                    <input type="text" id="locationtext">
+                    <button type="button" id="locateme">locate me</button>
+
+                </div>
+
+
+
+                <div class="rememberme"><input type="checkbox" class="input inputcheckbox" id="chckbox">
+                    <label for="chckbox">I certify above information is true and correct.</label>
+            </div>
+
+            <button type="button" class="button">Register</button>
+
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+        <script src="../scripts/projectscript.js"></script>
+        <script src="../scripts/vaccineregister.js"></script>
+
+    </main>
+        <footer class="footerhome">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">Vaccination</a></li>
+                <li><a href="#">Updates</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </footer>
+</body>
+
+</html>
