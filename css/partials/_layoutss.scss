@@ -9,6 +9,7 @@ body{
 }
 header{
     width: 100%;
+    box-shadow: 0 1px 4px 0px gray;
 }
 header h1{
     text-align: center;
@@ -51,9 +52,9 @@ footer{
     background: url("../../assets/logo/logo.png");
 }
 .logoarea{
-    margin:auto;
+margin:auto;
 width: 250px;
-height: 116px;
+height: 130px;
 margin: 1rem auto 1rem auto;
 }
 
@@ -109,4 +110,30 @@ flex: 1 0 15%;
 
 /*  */
 
+/* Vaccihe Registration Styling */
+#vaccine_register{
+display: flex;
+flex-flow: column nowrap;
+justify-content: space-between;
 
+}
+.vaccine_register_wrapper .formarea{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-between;
+    align-items: center;
+}
+.vaccine_register main{
+    height:100%;
+}
+.vaccine_register_wrapper select{
+    margin-bottom: 1rem;
+}
+.locationdiv{
+    margin-bottom: 1rem;
+}
+
+.vaccine_register_formarea{
+  
+}
+/*  */
