@@ -27,36 +27,45 @@
                 <label for="name" class="hidelabel">Enter your Full name</label>
                 <input type="text" id="name" placeholder="please enter your fullname" class="input vaccine_register_input"></label>
 
-                <label for="age" class="hidelabel">Enter your age</label>
-                <input type="text" id="age" class="input vaccine_register_input" placeholder="please enter your age"></label>
+                <div class="personaldetails">
+                    <label for="age" class="hidelabel">Enter your age</label>
+                    <input type="number" id="age" class="input vaccine_register_input" placeholder="please enter your age" min="0" max="150"></label>
 
-                <label for="diseaseinfo">Do you have any chronc diseases</label>
-                <select name="selectdisease" id="diseaseinfo" >
+                    <label for="sex" class="hidelabel">Enter your gender</label>
+                    <select name="selectsex" id="sex" class="select" >
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label>
+                <select name="selectdisease" id="diseaseinfo" class="select" >
                     <option value="yes">Yes</option>
                     <option value="No" selected>No</option>
                 </select>
 
 
-                <label for="diseaseinfoprevious">Did you get a vaccine shot previously?</label>
-                <select name="selectdiseaseprevious" id="diseaseinfoprevious" >
+                <label for="diseaseinfoprevious" class="showlabel">Did you get a vaccine shot previously?</label>
+                <select name="selectdiseaseprevious" id="diseaseinfoprevious" class="select" >
                     <option value="yes">Yes</option>
                     <option value="No" selected>No</option>
                 </select>
 
                 <div class="locationdiv">
                     <label for="locationtext" class="hidelabel">Enter your location</label>
-                    <input type="text" id="locationtext">
-                    <button type="button" id="locateme">locate me</button>
+                    <input type="text" id="locationtext" class="input vaccine_register_location_input">
+                    <button type="button" id="locateme" class="button vaccine_regiser_button">locate me</button>
 
                 </div>
 
 
 
-                <div class="rememberme"><input type="checkbox" class="input inputcheckbox" id="chckbox">
+                <div class="rememberme"><input type="checkbox" class="inputcheckbox" id="chckbox">
                     <label for="chckbox">I certify above information is true and correct.</label>
             </div>
 
-            <button type="button" class="button">Register</button>
+            <button type="button" class="button vaccine_register_button">Register</button>
 
         </div>
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
