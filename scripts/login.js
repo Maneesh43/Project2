@@ -5,14 +5,25 @@ firebase.auth().onAuthStateChanged(function(user) {
       console.log(user);
     } else {
       // No user is signed in.
-      alert("login fail");
+      // alert("login fail");
+      console.log("login failed");
     }
   });
 
+//Key Events
 
+window.addEventListener('keydown',function(event){
+  console.log(event.code);
+  if(event.code=="Enter"){
+    loginuser();
+  }
+});
 
   // Event Listener
-  document.querySelector('#log-in').addEventListener('click',()=>{
+  document.querySelector('#log-in').addEventListener('click',loginuser);
+  
+  
+  function loginuser(){
     let a=document.querySelector('#email-input').value;
     let a1=document.querySelector('#password-input').value;
     firebase.auth().signInWithEmailAndPassword(a, a1)
@@ -28,4 +39,5 @@ firebase.auth().onAuthStateChanged(function(user) {
     var errorMessage = error.message;
     alert(errorMessage);
   });
-  })
+}
+

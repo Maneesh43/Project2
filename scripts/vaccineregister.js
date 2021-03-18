@@ -2,6 +2,23 @@ let objectadata={};
 let latitude=0;
 let longitude=0;
 let userpriority=0;
+let useremail=null;
+
+
+// check if user is logged in
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      // alert("success");
+      console.log(user.email);
+      useremail=user.email;
+    } else {
+      // No user is signed in.
+      alert("user not logged in");
+      window.location.replace('../pages/login.html');
+    }
+  });
 
 //  Geolocation api
 let locatevalue = document.querySelector("#locationtext");
@@ -44,7 +61,8 @@ document.querySelector('#diseaseinfoprevious').addEventListener('change', () => 
 
 
 class Objectdata{
-    constructor(username,userage,usersex,latitude,longitude,userischronic,userhasprevious){
+    constructor(useremail,username,userage,usersex,latitude,longitude,userischronic,userhasprevious){
+        this.useremail=useremail,
         this.username=username;
         this.userage=userage;
         this.usersex=usersex;
@@ -82,7 +100,8 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     let priorityvalue=prioritycalc();
     console.log(priorityvalue);
 
-     db.collection("userdata").doc(username).set({
+     db.collection("userdata").doc(useremail).set({
+     email:useremail,    
      name: username,
      age:userage,
      sex:usersex,
@@ -91,6 +110,7 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
      userischronic:userischronic,
      userhasprevious:userhasprevious,
      priority:priorityvalue,
+     created:firebase.firestore.FieldValue.serverTimestamp()
      },{merge:true})
      .then(() => {
      console.log("Document successfully written!");
@@ -115,3 +135,53 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
 return userpriority/4;
 }
 });
+
+
+
+//Event Handler for menu
+
+//From W3 Schools Dropdown with click
+
+
+document.querySelector('.dropbtn i').addEventListener('click',()=>{
+
+    document.getElementById("myDropdown").classList.toggle("show");
+
+
+
+})
+
+
+//Window Event Handlers
+
+
+window.addEventListener('click',(event)=>{
+
+    if (!event.target.matches('.dropbtn i')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+
+
+
+})
+
+
+// Signout
+
+document.querySelector('#signouthere').addEventListener('click',()=>{
+    firebase.auth().signOut().then(() => {
+      alert("signed out");
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+      alert("sign-out failed");
+    });
+    
+  })

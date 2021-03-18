@@ -4,37 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script
+          src="https://kit.fontawesome.com/5149b952aa.js"
+          crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 
-<body>
+<body >
   
     <header>
-        <div class="logoarea"></div>
-        <nav>
 
-            <div class="carousel homehome" data-flickity='{ "autoPlay": 1500 }'>
+
+        <div class="headerarea">
+            <div class="logoarea"></div>
+            <nav><div class="dropdown">
+                <div class="dropbtn"><i class="fas fa-bars" aria-label="Menu" aria-hidden="true"></i></div>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="home.html">Home</a>
+                  <a href="profile.html">Profile</a>
+                  <a href="#" id="signouthere">Signout</a>
+                </div>
+              </div>
+            </nav>
+
+        </div>
+
+
+
+
+           <div class="carousel">
+                <div class="carousel homehome" data-flickity='{ "autoPlay": 1500 }'>
                 <div class="carousel-cell"><a href="../pages/vaccine_register.html">Register for Vaccine</a>
                 </div>
-                <div class="carousel-cell"><a href="../pages/vaccine_register.html">Register for Vaccine</a></div>
-                <div class="carousel-cell"><p>is</p></div>
-                <div class="carousel-cell"><p>not</p> </div>
-                <div class="carousel-cell"><p>working </p></div>
+                <div class="carousel-cell"><a href="#">Vaccination Centres</a></div>
+                <div class="carousel-cell"><a href="#">Vaccine</a></div>
+                <div class="carousel-cell"><a href="#">Vaccine</a></div>
+                <div class="carousel-cell"> <a href="#">Vaccine</a></div>
               </div>
         </nav>
+           </div>
       
     </header>
   
     <main>
-        <div class="msgbanner">Hello<span>&times</span></div>
-          <div class="bingmap">
+        <div class="loader hide"></div>
+        <div class="msgbanner .hide">Hello<span>&times</span></div>
+          <div class="bingmap .hide">
 
        </div>
     </main>
-    <footer class="footerhome">
+    <footer class="footerhome ">
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="#">Vaccination</a></li>

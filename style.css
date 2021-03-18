@@ -6,7 +6,10 @@
 /* 6.Variables */
 /* 7.Carousel */
 /* 8.Layout */
-/* Accessibility */
+/* 9. Accessibility */
+/* 10.Dropdown */
+/* 11. Loader */
+/* 12.profile page */
 /*  1.Reset===============================================*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -414,6 +417,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(0, 0, 0, 0.1);
   outline: none;
   border: 2px solid transparent;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 .showlabel {
@@ -428,20 +433,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-cell {
+  text-align: center;
   width: 66%;
-  height: 6rem;
+  height: 4rem;
   background: #8C8;
   border-radius: 5px;
   counter-increment: gallery-cell;
   color: white;
   margin-right: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.carousel-cell p {
+.carousel-cell a {
   font-size: 1.5rem;
   text-align: center;
   color: white;
-  margin: 2.2rem 0;
 }
 
 /* 8.layout */
@@ -461,6 +475,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: #f5f7ff;
 }
 
 header {
@@ -613,10 +628,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-.locationdiv {
-  margin-bottom: 1rem;
-}
-
 .personaldetails {
   width: calc(80% + 1rem);
   display: -webkit-box;
@@ -647,8 +658,46 @@ footer {
   gap: .5rem;
 }
 
+.headerarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.headerarea .logoarea {
+  margin: initial;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-left: 1rem;
+}
+
+.headerarea nav {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
 /*  */
-/* Accessibility */
+/* Profile page layout */
+main .hide {
+  display: none;
+}
+
+.loader {
+  margin: auto;
+}
+
+/*  */
+/* 9.Accessibility */
 .hidelabel {
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
@@ -658,5 +707,104 @@ footer {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* 10.Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  min-width: 160px;
+  overflow: auto;
+  z-index: 1;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content a {
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 1rem;
+  text-decoration: none;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  font-weight: bold;
+}
+
+.show {
+  display: block;
+}
+
+/* 11.Loader */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* 12.Profile  */
+.profileindividualdiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  gap: .5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profileformarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 /*# sourceMappingURL=style.css.map */
