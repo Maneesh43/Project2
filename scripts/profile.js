@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded',()=>{
           // alert("success");
         //   console.log(user);
           useremail=user.email;
+          console.log(useremail);
           getuserprofile();
         } else {
           // No user is signed in.
@@ -33,6 +34,9 @@ docRef.get().then((doc) => {
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
+
+
+
     }
 }).catch((error) => {
     console.log("Error getting document:", error);
@@ -40,8 +44,8 @@ docRef.get().then((doc) => {
 }
 
 function setuserdata(datauser){
-document.querySelector('.loader').classList.add("hide");
-document.querySelector('.wrapper').classList.toggle("hide");
+    document.querySelector('.loader').classList.add("hide");
+    document.querySelector('.wrapper').classList.toggle("hide");
 
 console.log(datauser.data());
 userdata=datauser.data();
@@ -49,6 +53,7 @@ console.log(userdata.created.toDate().toDateString());
 
 if((userdata.priority+1)>0){
     document.querySelector('.username p').textContent=userdata.name;
+    console.log('.username p');
     document.querySelector('.useremail p').textContent=userdata.email;
     document.querySelector('.userage p').textContent=userdata.age;
     document.querySelector('.userhasregisteredforvaccine p').textContent="Yes";
@@ -56,3 +61,4 @@ if((userdata.priority+1)>0){
 
 }
 }
+

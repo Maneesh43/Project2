@@ -110,6 +110,7 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
      userischronic:userischronic,
      userhasprevious:userhasprevious,
      priority:priorityvalue,
+     isadmin:"false",
      created:firebase.firestore.FieldValue.serverTimestamp()
      },{merge:true})
      .then(() => {
