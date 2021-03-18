@@ -1,0 +1,12 @@
+.profileindividualdiv{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+
+}
+.profileformarea{
+    display: flex;
+    flex-flow: column nowrap;
+}

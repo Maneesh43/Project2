@@ -6,7 +6,10 @@
  /* 6.Variables */
  /* 7.Carousel */
  /* 8.Layout */
-/* Accessibility */
+/* 9. Accessibility */
+/* 10.Dropdown */
+/* 11. Loader */
+/* 12.profile page */
 
 
 
@@ -51,6 +54,18 @@
 
 @import 'partials/layoutss';
 
-/* Accessibility */
+/* 9.Accessibility */
 
 @import 'partials/accessibility';
+
+/* 10.Dropdown */
+
+@import 'partials/_dropdown.scss';
+
+/* 11.Loader */
+
+@import 'partials/_loader.scss';
+
+/* 12.Profile  */
+
+@import 'partials/_profile.scss'

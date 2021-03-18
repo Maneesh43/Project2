@@ -6,6 +6,7 @@ body{
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
+    background-color:$color_background ;
 }
 header{
     width: 100%;
@@ -131,7 +132,7 @@ justify-content: space-between;
     margin-bottom: 1rem;
 }
 .locationdiv{
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
 }
 .personaldetails{
     width: calc(80% + 1rem);
@@ -149,6 +150,32 @@ justify-content: space-between;
     flex-flow: row nowrap;
     gap:.5rem;
 }
+.headerarea{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logoarea{
+        margin: initial;
+        order: 1;
+        margin-left: 1rem;
+    }
+    nav{
+        order:2;
+        margin-right: 1rem;
+        font-size: 2rem;
+    }
+}
 
+
+/*  */
+
+
+/* Profile page layout */
+ main .hide{
+    display: none;
+}
+.loader{
+    margin: auto;
+}
 
 /*  */
