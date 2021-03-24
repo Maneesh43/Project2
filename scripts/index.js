@@ -68,13 +68,31 @@ firebase.auth()
 
 //signout
 
-document.querySelector('#sign-out').addEventListener('click',()=>{
-  firebase.auth().signOut().then(() => {
-    alert("signed out");
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-    alert("sign-out failed");
-  });
+// document.querySelector('#sign-out').addEventListener('click',()=>{
+//   firebase.auth().signOut().then(() => {
+//     alert("signed out");
+//     // Sign-out successful.
+//   }).catch((error) => {
+//     // An error happened.
+//     alert("sign-out failed");
+//   });
   
-})
+// })
+
+
+
+
+// document.querySelector('#forgot').addEventListener('click',()=>{
+
+//   var auth = firebase.auth();
+//   var emailAddress = "thouti.maneesh43@gmail.com";
+  
+//   auth.sendPasswordResetEmail(emailAddress).then(function() {
+//     // Email sent.
+//     console.log("email sent");
+//   }).catch(function(error) {
+//     // An error happened.
+//   });
+
+
+// })

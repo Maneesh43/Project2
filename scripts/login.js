@@ -1,3 +1,5 @@
+
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -13,7 +15,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 //Key Events
 
 window.addEventListener('keydown',function(event){
-  console.log(event.code);
+  // console.log(event.code);
   if(event.code=="Enter"){
     loginuser();
   }
@@ -41,3 +43,25 @@ window.addEventListener('keydown',function(event){
   });
 }
 
+//Reset Password
+
+document.querySelector('#forgot').addEventListener('click',()=>{
+  let a=null;
+  a=document.querySelector('#email-input').value;
+  console.log(a);
+  if(a!=null){
+
+  var auth = firebase.auth();
+  firebase.auth().useDeviceLanguage();
+  var emailAddress = a;
+  
+  auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+    console.log("email sent");
+  }).catch(function(error) {
+    // An error happened.
+    console.log("failed to send email");
+  });
+  }
+
+})

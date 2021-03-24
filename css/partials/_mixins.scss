@@ -1,0 +1,4 @@
+@mixin imground($border-radius:50%,$align:center){
+border-radius: $border-radius;
+text-align: $align;
+}

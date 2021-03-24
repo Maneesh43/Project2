@@ -1,14 +1,27 @@
 firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      // alert("success");
-      console.log(user.email);
-    } else {
-      // No user is signed in.
-      alert("user not logged in");
-      window.location.replace('../pages/login.html');
-    }
+  if (user) {
+    // User is signed in.
+    // alert("success");
+    console.log(user.email);
+    useremail=user.email;
+  } else {
+    // No user is signed in.
+    alert("user not logged in");
+    window.location.replace('../index.html');
+  }
+});
+
+// Signout
+document.querySelector('#signouthere').addEventListener('click',()=>{
+  firebase.auth().signOut().then(() => {
+    alert("signed out");
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+    alert("sign-out failed");
   });
+  
+})
 
 
   //dropdown
