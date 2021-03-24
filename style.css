@@ -551,7 +551,7 @@ template {
 
 /* Global layout */
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -559,14 +559,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #f5f7ff;
-  overflow-x: hidden;
 }
 
 header {

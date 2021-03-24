@@ -55,13 +55,11 @@
 
 /* Global layout */
 body{
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     justify-content: space-between;
     background-color:$color_background ;
-    overflow-x: hidden;
 }
 header{
     width: 100%;
