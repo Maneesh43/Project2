@@ -1,71 +1,58 @@
-/*  1.Reset */
- /* 2.Links */
- /* 3.Typography */
- /* 4.buttons */
- /* 5.inputs */
- /* 6.Variables */
- /* 7.Carousel */
- /* 8.Layout */
-/* 9. Accessibility */
-/* 10.Dropdown */
-/* 11. Loader */
-/* 12.profile page */
+/* 1.Variables */
+/* 2.Reset */
+/* 3.Accessibility */
+/* 4.Buttons */
+/* 5.Carousels */
+/* 6.Dropdowns */
+/* 7.Inputs */
+/* 8.Layouts */
+/* 9.Links */
+/* 10.Loader */
+/* 11.Profile */
+/* 12.Typography */
+/* 13.Mixins  */
 
 
 
 
-
-
-/*  1.Reset===============================================*/
-
-@import 'partials/reset';
-
-
-
+/* 1.Variables==================================================================== */
 @import 'partials/variables/variabless';
 
-/*  2.links================================================ */
+/* 13.Mixins=================================*/
 
-@import 'partials/linkss';
+@import 'partials/mixins';
 
-/* 3.Typography=============================================*/
+/* 2.Reset==================================================================== */
 
-@import 'partials/typography';
-
-
-
-
-/* 4. Buttons================================================*/
-
-@import 'partials/buttons';
-
-/*5. inputs==================================================*/
-
-@import 'partials/inputs';
-/* 6.Variables================================================*/
-
-
-
-/* 7.carousel */
-
-@import 'partials/carouselss';
-
-/* 8.layout */
-
-@import 'partials/layoutss';
-
-/* 9.Accessibility */
+@import  'partials/reset';
+/* 3.Accessibility==================================================================== */
 
 @import 'partials/accessibility';
+/* 4.Buttons==================================================================== */
 
-/* 10.Dropdown */
+@import 'partials/buttons';
+/* 5.Carousels==================================================================== */
 
-@import 'partials/_dropdown.scss';
+@import 'partials/carouselss';
+/* 6.Dropdowns==================================================================== */
 
-/* 11.Loader */
+@import 'partials/dropdown';
+/* 7.Inputs==================================================================== */
 
-@import 'partials/_loader.scss';
+@import 'partials/inputs';
+/* 8.Layouts==================================================================== */
 
-/* 12.Profile  */
+@import 'partials/layoutss';
+/* 9.Links==================================================================== */
 
-@import 'partials/_profile.scss'
+@import 'partials/linkss';
+/* 10.Loader==================================================================== */
+
+@import 'partials/loader';
+/* 11.Profile==================================================================== */
+
+
+@import 'partials/profile';
+/* 12.Typography==================================================================== */
+
+@import 'partials/typography';

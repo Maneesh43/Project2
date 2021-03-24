@@ -1,3 +1,57 @@
+// google icon
+.google-button {
+    height: 40px;
+    border-width: 0;
+    background: white;
+    color: #737373;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
+    transition-property: background-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    padding: 0;
+    
+    &:focus,
+    &:hover {
+      box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+    }
+    
+    &:active {
+      background-color: #e5e5e5;
+      box-shadow: none;
+      transition-duration: 10ms;
+    }
+  }
+      
+  .google-button__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0 8px 8px;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+  }
+  
+  .google-button__icon--plus {
+    width: 27px;
+  }
+  
+  .google-button__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto',arial,sans-serif;
+  }
+  
+
+
+
+
+// 
+
 
 /* Global layout */
 body{
@@ -7,6 +61,7 @@ body{
     align-items: center;
     justify-content: space-between;
     background-color:$color_background ;
+    overflow-x: hidden;
 }
 header{
     width: 100%;
@@ -18,26 +73,12 @@ header h1{
 main{
     width: 100%;
 }
-footer{
-    width: 100%;
-}
+
 .formarea{
     text-align: center;
 }
 
-.msgbanner{
-    display: none;
-    position: absolute;
-    top: 30%;
-    left: 60%;
-    background-color: lightgreen;
-    padding: 1rem;
-    width: 40%;
-}
-.msgbanner span{
-    display: none;
 
-}
 .rememberme{
     display: flex;
     align-items: center;
@@ -84,29 +125,25 @@ margin: 1rem auto 1rem auto;
 
 
 /* Home page styling */
-
-
+.footerhome{
+    display: block;
+    width: 100%;
+    background-color:$color_blue_2;
+}
 .footerhome ul{
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 1rem;
-    padding:.5rem 0;
-    margin: 0;
-    padding: 0 1rem;
-    background-color: $color-active;  
+display: grid;
+padding-left: 0;
+width: 100%;
+grid-template-columns: repeat(4,1fr);
+li{
+    justify-self: center;
 }
-.footerhome ul li{
-flex: 1 0 15%;
 }
-.footerhome li{
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 1rem;
-}
-.footerhome li a{
-    align-self:center;
+.footerhome a{
     color: white;
 }
+
+
 
 
 /*  */
@@ -131,9 +168,8 @@ justify-content: space-between;
 .vaccine_register_wrapper select{
     margin-bottom: 1rem;
 }
-.locationdiv{
-    // margin-bottom: 1rem;
-}
+
+
 .personaldetails{
     width: calc(80% + 1rem);
     display: flex;

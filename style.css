@@ -1,16 +1,24 @@
-/*  1.Reset */
-/* 2.Links */
-/* 3.Typography */
-/* 4.buttons */
-/* 5.inputs */
-/* 6.Variables */
-/* 7.Carousel */
-/* 8.Layout */
-/* 9. Accessibility */
-/* 10.Dropdown */
-/* 11. Loader */
-/* 12.profile page */
-/*  1.Reset===============================================*/
+/* 1.Variables */
+/* 2.Reset */
+/* 3.Accessibility */
+/* 4.Buttons */
+/* 5.Carousels */
+/* 6.Dropdowns */
+/* 7.Inputs */
+/* 8.Layouts */
+/* 9.Links */
+/* 10.Loader */
+/* 11.Profile */
+/* 12.Typography */
+/* 13.Mixins  */
+/* 1.Variables==================================================================== */
+/* 1.colors */
+/* 2.fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@700&display=swap");
+/* 1.colors====================================================== */
+/* 2.fonts======================================================== */
+/* 13.Mixins=================================*/
+/* 2.Reset==================================================================== */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -18,7 +26,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@700&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -355,30 +362,19 @@ template {
   display: none;
 }
 
-/* 1.colors */
-/* 2.fonts */
-/* 1.colors====================================================== */
-/* 2.fonts======================================================== */
-/*  2.links================================================ */
-a {
-  text-decoration: none;
+/* 3.Accessibility==================================================================== */
+.hidelabel {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-li {
-  list-style-type: none;
-}
-
-/* 3.Typography=============================================*/
-* {
-  font-family: "Noto Sans JP", sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-}
-
-/* 4. Buttons================================================*/
+/* 4.Buttons==================================================================== */
 .button {
   padding: 0.5rem;
   width: 50%;
@@ -395,38 +391,7 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-/*5. inputs==================================================*/
-.input {
-  width: 80%;
-  margin-bottom: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  outline: none;
-  border: 2px solid transparent;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  height: 25px;
-}
-
-.input:hover, .select:hover {
-  border-color: #5BC0DE;
-  background-color: #fff;
-}
-
-.select {
-  background-color: rgba(0, 0, 0, 0.1);
-  outline: none;
-  border: 2px solid transparent;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-}
-
-.showlabel {
-  margin-bottom: 1rem;
-}
-
-/* 6.Variables================================================*/
-/* 7.carousel */
+/* 5.Carousels==================================================================== */
 .carousel {
   background: #EEE;
   padding-top: .2rem;
@@ -458,7 +423,132 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-/* 8.layout */
+/* 6.Dropdowns==================================================================== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  min-width: 160px;
+  overflow: auto;
+  z-index: 1;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content a {
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 1rem;
+  text-decoration: none;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  font-weight: bold;
+}
+
+.show {
+  display: block;
+}
+
+/* 7.Inputs==================================================================== */
+.input {
+  width: 80%;
+  margin-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  outline: none;
+  border: 2px solid transparent;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  height: 25px;
+}
+
+.input:hover, .select:hover {
+  border-color: #5BC0DE;
+  background-color: #fff;
+}
+
+.select {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: 2px solid transparent;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.showlabel {
+  margin-bottom: 1rem;
+}
+
+/* 8.Layouts==================================================================== */
+.google-button {
+  height: 40px;
+  border-width: 0;
+  background: white;
+  color: #737373;
+  border-radius: 5px;
+  white-space: nowrap;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition-property: background-color, -webkit-box-shadow;
+  transition-property: background-color, -webkit-box-shadow;
+  transition-property: background-color, box-shadow;
+  transition-property: background-color, box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  padding: 0;
+}
+
+.google-button:focus, .google-button:hover {
+  -webkit-box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.google-button:active {
+  background-color: #e5e5e5;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition-duration: 10ms;
+          transition-duration: 10ms;
+}
+
+.google-button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 8px 0 8px 8px;
+  width: 18px;
+  height: 18px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.google-button__icon--plus {
+  width: 27px;
+}
+
+.google-button__text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto',arial,sans-serif;
+}
+
 /* Global layout */
 body {
   min-height: 100vh;
@@ -476,6 +566,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #f5f7ff;
+  overflow-x: hidden;
 }
 
 header {
@@ -492,26 +583,8 @@ main {
   width: 100%;
 }
 
-footer {
-  width: 100%;
-}
-
 .formarea {
   text-align: center;
-}
-
-.msgbanner {
-  display: none;
-  position: absolute;
-  top: 30%;
-  left: 60%;
-  background-color: lightgreen;
-  padding: 1rem;
-  width: 40%;
-}
-
-.msgbanner span {
-  display: none;
 }
 
 .rememberme {
@@ -550,42 +623,27 @@ footer {
 /* Login.html layout */
 /*  */
 /* Home page styling */
+.footerhome {
+  display: block;
+  width: 100%;
+  background-color: #4695BD;
+}
+
 .footerhome ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  gap: 1rem;
-  padding: .5rem 0;
-  margin: 0;
-  padding: 0 1rem;
-  background-color: #428BCA;
+  display: -ms-grid;
+  display: grid;
+  padding-left: 0;
+  width: 100%;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
 }
 
 .footerhome ul li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 15%;
-          flex: 1 0 15%;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
-.footerhome li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  padding: 1rem;
-}
-
-.footerhome li a {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.footerhome a {
   color: white;
 }
 
@@ -697,58 +755,16 @@ main .hide {
 }
 
 /*  */
-/* 9.Accessibility */
-.hidelabel {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-/* 10.Dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  min-width: 160px;
-  overflow: auto;
-  z-index: 1;
-  background-color: white;
-  -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-content a {
-  text-align: center;
-  padding: 0.75rem;
-  font-size: 1rem;
+/* 9.Links==================================================================== */
+a {
   text-decoration: none;
-  display: block;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: black;
-  -webkit-transition: all .5s;
-  transition: all .5s;
 }
 
-.dropdown-content a:hover {
-  background-color: white;
-  font-weight: bold;
+li {
+  list-style-type: none;
 }
 
-.show {
-  display: block;
-}
-
-/* 11.Loader */
+/* 10.Loader==================================================================== */
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -780,7 +796,7 @@ main .hide {
   }
 }
 
-/* 12.Profile  */
+/* 11.Profile==================================================================== */
 .profileindividualdiv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -798,6 +814,10 @@ main .hide {
           justify-content: center;
 }
 
+input[type="file"] {
+  display: none;
+}
+
 .profileformarea {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -806,5 +826,47 @@ main .hide {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+}
+
+.imageholder {
+  position: relative;
+}
+
+.imageholder img {
+  min-width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.imageholder button {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  top: 83%;
+  left: 80%;
+  opacity: .4;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.sendbutton:hover i {
+  color: #4270B3;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.sendbutton:hover {
+  opacity: 1;
+}
+
+/* 12.Typography==================================================================== */
+* {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
 }
 /*# sourceMappingURL=style.css.map */

@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+     <script
+          src="https://kit.fontawesome.com/5149b952aa.js"
+          crossorigin="anonymous"></script>
+
     <title>Profile Page</title>
 </head>
 
@@ -30,44 +34,53 @@
                 <!-- <div class="userdetails"> -->
                 <div class="profileheading profileindividualdiv">
                     <h3>User info</h3>
+
                 </div>
-                <div class="userprofile profileindividualdiv0">
-                    <img src="" alt="user image">
+                <div class="userprofile profileindividualdiv">
+                    <div class="imageholder">
+                        <img src="../assets/images/default_image.png" alt="user image">
+                        <input type="file" id="fileupload" accept=".jpg, .png">
+                        <button id="send" class="sendbutton"><i class="fas fa-pencil-alt"></i><span class="hidelabel">upload</span></button>
+                    </div>
                 </div>
                 <div class="username profileindividualdiv">
                     <b>Name:</b>
                     <p></p>
                 </div>
-                    <div class="useremail profileindividualdiv">
-                        <b>User Email</b>
-                        <p></p>
-                    </div>
-                    <div class="userage profileindividualdiv">
-                        <b>Age</b>
-                        <p></p>
-                    </div>
-
-                    <div class="userhasregisteredforvaccine profileindividualdiv">
-                        <b>Registered for vaccine:</b>
-                        <p></p>
-                    </div>
-                    <div class="userregistered profileindividualdiv">
-                        <b>User Registered:</b>
-                        <p></p>
-
-                    </div>
+                <div class="useremail profileindividualdiv">
+                    <b>Registered Email:</b>
+                    <p></p>
+                </div>
+                <div class="userage profileindividualdiv">
+                    <b>Age:</b>
+                    <p></p>
                 </div>
 
+                <div class="userhasregisteredforvaccine profileindividualdiv">
+                    <b>Registered for vaccine:</b>
+                    <p></p>
+                </div>
+                <div class="userregistered profileindividualdiv">
+                    <b>User Registered:</b>
+                    <p></p>
+                    
+                </div>
             </div>
-            <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-            <!-- TODO: Add SDKs for Firebase products that you want to use
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
              https://firebase.google.com/docs/web/setup#available-libraries -->
-            <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-            <script src="../scripts/projectscript.js"></script>
-            <script src="../scripts/profile.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
+     
+        <script src="../scripts/projectscript.js"></script>
+        <script src="../scripts/profile.js"></script>
+    
 
     </main>
     <footer></footer>

@@ -3,6 +3,7 @@ let latitude=0;
 let longitude=0;
 let userpriority=0;
 let useremail=null;
+let userdataobject;
 
 
 // check if user is logged in
@@ -16,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     } else {
       // No user is signed in.
       alert("user not logged in");
-      window.location.replace('../pages/login.html');
+      window.location.replace('../index.html');
     }
   });
 
@@ -60,16 +61,16 @@ document.querySelector('#diseaseinfoprevious').addEventListener('change', () => 
 
 
 
-class Objectdata{
-    constructor(useremail,username,userage,usersex,latitude,longitude,userischronic,userhasprevious){
+class Userobjectdata{
+    constructor(username,useremail,userage,usersex,userischronic,userhasprevious,latitude,longitude){
+        this.username=username,
         this.useremail=useremail,
-        this.username=username;
-        this.userage=userage;
-        this.usersex=usersex;
-        this.userlocationlatitude=latitude;
-        this.userlocationlongitude=longitude;
-        this.userischronic=userischronic;
-        this.userhasprevious=userhasprevious;
+        this.userage=userage,
+        this.usersex=usersex,
+        this.userischronic=userischronic,
+        this.userhasprevious=userhasprevious,
+        this.latitude=latitude,
+        this.longitude=longitude
     }
 }
 
@@ -80,12 +81,13 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
 
     let username=document.querySelector('#name').value;
     let userage=document.querySelector('#age').value;
+    console.log(userage);
+    // debugger;
     let usersex=document.querySelector('#sex').value;
     let userischronic=document.querySelector('#diseaseinfo').value;
     let userhasprevious=document.querySelector('#diseaseinfoprevious').value;
 
-    let userdataobject=new Objectdata(username,userage,usersex,latitude,longitude,userischronic,userhasprevious);
-    console.log(userdataobject);
+
 
     //  let inputs = document.querySelectorAll('.input');
     //   console.log(inputs);
@@ -96,7 +98,7 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
 
 
 
-
+let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userischronic,userhasprevious,latitude,longitude);
     let priorityvalue=prioritycalc();
     console.log(priorityvalue);
 
@@ -122,18 +124,22 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
      });
 
     function prioritycalc(){
-
+        console.log("update")
+        console.log(userdataobject);
     if(userdataobject.userage>=55){
         userpriority+=1;
-    }else if (userdataobject.usersex==="Female"){
+        debugger;
+        console.log(userpriority);
+    }if(userdataobject.usersex==="Female"){
         userpriority+=1;
-    }else if(userdataobject.userischronic=="Yes"){
+    }if(userdataobject.userischronic==="yes"){
         userpriority+=1;
-    }else if(userdataobject.userhasprevious=="Yes"){
+    }if(userdataobject.userhasprevious==="yes"){
         userpriority+=1;
     }
     console.log(userpriority);
 return userpriority/4;
+console.log(userpriority);
 }
 });
 

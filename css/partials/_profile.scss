@@ -6,7 +6,41 @@
     justify-content: center;
 
 }
+input[type="file"]{
+
+    display: none;
+}
 .profileformarea{
     display: flex;
     flex-flow: column nowrap;
 }
+.imageholder{
+    position: relative;
+img{
+    min-width: 180px;
+    height: 180px;
+    @include imground;
+
+}
+
+
+    button{
+        position: absolute;
+        border: none;
+        background-color: transparent;
+        top: 83%;
+        // right: 4%;
+        left: 80%;
+        opacity: .4;
+        transition: all .25s;
+    }
+}
+.sendbutton:hover i{
+color: $color_blue_1;
+transform: scale(1.5);
+
+}
+.sendbutton:hover{
+    opacity: 1;
+}
+
