@@ -28,6 +28,7 @@ window.addEventListener('keydown',function(event){
   function loginuser(){
     let a=document.querySelector('#email-input').value;
     let a1=document.querySelector('#password-input').value;
+    if(is_email(a) && is_empty(a1)&& is_empty(a)){
     firebase.auth().signInWithEmailAndPassword(a, a1)
   .then((userCredential) => {
     // Signed in
@@ -41,7 +42,16 @@ window.addEventListener('keydown',function(event){
     var errorMessage = error.message;
     alert(errorMessage);
   });
+}else{
+  console.log("email Validation failed");
+  toaster("Email or password incorrect!");
+    document.querySelector("#email-input").style.borderColor="red"
+  
 }
+}
+
+
+
 
 //Reset Password
 
