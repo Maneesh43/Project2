@@ -6,13 +6,14 @@ let useremail=null;
 let userdataobject;
 
 
+
 // check if user is logged in
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       // alert("success");
-      console.log(user.email);
+      console.log(user);
       useremail=user.email;
     } else {
       // No user is signed in.
@@ -20,6 +21,21 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.replace('../index.html');
     }
   });
+
+  console.log(useremail);
+
+//   var db = firebase.firestore();
+//   var docRef = db.collection("userdata").doc(useremail);
+//   docRef.get().then((doc) => {
+//     if (doc.exists) {
+//       // console.log("Document data:", doc.data());
+//       setuserdata(doc);
+//     } else {
+      
+//       // doc.data() will be undefined in this case
+//       console.log("No such document!");
+//     }});
+
 
 //  Geolocation api
 let locatevalue = document.querySelector("#locationtext");
@@ -82,7 +98,7 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     let username=document.querySelector('#name').value;
     let userage=document.querySelector('#age').value;
     console.log(userage);
-    // debugger;
+
     let usersex=document.querySelector('#sex').value;
     let userischronic=document.querySelector('#diseaseinfo').value;
     let userhasprevious=document.querySelector('#diseaseinfoprevious').value;

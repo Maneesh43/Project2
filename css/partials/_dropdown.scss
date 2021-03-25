@@ -13,12 +13,13 @@
     min-width: 160px;
     overflow: auto;
     z-index: 1;
-    background-color:$color_white;
+    background-color:$color_background;
     box-shadow: 0 1px 2px 2px $background-color_widget;
   }
   
   .dropdown-content a {
       text-align: center;
+      border:2px dotted transparent;
     padding: 0.75rem;
     font-size: 1rem;
     text-decoration: none;
@@ -29,9 +30,12 @@
     transition: all .5s;
   }
 
+
   .dropdown-content a:hover{
       background-color: $color_white;
       font-weight: bold;
+      border-style: dotted;
+      border-color: $color-hover-border;
   }
   
  

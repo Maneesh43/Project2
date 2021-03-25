@@ -65,6 +65,7 @@ function setuserdata(datauser) {
 
   // console.log(datauser.data());
   userdata = datauser.data();
+  console.log(userdata);
   console.log(userdata.created.toDate().toDateString());
 
   if ((userdata.priority + 1) > 0) {
