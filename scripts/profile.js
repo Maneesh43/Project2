@@ -70,7 +70,6 @@ function setuserdata(datauser) {
 
   if ((userdata.priority + 1) > 0) {
     document.querySelector('.username p').textContent = userdata.name;
-
     document.querySelector('.useremail p').textContent = userdata.email;
     document.querySelector('.userage p').textContent = userdata.age;
     document.querySelector('.userhasregisteredforvaccine p').textContent = "Yes";

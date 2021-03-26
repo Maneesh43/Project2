@@ -798,20 +798,39 @@ li {
 
 /* 11.Profile==================================================================== */
 .profileindividualdiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  gap: .5rem;
+  grid-column: 1/-1;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.profileindividualdiv b {
+  text-align: center;
+}
+
+.profileindividualdiv p {
+  text-align: center;
+}
+
+.profileheading p {
+  grid-column: 1/-1;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.userprofile {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.userprofile .imageholder {
+  grid-column: 1/-1;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 input[type="file"] {
@@ -819,13 +838,10 @@ input[type="file"] {
 }
 
 .profileformarea {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 .imageholder {
