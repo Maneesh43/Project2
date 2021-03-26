@@ -809,7 +809,8 @@ li {
 }
 
 .profileindividualdiv b {
-  text-align: center;
+  text-align: left;
+  margin-left: 1rem;
 }
 
 .profileindividualdiv p {
@@ -842,6 +843,13 @@ input[type="file"] {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 500px) {
+  .profileformarea {
+    max-width: 500px;
+    margin: auto;
+  }
 }
 
 .imageholder {
