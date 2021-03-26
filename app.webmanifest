@@ -1,0 +1,16 @@
+{
+    "short_name": "Lifeline",
+    "name": "Lifeline",
+    "icons": [
+
+      {
+        "src": "assets/logo/logo512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/index.html?source=pwa",
+    "display": "fullscreen",
+    "background_color": "#FF6F6F",
+    "theme_color": "#FF6F6F"
+  }
