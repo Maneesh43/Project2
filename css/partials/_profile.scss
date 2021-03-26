@@ -1,18 +1,34 @@
 .profileindividualdiv{
-    display: flex;
-    flex-flow: row nowrap;
-    gap: .5rem;
-    align-items: center;
-    justify-content: center;
+    grid-column: 1/-1;
+display: grid;
+align-items: center;
+grid-template-columns:repeat(2,1fr);
+b{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
 
+}
+.profileheading p{
+    grid-column: 1/-1;
+    justify-self: center;
+}
+.userprofile{
+    justify-self: center;
+    .imageholder{
+        grid-column: 1/-1;
+        justify-self: center;
+    }
 }
 input[type="file"]{
 
     display: none;
 }
 .profileformarea{
-    display: flex;
-    flex-flow: column nowrap;
+display: grid;
+grid-template-columns: repeat(2,1fr);
 }
 .imageholder{
     position: relative;
