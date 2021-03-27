@@ -388,42 +388,11 @@ template {
 }
 
 .button:hover {
-  background-color: #428BCA;
+  background-color: #4270B3;
   color: white;
 }
 
 /* 5.Carousels==================================================================== */
-.carousel {
-  background: #EEE;
-  padding-top: .2rem;
-}
-
-.carousel-cell {
-  text-align: center;
-  width: 66%;
-  height: 4rem;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: gallery-cell;
-  color: white;
-  margin-right: .5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.carousel-cell a {
-  font-size: 1.5rem;
-  text-align: center;
-  color: white;
-}
-
 /* 6.Dropdowns==================================================================== */
 .dropdown {
   position: relative;
@@ -437,7 +406,7 @@ template {
   min-width: 160px;
   overflow: auto;
   z-index: 1;
-  background-color: #f5f7ff;
+  background-color: #F4F4F4;
   -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -449,7 +418,7 @@ template {
   font-size: 1rem;
   text-decoration: none;
   display: block;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #F4F4F4;
   color: black;
   -webkit-transition: all .5s;
   transition: all .5s;
@@ -459,7 +428,7 @@ template {
   background-color: white;
   font-weight: bold;
   border-style: dotted;
-  border-color: #5BC0DE;
+  border-color: #4695BD;
 }
 
 .show {
@@ -480,7 +449,7 @@ template {
 }
 
 .input:hover, .select:hover {
-  border-color: #5BC0DE;
+  border-color: #4695BD;
   background-color: #fff;
 }
 
@@ -625,7 +594,7 @@ main {
 .footerhome {
   display: block;
   width: 100%;
-  background-color: #4695BD;
+  background-color: #4270B3;
 }
 
 .footerhome ul {
@@ -648,7 +617,7 @@ main {
 
 /*  */
 /* Vaccihe Registration Styling */
-.wrapper {
+.vaccine_register_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -664,11 +633,11 @@ main {
           align-items: center;
 }
 
-.wrapper .select {
+.vaccine_register_wrapper .select {
   padding: 0.5rem;
 }
 
-.wrapper .personaldetails {
+.vaccine_register_wrapper .personaldetails {
   width: calc(80% + 1rem);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -680,21 +649,21 @@ main {
           flex-flow: row nowrap;
 }
 
-.wrapper .personaldetails .agediv {
+.vaccine_register_wrapper .personaldetails .agediv {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 50%;
           flex: 1 0 50%;
 }
 
-.wrapper .personaldetails .agediv input {
+.vaccine_register_wrapper .personaldetails .agediv input {
   width: 95%;
 }
 
-.wrapper .personaldetails .agediv select {
+.vaccine_register_wrapper .personaldetails .agediv select {
   width: 20%;
 }
 
-.wrapper .radiobuttons {
+.vaccine_register_wrapper .radiobuttons {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -704,7 +673,7 @@ main {
   width: calc(80% + 1rem);
 }
 
-.wrapper .radiobuttons .diseaseprev {
+.vaccine_register_wrapper .radiobuttons .diseaseprev {
   justify-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -718,7 +687,7 @@ main {
           align-items: center;
 }
 
-.wrapper .radiobuttons .diseaseselect {
+.vaccine_register_wrapper .radiobuttons .diseaseselect {
   justify-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -732,13 +701,13 @@ main {
           align-items: center;
 }
 
-.wrapper .radiobuttons .diseaseprev, .wrapper .radiobuttons .diseaseselect {
+.vaccine_register_wrapper .radiobuttons .diseaseprev, .vaccine_register_wrapper .radiobuttons .diseaseselect {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.wrapper .locationdiv {
+.vaccine_register_wrapper .locationdiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -939,7 +908,7 @@ h1, h2, h3, h4, h5, h6 {
   /* White text color */
   text-align: center;
   /* Centered text */
-  border-radius: 2px;
+  border-radius: 20px;
   /* Rounded borders */
   padding: 16px;
   /* Padding */

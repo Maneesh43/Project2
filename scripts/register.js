@@ -12,7 +12,8 @@ firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
     // Signed in 
     var user = userCredential.user;
     console.log("User Registered successfully");
-    alert("registration successfull");
+    // alert("registration successfull");
+    toaster("Registered Successfully","lightgreen");
     window.location.href="home.html";
     // ...
   })
@@ -22,7 +23,8 @@ firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
     console.log(errorMessage);
     console.log(errorCode);
     if(errorCode){
-        alert(error.message);
+        // alert(error.message);
+        toaster("Registration Failed","darkred");
     }
     console.log(error);
     // ..

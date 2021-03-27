@@ -126,7 +126,7 @@ width: 100px;
 .footerhome{
     display: block;
     width: 100%;
-    background-color:$color_blue_2;
+    background-color:$color_active;
 }
 .footerhome ul{
 display: grid;
@@ -148,7 +148,7 @@ li{
 
 /* Vaccihe Registration Styling */
 
-.wrapper{
+.vaccine_register_wrapper{
     display: flex;
     flex-flow: column nowrap;
     flex: 1 0 50%;

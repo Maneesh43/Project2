@@ -41,7 +41,9 @@ function loginuser() {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert(errorMessage);
+        // alert(errorMessage);
+        toaster("User login failed","darkred");
+        console.log(errorMessage);
       });
   } else {
     console.log("email Validation failed");
