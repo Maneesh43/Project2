@@ -95,13 +95,14 @@ class Userobjectdata{
 
 
 document.querySelector('.vaccine_register_button').addEventListener('click', () => {
+    let is_true=true;
 
     var db = firebase.firestore();
 
 
 
 
-
+    
     let username=document.querySelector('#name').value;
     let userage=document.querySelector('#age').value;
     console.log(userage);
@@ -110,7 +111,18 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     let userischronic=document.querySelector('#diseaseinfo').value;
     let userhasprevious=document.querySelector('#diseaseinfoprevious').value;
 
-
+    let docRef=db.collection("userdata").doc(useremail);
+    docRef.get().then((doc) => {
+        if (doc.exists && !(is_empty(username)) && !(is_empty(userage)) ) {
+          // console.log("Document data:", doc.data());
+          let confirmation=window.confirm("Proceeding will rewrite your registration");
+          if(confirmation){
+              is_true=true;
+          }else{
+              is_true=false;
+          }
+        }
+        });
 
     //  let inputs = document.querySelectorAll('.input');
     //   console.log(inputs);
@@ -119,8 +131,7 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     //      a['username']=element.value
     //  });
 
-
-if((is_empty(username)) && is_empty(userage)){
+if((is_empty(username)) && is_empty(userage) && is_true){
 
 toaster("All fields must be filled to complete registration.","darkred")
 }else{
