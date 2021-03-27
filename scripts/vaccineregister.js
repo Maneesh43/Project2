@@ -17,7 +17,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       useremail=user.email;
     } else {
       // No user is signed in.
-      alert("user not logged in");
+    //   alert("user not logged in");
+    toaster("USer not logged in","darkred");
       window.location.replace('../index.html');
     }
   });
@@ -55,12 +56,14 @@ function getLocation() {
     }
 
     function error() {
-        alert("You have denied access to location!");
+        // alert("You have denied access to location!");
+        toaster("Location denied by the user","darkred");
 
     }
 
     if (!navigator.geolocation) {
-        alert("Geolocation API not supported");
+        // alert("Geolocation API not supported");
+        toaster("Geolocation API not supported by the browser");
     } else {
         navigator.geolocation.getCurrentPosition(success, error);
     }

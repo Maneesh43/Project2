@@ -6,7 +6,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     useremail=user.email;
   } else {
     // No user is signed in.
-    alert("user not logged in");
+    // alert("user not logged in");
+    console.log("User not signed in")
     window.location.replace('../index.html');
   }
 });
@@ -14,11 +15,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 // Signout
 document.querySelector('#signouthere').addEventListener('click',()=>{
   firebase.auth().signOut().then(() => {
-    alert("signed out");
+    // alert("signed out");
+    toaster("Signed Out!","lightgreen");
     // Sign-out successful.
   }).catch((error) => {
     // An error happened.
-    alert("sign-out failed");
+    // alert("sign-out failed");
+    toaster("Failed to signout","darkred");
   });
   
 })

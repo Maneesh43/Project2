@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
       loadprofileimage();
     } else {
       // No user is signed in.
-      alert("user not logged in");
+      // alert("user not logged in");
+      toaster("User not logged in","darkred");
       window.location.replace('../pages/login.html');
     }
   });
