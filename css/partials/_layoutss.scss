@@ -140,8 +140,11 @@ li{
 .footerhome a{
     color: white;
 }
-
-
+.cards{
+    -webkit-box-shadow: 0px 1px 8px 0px black;
+-moz-box-shadow: 0px 1px 8px 0px black;
+box-shadow: 0px 1px 8px 0px black;
+}
 
 
 /*  */
