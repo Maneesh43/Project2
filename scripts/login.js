@@ -29,7 +29,7 @@ function loginuser() {
   let a = document.querySelector('#email-input').value;
   let a1 = document.querySelector('#password-input').value;
   // console.log(is_email(a));
-  if (is_email(a) && is_empty(a) && is_empty(a1)) {
+  if (is_email(a) && !(is_empty(a1))) {
     firebase.auth().signInWithEmailAndPassword(a, a1)
       .then((userCredential) => {
         // Signed in

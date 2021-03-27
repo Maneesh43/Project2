@@ -3,7 +3,8 @@ var db = firebase.firestore();
 const fileUploader = document.getElementById('fileupload');
 var storage = firebase.storage();
 
-var gsReference = storage.refFromURL('gs://bucket/user-images/thouti.maneesh43@gmail.com.png');
+
+// var gsReference = storage.refFromURL('gs://bucket/user-images/thouti.maneesh43@gmail.com.png');
 // Loading image data 
 document.addEventListener('DOMContentLoaded', () => {
  
@@ -42,7 +43,9 @@ function getuserprofile() {
     
       document.querySelector('.loader').classList.add("hide");
       document.querySelector('.wrapper').classList.toggle("hide");
-      if(userinfo.displayName!=null){
+      if(userinfo.displayName==null){
+        document.querySelector('.username p').textContent = getUsernameFromEmail(userinfo.email);
+      }else{
         document.querySelector('.username p').textContent = userinfo.displayName;
       }
       document.querySelector('.useremail p').textContent = userinfo.email;
@@ -83,10 +86,9 @@ function setuserdata(datauser) {
 
 function loadprofileimage(){
 
-  if(userinfo.providerData[0].providerId=="google.com"){
-document.querySelector(".imageholder img").src = userinfo.photoURL;
-  }else{
-
+//   if(userinfo.providerData[0].providerId=="google.com"){
+// document.querySelector(".imageholder img").src = userinfo.photoURL;
+//   }
     const storageRef = storage.ref('user-images/'+userinfo.email);
     storageRef.getDownloadURL()
     .then((url) => { 
@@ -94,10 +96,14 @@ document.querySelector(".imageholder img").src = userinfo.photoURL;
     })
     .catch((error) => {
       // Handle any errors
+      console.log(error);
+      if(userinfo.providerData[0].providerId=="google.com"){
+        document.querySelector(".imageholder img").src = userinfo.photoURL;
+          }
+
     });
 
   }
-}
 
 
 document.querySelector("#send").addEventListener('click',()=>{
@@ -115,8 +121,15 @@ fileUploader.click();
   
     // Create a storage reference from our storage service
     var storageRef = storage.ref('user-images/'+userinfo.email);
-    console.log('files', files[0]); // Printing the file object to the console.
+    console.log('files', files[0].type); // Printing the file object to the console.
+    // if(files[0].type.split("/",1))
+    console.log(files[0].type);
+    if((files[0].type.split("/",1)).toString()=="image"){
+
     uploadfile(storageRef,files);
+    }else{
+      toaster("Not a valid image");
+    }
   });
 
   function uploadfile(storageRef,files){
