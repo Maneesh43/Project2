@@ -3,6 +3,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     // alert("success");
     console.log(user.email);
+    document.querySelector(".loader").classList.toggle("hide");
+    document.querySelector(".wrapperhome").classList.toggle("hide");
     useremail=user.email;
   } else {
     // No user is signed in.
