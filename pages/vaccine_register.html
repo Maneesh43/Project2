@@ -13,18 +13,21 @@
 
 <body class="vaccine_register" id="vaccine_register">
     <header>
-      
+
         <div class="headerarea">
-            <nav> <div class="dropdown">
-                <div class="dropbtn"><i class="fas fa-bars" aria-label="Menu" aria-hidden="true"></i></div>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="home.html">Home</a>
-                  <a href="profile.html">Profile</a>
-                  <a href="#" id="signouthere">Signout</a>
+            <nav>
+                <div class="dropdown">
+                    <div class="dropbtn" aria-label="Menu"><i class="fas fa-bars"  aria-hidden="true"></i>
+                    </div>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="home.html">Home</a>
+                        <a href="profile.html">Profile</a>
+                        <a href="#" id="signouthere">Signout</a>
+                    </div>
                 </div>
-              </div></nav>
+            </nav>
 
-
+            <div id="snackbar">Some text some message..</div>
             <div class="logoarea"></div>
         </div>
     </header>
@@ -32,74 +35,90 @@
 
 
     <main>
+     
         <div class="wrapper vaccine_register_wrapper">
-           
 
-            <div class="formarea vaccine_register_formarea">
-                <h2>Vaccine Registration form</h2>
-                <label for="name" class="hidelabel">Enter your Full name</label>
-                <input type="text" id="name" placeholder="please enter your fullname" class="input vaccine_register_input"></label>
 
-                <div class="personaldetails">
-                    <label for="age" class="hidelabel">Enter your age</label>
-                    <input type="number" id="age" class="input vaccine_register_input" placeholder="please enter your age" min="0" max="150"></label>
 
-                    <label for="sex" class="hidelabel">Enter your gender</label>
-                    <select name="selectsex" id="sex" class="select" >
+            <h2>Vaccine Registration form</h2>
+            <label for="name" class="hidelabel">Enter your Full name</label>
+            <input type="text" id="name" placeholder="please enter your fullname" class="input vaccine_register_input">
+
+            <div class="personaldetails">
+                <div class="agediv">
+                <label for="age" class="hidelabel">Enter your age</label>
+                <input type="number" id="age" class="input vaccine_register_input" placeholder="please enter your age"
+                    min="0" max="150">
+                </div>
+
+                <div class="genderdiv">
+                <label for="sex" class="hidelabel">Enter your gender</label>
+                <select name="selectsex" id="sex" class="select">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
-                    </select>
-                </div>
+                </select>
+            </div>
+            </div>
 
+        <div class="radiobuttons">
+            <div class="diseaseselect">
                 <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label>
-                <select name="selectdisease" id="diseaseinfo" class="select" >
+                <select name="selectdisease" id="diseaseinfo" class="select">
                     <option value="yes">Yes</option>
                     <option value="No" selected>No</option>
                 </select>
-
-
+            </div>
+            <div class="diseaseprev">
                 <label for="diseaseinfoprevious" class="showlabel">Did you get a vaccine shot previously?</label>
-                <select name="selectdiseaseprevious" id="diseaseinfoprevious" class="select" >
+                <select name="selectdiseaseprevious" id="diseaseinfoprevious" class="select">
                     <option value="yes">Yes</option>
                     <option value="No" selected>No</option>
                 </select>
-
-                <div class="locationdiv">
-                    <label for="locationtext" class="hidelabel">Enter your location</label>
-                    <input type="text" id="locationtext" class="input vaccine_register_location_input">
-                    <button type="button" id="locateme" class="button vaccine_regiser_button">locate me</button>
-
-                </div>
+            </div>
+        </div>
 
 
+            <div class="locationdiv">
+                <label for="locationtext" class="hidelabel">Enter your location</label>
+                <input type="text" id="locationtext" class="input vaccine_register_location_input">
+                <button type="button" id="locateme" class="button vaccine_regiser_button">locate me</button>
 
-                <div class="rememberme"><input type="checkbox" class="inputcheckbox" id="chckbox">
-                    <label for="chckbox">I certify above information is true and correct.</label>
+            </div>
+
+
+
+            <div class="rememberme"><input type="checkbox" class="inputcheckbox" id="chckbox">
+                <label for="chckbox">I certify above information is true and correct.</label>
             </div>
 
             <button type="button" class="button vaccine_register_button">Register</button>
 
-        </div>
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-             https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-        <script src="../scripts/projectscript.js"></script>
-        <script src="../scripts/vaccineregister.js"></script>
+        </div>
 
     </main>
-        <footer class="footerhome">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Vaccination</a></li>
-                <li><a href="#">Updates</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </footer>
+    <footer class="footerhome">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Vaccination</a></li>
+            <li><a href="#">Updates</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </footer>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+    <script src="../scripts/projectscript.js"></script>
+    <script src="../scripts/misc.js"></script>
+    <script src="../scripts/vaccineregister.js"></script>
 </body>
 
 </html>

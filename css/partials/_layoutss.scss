@@ -59,7 +59,7 @@ body{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    background-color:$color_background ;
+    // background-color:$color_background ;
 }
 header{
     width: 100%;
@@ -147,43 +147,63 @@ li{
 /*  */
 
 /* Vaccihe Registration Styling */
-#vaccine_register{
-display: flex;
-flex-flow: column nowrap;
-justify-content: space-between;
 
-}
-.vaccine_register_wrapper .formarea{
+.wrapper{
     display: flex;
     flex-flow: column nowrap;
-    justify-content:space-between;
+    flex: 1 0 50%;
+    // margin: auto;
     align-items: center;
-
-}
-.vaccine_register main{
-    height:100%;
-}
-.vaccine_register_wrapper select{
-    margin-bottom: 1rem;
-}
-
-
-.personaldetails{
-    width: calc(80% + 1rem);
-    display: flex;
-    flex-flow: row nowrap;
-    gap:.5rem;
     .select{
-        flex: 1 0 20%;
+        padding: 0.5rem;
+    }
+    .personaldetails{
+        width: calc(80% + 1rem);
+        display: flex;
+        gap: 1rem;
+        flex-flow: row nowrap;
+        .agediv{
+            flex: 1 0 50%;
+            input{
+                width: 95%;
+            }
+            select{
+                width: 20%;
+            }
+        }
+    }
+    .radiobuttons{
+        display: grid;
+        grid-template-columns:1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        width: calc(80% + 1rem);
+      
+        .diseaseprev{
+          justify-self: center;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+        }
+        .diseaseselect{
+           justify-self: center;
+           display: flex;
+           flex-flow: column nowrap;
+           align-items: center;
+        }
+        .diseaseprev,.diseaseselect{
+            align-items: center;
+
+        }
+    
+    }
+    .locationdiv{
+        display: flex;
+        gap: 1rem;
+        width: calc(80% + 1rem);
     }
 }
 
-.locationdiv{
-    width: 80%;
-    display: flex;
-    flex-flow: row nowrap;
-    gap:.5rem;
-}
 .headerarea{
     display: flex;
     align-items: center;

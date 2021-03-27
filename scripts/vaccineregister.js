@@ -95,6 +95,10 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
 
     var db = firebase.firestore();
 
+
+
+
+
     let username=document.querySelector('#name').value;
     let userage=document.querySelector('#age').value;
     console.log(userage);
@@ -113,7 +117,10 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     //  });
 
 
+if((is_empty(username)) && is_empty(userage)){
 
+toaster("All fields must be filled to complete registration.","darkred")
+}else{
 let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userischronic,userhasprevious,latitude,longitude);
     let priorityvalue=prioritycalc();
     console.log(priorityvalue);
@@ -133,7 +140,8 @@ let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userisc
      },{merge:true})
      .then(() => {
      console.log("Document successfully written!");
-     alert("success")
+    //  alert("success")
+    toaster("Registered Succesfully","lightgreen");
      })
      .catch((error) => {
      console.error("Error writing document: ", error);
@@ -144,7 +152,7 @@ let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userisc
         console.log(userdataobject);
     if(userdataobject.userage>=55){
         userpriority+=1;
-        debugger;
+
         console.log(userpriority);
     }if(userdataobject.usersex==="Female"){
         userpriority+=1;
@@ -156,6 +164,7 @@ let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userisc
     console.log(userpriority);
 return userpriority/4;
 console.log(userpriority);
+}
 }
 });
 
@@ -200,11 +209,13 @@ window.addEventListener('click',(event)=>{
 
 document.querySelector('#signouthere').addEventListener('click',()=>{
     firebase.auth().signOut().then(() => {
-      alert("signed out");
+    //   alert("signed out");
+    toaster("signed out successfully");
       // Sign-out successful.
     }).catch((error) => {
       // An error happened.
-      alert("sign-out failed");
+    //   alert("sign-out failed");
+    toaster("Failed to signout");
     });
     
   })

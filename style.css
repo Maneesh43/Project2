@@ -566,7 +566,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #f5f7ff;
 }
 
 header {
@@ -649,7 +648,7 @@ main {
 
 /*  */
 /* Vaccihe Registration Styling */
-#vaccine_register {
+.wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -657,63 +656,94 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.vaccine_register_wrapper .formarea {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.vaccine_register main {
-  height: 100%;
+.wrapper .select {
+  padding: 0.5rem;
 }
 
-.vaccine_register_wrapper select {
-  margin-bottom: 1rem;
-}
-
-.personaldetails {
+.wrapper .personaldetails {
   width: calc(80% + 1rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 1rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  gap: .5rem;
 }
 
-.personaldetails .select {
+.wrapper .personaldetails .agediv {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 20%;
-          flex: 1 0 20%;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
 }
 
-.locationdiv {
-  width: 80%;
+.wrapper .personaldetails .agediv input {
+  width: 95%;
+}
+
+.wrapper .personaldetails .agediv select {
+  width: 20%;
+}
+
+.wrapper .radiobuttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  width: calc(80% + 1rem);
+}
+
+.wrapper .radiobuttons .diseaseprev {
+  justify-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  gap: .5rem;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .radiobuttons .diseaseselect {
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .radiobuttons .diseaseprev, .wrapper .radiobuttons .diseaseselect {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .locationdiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  width: calc(80% + 1rem);
 }
 
 .headerarea {
@@ -815,6 +845,7 @@ li {
 
 .profileindividualdiv p {
   text-align: center;
+  margin-right: 1rem;
 }
 
 .profileheading p {
@@ -848,7 +879,7 @@ input[type="file"] {
 @media screen and (min-width: 500px) {
   .profileformarea {
     max-width: 500px;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 
@@ -857,8 +888,8 @@ input[type="file"] {
 }
 
 .imageholder img {
-  min-width: 180px;
-  height: 180px;
+  max-width: 250px;
+  height: 250px;
   border-radius: 50%;
   text-align: center;
 }
