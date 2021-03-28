@@ -522,6 +522,27 @@ template {
   font-family: 'Roboto',arial,sans-serif;
 }
 
+.headingmain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 4rem;
+}
+
+.headingmain h2 {
+  color: #4270B3;
+}
+
+.headingmain p {
+  color: #4695BD;
+}
+
 /* Global layout */
 body {
   height: 100vh;
@@ -640,7 +661,6 @@ main .wrapperhome .cards {
   padding: 1rem;
   border-radius: 10px;
   width: 80%;
-  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -664,6 +684,10 @@ main .wrapperhome .cards h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.vaccine_register_wrapper h2 {
+  color: #4695BD;
 }
 
 .vaccine_register_wrapper .select {
