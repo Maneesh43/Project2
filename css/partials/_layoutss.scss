@@ -46,7 +46,19 @@
     font-family: 'Roboto',arial,sans-serif;
   }
   
+.headingmain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    h2{
+        color: $color_blue_1;
+    }
+    p{
+        color: $color_blue_2;
+    }
 
+}
 
 
 
@@ -155,7 +167,7 @@ main .wrapperhome{
         padding: 1rem;
         border-radius: 10px;
         width: 80%;
-        margin-bottom: 1rem;
+
         text-align: center;
         h3{
             color: $color_blue_2;
@@ -174,6 +186,9 @@ main .wrapperhome{
     flex: 1 0 50%;
     // margin: auto;
     align-items: center;
+    h2{
+        color: $color_blue_2;
+    }
     .select{
         padding: 0.5rem;
     }
