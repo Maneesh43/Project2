@@ -138,6 +138,79 @@ toaster("All fields must be filled to complete registration.","darkred")
 let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userischronic,userhasprevious,latitude,longitude);
     let priorityvalue=prioritycalc();
     console.log(priorityvalue);
+    //////////////////////////////
+    geocode();
+            function geocode() {
+                let location = locationtext.value;
+                axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                    params: {
+                        address: location,
+                        key: 'AIzaSyD8wMTakMDfBHIHwKunjPkRV5D1Yzmsjhs',
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response);
+
+                        let formattedAddress = response.data.results[0].formatted_address;
+                        let formattedAddressOutput = `<div> ${formattedAddress} </div>`;
+                        output.innerHTML = formattedAddressOutput;
+
+
+                        let addressComponents = response.data.results[0].address_components;
+                        let addressComponentOutput = "<ul>";
+
+                        for (let i = 0; i < addressComponents.length; i++) {
+                            addressComponentOutput += `
+                    <li><strong>${addressComponents[i].types[0]}</strong>: ${addressComponents[i].long_name}</li>
+                    `;
+                        }
+                        addressComponentOutput += "</ul>";
+                        let lat = response.data.results[0].geometry.location.lat;
+                        let lng = response.data.results[0].geometry.location.lng;
+                        let geometryOutput = `<ul>
+                    <li>Latitude : ${lat}</li>
+                    <li>Longitude : ${lng}</li>    
+                </ul>`;
+
+                        addresscomponents.innerHTML = addressComponentOutput;
+                        geometry.innerHTML = geometryOutput;
+                    })
+                    .catch(function (error) {
+                        console.log("Error is : " + error);
+                    });
+            };
+
+///////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      db.collection("userdata").doc(useremail).set({
      email:useremail,    
@@ -233,3 +306,29 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
     });
     
   })
+
+  const center = { lat: 50.064192, lng: -130.605469 };
+        // Create a bounding box with sides ~10km away from the center point
+        const defaultBounds = {
+            north: center.lat + 0.1,
+            south: center.lat - 0.1,
+            east: center.lng + 0.1,
+            west: center.lng - 0.1,
+        };
+        const inputField = document.getElementById("locationtext");
+        
+        const options = {
+            bounds: defaultBounds,
+            componentRestrictions: { country: "ca" },
+            fields: ["address_components", "geometry", "icon", "name"],
+            origin: center,
+            strictBounds: false,
+            types: ["establishment"],
+        };
+        const autocomplete = new google.maps.places.Autocomplete(inputField, options);
+
+        // geocoding api
+        btn.addEventListener('click', () => {
+            
+        });
+
