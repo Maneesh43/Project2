@@ -4,8 +4,11 @@ let longitude=0;
 let userpriority=0;
 let useremail=null;
 let userdataobject;
+let sessstorage=window.sessionStorage;
+is_doc=sessstorage.getItem("is_doc");
+var db = firebase.firestore();
 
-
+// console.log(sessstorage.getItem("email"));
 
 // check if user is logged in
 
@@ -95,14 +98,13 @@ class Userobjectdata{
 
 
 document.querySelector('.vaccine_register_button').addEventListener('click', () => {
-    let is_true=true;
-
-    var db = firebase.firestore();
 
 
 
 
-    
+
+
+
     let username=document.querySelector('#name').value;
     let userage=document.querySelector('#age').value;
     console.log(userage);
@@ -111,18 +113,7 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     let userischronic=document.querySelector('#diseaseinfo').value;
     let userhasprevious=document.querySelector('#diseaseinfoprevious').value;
 
-    let docRef=db.collection("userdata").doc(useremail);
-    docRef.get().then((doc) => {
-        if (doc.exists && !(is_empty(username)) && !(is_empty(userage)) ) {
-          // console.log("Document data:", doc.data());
-          let confirmation=window.confirm("Proceeding will rewrite your registration");
-          if(confirmation){
-              is_true=true;
-          }else{
-              is_true=false;
-          }
-        }
-        });
+   
 
     //  let inputs = document.querySelectorAll('.input');
     //   console.log(inputs);
@@ -130,84 +121,31 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     //      console.log(element.value);
     //      a['username']=element.value
     //  });
-
-if((is_empty(username)) && is_empty(userage) && is_true){
+let confirmreg;
+let register_stat
+if((is_empty(username)) && is_empty(userage)){
 
 toaster("All fields must be filled to complete registration.","darkred")
+register_stat=false;
 }else{
+    register_stat=true
+}
+if(is_doc){
+confirmreg=window.confirm("Proceeding will rewrite your registration data");
+}
+if(is_doc==false){
+    confirmreg=true;
+}
+
+if(confirmreg==true && register_stat==true){
 let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userischronic,userhasprevious,latitude,longitude);
     let priorityvalue=prioritycalc();
     console.log(priorityvalue);
     //////////////////////////////
     geocode();
-            function geocode() {
-                let location = locationtext.value;
-                axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-                    params: {
-                        address: location,
-                        key: 'AIzaSyD8wMTakMDfBHIHwKunjPkRV5D1Yzmsjhs',
-                    }
-                })
-                    .then(function (response) {
-                        console.log(response);
-
-                        let formattedAddress = response.data.results[0].formatted_address;
-                        let formattedAddressOutput = `<div> ${formattedAddress} </div>`;
-                        output.innerHTML = formattedAddressOutput;
-
-
-                        let addressComponents = response.data.results[0].address_components;
-                        let addressComponentOutput = "<ul>";
-
-                        for (let i = 0; i < addressComponents.length; i++) {
-                            addressComponentOutput += `
-                    <li><strong>${addressComponents[i].types[0]}</strong>: ${addressComponents[i].long_name}</li>
-                    `;
-                        }
-                        addressComponentOutput += "</ul>";
-                        let lat = response.data.results[0].geometry.location.lat;
-                        let lng = response.data.results[0].geometry.location.lng;
-                        let geometryOutput = `<ul>
-                    <li>Latitude : ${lat}</li>
-                    <li>Longitude : ${lng}</li>    
-                </ul>`;
-
-                        addresscomponents.innerHTML = addressComponentOutput;
-                        geometry.innerHTML = geometryOutput;
-                    })
-                    .catch(function (error) {
-                        console.log("Error is : " + error);
-                    });
-            };
+           
 
 ///////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -250,8 +188,11 @@ let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userisc
     }
     console.log(userpriority);
 return userpriority/4;
-console.log(userpriority);
+  console.log(userpriority);
 }
+}
+else if(confirmreg==false){
+    window.location.href="../pages/home.html";
 }
 });
 
@@ -295,16 +236,8 @@ window.addEventListener('click',(event)=>{
 // Signout
 
 document.querySelector('#signouthere').addEventListener('click',()=>{
-    firebase.auth().signOut().then(() => {
-    //   alert("signed out");
-    toaster("signed out successfully");
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    //   alert("sign-out failed");
-    toaster("Failed to signout");
-    });
-    
+ 
+ signout();   
   })
 
   const center = { lat: 50.064192, lng: -130.605469 };
@@ -328,7 +261,14 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
         const autocomplete = new google.maps.places.Autocomplete(inputField, options);
 
         // geocoding api
-        btn.addEventListener('click', () => {
-            
-        });
 
+
+
+        // PWA init
+        document.addEventListener("DOMContentLoaded",()=>{
+            pwainit('./sw.js');
+          })
+        //   Geocode
+        function geocode() {
+          
+            }

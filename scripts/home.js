@@ -2,10 +2,11 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     // alert("success");
-    console.log(user.email);
+    // console.log(user.email);
     document.querySelector(".loader").classList.toggle("hide");
     document.querySelector(".wrapperhome").classList.toggle("hide");
     useremail=user.email;
+    is_doc_available(useremail);
   } else {
     // No user is signed in.
     // alert("user not logged in");
@@ -16,15 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 // Signout
 document.querySelector('#signouthere').addEventListener('click',()=>{
-  firebase.auth().signOut().then(() => {
-    // alert("signed out");
-    toaster("Signed Out!","lightgreen");
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-    // alert("sign-out failed");
-    toaster("Failed to signout","darkred");
-  });
+  signout();
   
 })
 
@@ -35,31 +28,19 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
 //From W3 Schools Dropdown with click
 
 
-document.querySelector('.dropbtn i').addEventListener('click',()=>{
 
-  document.getElementById("myDropdown").classList.toggle("show");
-
-
-
-})
 
 
 //Window Event Handlers
+// Drop Down
 
-
-window.addEventListener('click',(event)=>{
-
-  if (!event.target.matches('.dropbtn i')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
+dropdownfunc();
 
 
 
+
+// PWA
+
+document.addEventListener("DOMContentLoaded",()=>{
+  pwainit('.././sw.js');
 })

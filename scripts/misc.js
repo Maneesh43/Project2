@@ -1,4 +1,4 @@
-
+let sessionstorage=window.sessionStorage;
 // Toaster 
 
 function toaster(errormsg,bgcolor,fgcolor){
@@ -32,6 +32,7 @@ function toaster(errormsg,bgcolor,fgcolor){
 function is_email(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   console.log(re.test(String(email)));
+  console.log(email);
  
   return re.test(String(email).toLowerCase());
 
@@ -65,4 +66,87 @@ function validateAndUpload(input){
 
       // image.src = URL.createObjectURL(file);
   }
+}
+
+// Signout
+function signout(){
+firebase.auth().signOut().then(() => {
+  // alert("signed out");
+  toaster("Signed Out!","lightgreen");
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+  // alert("sign-out failed");
+  toaster("Failed to signout","darkred");
+});
+}
+
+
+// PWA 
+
+function pwainit(a){
+  // does the browser support service workers?
+  if ('serviceWorker' in navigator) {
+    // fires when the service worker is ready
+    navigator.serviceWorker.ready.then(reg => {
+      // we have an active service worker working for us
+      console.log(`Service Worker ready (Scope: ${reg.scope})`);
+      // do something interesting, if you want...
+
+    });
+    // then register our service worker
+    navigator.serviceWorker.register(a, { scope: '/' })
+      .then(function (reg) {
+        // display a success message
+        console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+      })
+      .catch(function (error) {
+        // display an error message
+        console.log(`Service Worker Error (${error})`);
+      });
+  } else {
+    // happens when the app isn't served over a TLS connection (HTTPS)
+    console.warn('Service Worker not available');
+  }
+}
+
+
+  function is_doc_available(a){
+    var db=firebase.firestore();
+    let docRef=db.collection("userdata").doc(a);
+    console.log("hi");
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            sessionstorage.setItem("is_doc",true);
+        }
+        });
+  }
+
+
+  // Drop down event handler
+  function dropdownfunc(){
+    document.querySelector('.dropbtn i').addEventListener('click',()=>{
+
+      document.getElementById("myDropdown").classList.toggle("show");
+    
+    
+    
+    })
+
+  window.addEventListener('click',(event)=>{
+
+    if (!event.target.matches('.dropbtn i')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+  
+  
+  
+  })
 }

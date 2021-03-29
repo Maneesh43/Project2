@@ -148,3 +148,8 @@ fileUploader.click();
 
   // getting file from storage
 
+// PWA
+
+document.addEventListener("DOMContentLoaded",()=>{
+  pwainit('.././sw.js');
+})

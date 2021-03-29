@@ -4,3 +4,7 @@ Project:Vaccine Rollout Planner
 Project Name:Lifeline
 
 
+
+<!-- Add offline capability -->
+
+

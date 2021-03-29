@@ -1,10 +1,11 @@
 
-
+signout();
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log(user.displayName);
     console.log("user signedin");
+
   } else {
     // No user is signed in.
     // alert("login fail");
@@ -103,6 +104,14 @@ firebase
   });
 
 })
+
+
+// PWA Initialization
+document.addEventListener("DOMContentLoaded",()=>{
+  pwainit('./sw.js');
+})
+
+
 //signout
 
 // document.querySelector('#sign-out').addEventListener('click',()=>{
