@@ -1,11 +1,49 @@
 .wrapperupdates{
+    select{
+            width: 80%;
+            padding: .5rem;
+            margin-bottom: 1rem;
+    }
+    td{
+        text-align: center;
+    }
+    .pdata{
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    table{
+            width: 80%;
+            text-align: initial;
+            margin: 0 auto;
+            border-spacing: 1rem;
+            overflow-x: hidden;
+    }
     .cards{
         padding: 1rem;
     }
+    .vaccinecand{
+        margin-bottom: 1rem;
+      h3{
+          color: $color_blue_2;
+          font-size: 1.17rem;
+      }
+    }
+    .cardsvaccine{
+        margin-bottom: 1rem;
+        h3{
+            color: $color_blue_2;
+            font-family: "Noto Sans JP",sans-serif;
+        }
+    }
     .cardstoday{
         margin-bottom: 1rem;
+        margin-top: 1rem;
+            caption{
+                font-size: 1.17rem;
+                font-weight: bold;
+                color: $color_blue_2;
+            }
+        }
     }
-    select{
-        width: 80%;
-    }
-}

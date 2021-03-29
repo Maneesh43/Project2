@@ -167,6 +167,7 @@ let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userisc
      console.log("Document successfully written!");
     //  alert("success")
     toaster("Registered Succesfully","lightgreen");
+    window.location.assign("/pages/home.html");
      })
      .catch((error) => {
      console.error("Error writing document: ", error);
@@ -266,9 +267,45 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
 
         // PWA init
         document.addEventListener("DOMContentLoaded",()=>{
-            pwainit('./sw.js');
+            pwainit('.././sw.js');
           })
         //   Geocode
         function geocode() {
           
             }
+
+
+            // Session storage;
+            let ss1=document.querySelector('#name');
+            let ss2=document.querySelector('#age');
+            let ss3=document.querySelector('#sex');
+            let ss4=document.querySelector('#diseaseinfo');
+            let ss5=document.querySelector('#diseaseinfoprevious');
+
+           if((sessstorage.getItem("username"))|| (sessstorage.getItem("userage")) ||(sessstorage.getItem("usersex"))||(sessstorage.getItem("userdiseaseinfo"))|| (sessstorage.getItem("userdiseaseinfoprevious"))){
+               ss1.value=sessstorage.getItem("username");
+               ss2.value=sessstorage.getItem("userage");
+               ss3.value=sessstorage.getItem("usersex");
+               ss4.value=sessstorage.getItem("userdiseaseinfo");
+               ss5.value=sessstorage.getItem("userdiseaseinfoprevious");
+        }
+
+            
+
+
+
+            [ss1,ss2,ss3,ss4,ss5].forEach(item=>{
+                item.addEventListener("change",()=>{
+
+                
+                sessstorage.setItem("username",ss1.value);
+                sessstorage.setItem("userage",ss2.value);
+                sessstorage.setItem("usersex",ss3.value);
+                sessstorage.setItem("userdiseaseinfo",ss4.value);
+                sessstorage.setItem("userdiseaseinfoprevious",ss5.value);
+
+            })
+            })
+
+
+            
