@@ -162,7 +162,13 @@ main .wrapperhome{
     flex-flow: column nowrap;
     align-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
+    .card1{
+        margin-top: 1rem;
+    }
+    .card2{
+        margin-bottom: 1rem;
+    }
     .cards{
         padding: 1rem;
         border-radius: 10px;

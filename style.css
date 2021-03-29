@@ -655,7 +655,15 @@ main .wrapperhome {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 3rem;
+  gap: 2rem;
+}
+
+main .wrapperhome .card1 {
+  margin-top: 1rem;
+}
+
+main .wrapperhome .card2 {
+  margin-bottom: 1rem;
 }
 
 main .wrapperhome .cards {
