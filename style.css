@@ -557,6 +557,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow-x: hidden;
 }
 
 header {
@@ -1062,7 +1063,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapperupdates .vaccinedata {
-  overflow: auto;
+  overflow-x: auto;
 }
 
 .wrapperupdates td {
