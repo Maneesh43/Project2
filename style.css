@@ -1061,6 +1061,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
+.wrapperupdates .vaccinedata {
+  overflow: auto;
+}
+
 .wrapperupdates td {
   text-align: center;
 }
@@ -1076,7 +1080,6 @@ h1, h2, h3, h4, h5, h6 {
   text-align: initial;
   margin: 0 auto;
   border-spacing: 1rem;
-  overflow-x: hidden;
 }
 
 .wrapperupdates .cards {
