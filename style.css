@@ -641,6 +641,7 @@ main {
 .cards {
   -webkit-box-shadow: 0px 1px 8px 0px black;
   box-shadow: 0px 1px 8px 0px black;
+  border: 3px solid #828282;
 }
 
 main .wrapperhome {
@@ -831,6 +832,33 @@ main .hide {
 }
 
 /*    */
+.ad2hs-prompt {
+  background-color: #4270B3;
+  opacity: .3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: .8;
+  display: none;
+}
+
+.ad2hs-prompt button {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  display: inline;
+  background-color: transparent;
+  color: white;
+}
+
+.ad2hs-prompt p {
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
 /* 9.Links==================================================================== */
 a {
   text-decoration: none;

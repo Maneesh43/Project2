@@ -11,6 +11,7 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
     <link rel="stylesheet" href="../style.css">
     <link rel="manifest" href="../app.webmanifest">
+
 </head>
 
 
@@ -51,25 +52,30 @@
     </header>
   
     <main>
-        <div class="loader show"></div>
-        <div class="ad2hs-prompt">
-          <button class=a2hsBtn>Install PWA</button>
-          <p>&times;</p>
-        </div>
-  <div class="wrapperhome hide">
+        <div class="wrapperselfassesment">
 
+p{
+    This guidance is not to be used to determine suitability to attend/return to work or school.
 
-<div class="cards card1">
-    <h3>Take a self Assesment</h3>
-    <p>Take a quick self assesment <a href="/pages/self_assesment.html">here</a></p>
+This self-assessment tool is intended for COVID-19 only and does not replace your health care provider's advice. Your symptoms may not be related to COVID-19 and could require you to seek medical attention.
+
+If you have any concerns, feel very sick, or your symptoms are not improving, contact your family doctor/nurse practitioner or call 8-1-1.
+
+COVID-19 and Children
+
+Children generally have milder symptoms of COVID-19 than adults. Children may also present symptoms of COVID-19 differently than adults. For example, symptoms in children may be a change in activity level, appetite, or behaviour. For children, it’s important to think about what is usual or unusual about their specific symptoms.</p>
+<div class="assessment">
+    <h3>Are you experiencing any of the following:</h3>
+    <ul>
+        <li>Severe difficulty breathing (e.g. struggling to breathe or speaking in single words)</li>
+        <li>Severe chest pain</li>
+        <li>Having a very hard time waking up</li>
+        <li>Feeling confused</li>
+        <li>Losing consciousness</li>
+    </ul>
 </div>
-<div class="cards card2">
-<h3>Register for Vaccine</h3>
-<p>Register for Vaccine</p>
+
 </div>
-
-
-  </div>
     </main>
     <footer class="footerhome ">
         <ul>
@@ -80,17 +86,11 @@
         </ul>
     </footer>
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-        
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
-         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-         <script src="../scripts/projectscript.js"></script>
+
          <script src="../scripts/misc.js"></script>
+         <script src="../selfassess.js"></script>
     
-         <script src="../scripts/home.js"></script>
+
 
 </body>
 </html>

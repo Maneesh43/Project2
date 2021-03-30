@@ -42,5 +42,41 @@ dropdownfunc();
 // PWA
 
 document.addEventListener("DOMContentLoaded",()=>{
-  pwainit('.././sw.js');
+  pwainit('../sw.js');
 })
+
+
+// document.querySelector('.ad2hs-prompt p').addEventListener("click",()=>{
+//   document.querySelector('.ad2hs-prompt').style.display="none";
+// })
+// setTimeout(function(){
+// document.querySelector('.ad2hs-prompt').style.display="none";
+// },(5*1000));
+
+// var deferredPrompt; 
+
+// window.addEventListener('beforeinstallprompt', function (e) { 
+//   deferredPrompt = e; 
+//   showAddToHomeScreen();
+//  }); 
+
+//  function showAddToHomeScreen() { 
+//    var a2hsBtn = document.querySelector(".ad2hs-prompt"); 
+//    console.log(a2hsBtn);
+//    a2hsBtn.style.display = "flex";
+//    a2hsBtn.style.justifyContent="space-around"; 
+//    a2hsBtn.addEventListener("click", addToHomeScreen); 
+//   } 
+
+//   function addToHomeScreen() { 
+//     var a2hsBtn = document.querySelector(".ad2hs-prompt");  
+//     a2hsBtn.style.display = 'none'; // Show the prompt 
+//     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
+//     deferredPrompt.userChoice .then(function(choiceResult){ 
+//       if (choiceResult.outcome === 'accepted') { 
+//         console.log('User accepted the A2HS prompt'); 
+//       } else 
+//       { 
+//         console.log('User dismissed the A2HS prompt'); 
+//       } 
+//       deferredPrompt = null; }); } 
