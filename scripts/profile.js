@@ -151,5 +151,5 @@ fileUploader.click();
 // PWA
 
 document.addEventListener("DOMContentLoaded",()=>{
-  pwainit('.././sw.js');
+  pwainit('../sw.js');
 })

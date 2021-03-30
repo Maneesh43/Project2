@@ -51,7 +51,14 @@ function getLocation() {
         longitude = position.coords.longitude;
         console.log(latitude);
         console.log(longitude);
-        locatevalue.value = "lat:" + latitude + "lon" + longitude;
+        // locatevalue.value = "lat:" + latitude + "lon" + longitude;
+      let location=reverse_geocode(latitude,longitude).then((values)=>{
+        locatevalue.value=values.results[0].formatted_address;
+        console.log(values);
+        });
+        // console.log(reverse_geocode(latitude,longitude).then(function(value){
+        //     console.log(value);
+        // }));
 
         //  status.textContent = '';
         //  mapLink.href = `https:www.openstreetmap.org#map=18${latitude}${longitude}`;
@@ -80,7 +87,7 @@ document.querySelector('#diseaseinfoprevious').addEventListener('change', () => 
 })
 
 
-
+console.log(latitude);
 
 
 class Userobjectdata{
@@ -136,13 +143,19 @@ confirmreg=window.confirm("Proceeding will rewrite your registration data");
 if(is_doc==false){
     confirmreg=true;
 }
-
+if(latitude==0 && longitude==0 && ss6.value==0){
+    toaster("Please enter your location","darkred");
+    register_stat=false;
+}if(ss6.value!=null){
+    geo_coding(ss6.value);
+}
 if(confirmreg==true && register_stat==true){
 let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userischronic,userhasprevious,latitude,longitude);
     let priorityvalue=prioritycalc();
     console.log(priorityvalue);
+  
     //////////////////////////////
-    geocode();
+
            
 
 ///////////////////////////////////////////////////
@@ -241,23 +254,16 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
  signout();   
   })
 
-  const center = { lat: 50.064192, lng: -130.605469 };
-        // Create a bounding box with sides ~10km away from the center point
-        const defaultBounds = {
-            north: center.lat + 0.1,
-            south: center.lat - 0.1,
-            east: center.lng + 0.1,
-            west: center.lng - 0.1,
-        };
+// Autocomplete
+  
         const inputField = document.getElementById("locationtext");
         
         const options = {
-            bounds: defaultBounds,
             componentRestrictions: { country: "ca" },
             fields: ["address_components", "geometry", "icon", "name"],
-            origin: center,
-            strictBounds: false,
-            types: ["establishment"],
+            // origin: center,
+            // strictBounds: false,
+            types: ["address"],
         };
         const autocomplete = new google.maps.places.Autocomplete(inputField, options);
 
@@ -267,12 +273,9 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
 
         // PWA init
         document.addEventListener("DOMContentLoaded",()=>{
-            pwainit('.././sw.js');
+            pwainit('../sw.js');
           })
-        //   Geocode
-        function geocode() {
-          
-            }
+     
 
 
             // Session storage;
@@ -281,20 +284,22 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
             let ss3=document.querySelector('#sex');
             let ss4=document.querySelector('#diseaseinfo');
             let ss5=document.querySelector('#diseaseinfoprevious');
+            let ss6=document.querySelector('#locationtext')
 
-           if((sessstorage.getItem("username"))|| (sessstorage.getItem("userage")) ||(sessstorage.getItem("usersex"))||(sessstorage.getItem("userdiseaseinfo"))|| (sessstorage.getItem("userdiseaseinfoprevious"))){
+           if((sessstorage.getItem("username"))|| (sessstorage.getItem("userage")) ||(sessstorage.getItem("usersex"))||(sessstorage.getItem("userdiseaseinfo"))|| (sessstorage.getItem("userdiseaseinfoprevious"))||(sessstorage.getItem("usergeolocation"))){
                ss1.value=sessstorage.getItem("username");
                ss2.value=sessstorage.getItem("userage");
                ss3.value=sessstorage.getItem("usersex");
                ss4.value=sessstorage.getItem("userdiseaseinfo");
                ss5.value=sessstorage.getItem("userdiseaseinfoprevious");
+               ss6.value=sessstorage.getItem("usergeolocation");
         }
 
             
 
 
 
-            [ss1,ss2,ss3,ss4,ss5].forEach(item=>{
+            [ss1,ss2,ss3,ss4,ss5,ss6].forEach(item=>{
                 item.addEventListener("change",()=>{
 
                 
@@ -303,6 +308,7 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
                 sessstorage.setItem("usersex",ss3.value);
                 sessstorage.setItem("userdiseaseinfo",ss4.value);
                 sessstorage.setItem("userdiseaseinfoprevious",ss5.value);
+                sessstorage.setItem("usergeolocation",ss6.value);
 
             })
             })

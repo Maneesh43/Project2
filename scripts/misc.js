@@ -110,7 +110,7 @@ function pwainit(a){
   }
 }
 
-
+// DOC exists in table.
   function is_doc_available(a){
     var db=firebase.firestore();
     let docRef=db.collection("userdata").doc(a);
@@ -149,4 +149,45 @@ function pwainit(a){
   
   
   })
+}
+
+
+// Geocoding Address to lat and longitudes
+
+
+// Reverse Geocoding lat and longitudes to address.
+async function reverse_geocode(latitude,longitude){
+  const KEY = "AIzaSyD8wMTakMDfBHIHwKunjPkRV5D1Yzmsjhs";
+  // const LAT = "49.2742";
+  // const LNG = "-123.1547";
+
+  let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${KEY}`;
+  let resp=await fetch(url).then(response=>response.json()).then((data)=>{
+    // console.log(data);
+    return data;
+  })
+  // return resp;
+  // console.log(resp);
+  // console.log(resp);
+  return resp;
+
+
+}
+
+
+function geo_coding(){
+    let location = "2047 E 53rd Ave, Vancouver, BC V5P 1X6, Canada";
+    axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+            address: location,
+            key: 'AIzaSyD8wMTakMDfBHIHwKunjPkRV5D1Yzmsjhs',
+        }
+    })
+        .then(function (response) {
+            let lat = response.data.results[0].geometry.location.lat;
+            let lng = response.data.results[0].geometry.location.lng;
+            console.log("Latitude = " + lat + " " + " longitude = " + lng);
+        //     console.log(response);
+
+})
 }

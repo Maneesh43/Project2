@@ -126,5 +126,5 @@ if(sessstorage.getItem("email") && sessstorage.getItem("password")){
 
 
 document.addEventListener("DOMContentLoaded",()=>{
-  pwainit('.././sw.js');
+  pwainit('../sw.js');
 })
