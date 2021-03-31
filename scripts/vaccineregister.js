@@ -214,37 +214,10 @@ else if(confirmreg==false){
 
 //Event Handler for menu
 
-//From W3 Schools Dropdown with click
+//From W3 Schools sidenav
+document.querySelector('.dropbtn').addEventListener("click",openNav);
+document.querySelector('.closebtn').addEventListener("click",closeNav);   
 
-
-document.querySelector('.dropbtn i').addEventListener('click',()=>{
-
-    document.getElementById("myDropdown").classList.toggle("show");
-
-
-
-})
-
-
-//Window Event Handlers
-
-
-window.addEventListener('click',(event)=>{
-
-    if (!event.target.matches('.dropbtn i')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-
-
-
-})
 
 
 // Signout

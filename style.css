@@ -395,45 +395,58 @@ template {
 
 /* 5.Carousels==================================================================== */
 /* 6.Dropdowns==================================================================== */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  min-width: 160px;
-  overflow: auto;
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
   z-index: 1;
-  background-color: #F4F4F4;
-  -webkit-box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  /* 0.5 second transition effect */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.dropdown-content a {
-  text-align: center;
-  border: 2px dotted transparent;
-  padding: 0.75rem;
-  font-size: 1rem;
-  text-decoration: none;
-  display: block;
-  background-color: #F4F4F4;
-  color: black;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+.sidenav a {
+  color: white;
+  border: 4px dotted transparent;
+  padding: 0.5rem;
+  font-size: 1.5rem;
 }
 
-.dropdown-content a:hover {
-  background-color: white;
-  font-weight: bold;
-  border-style: dotted;
-  border-color: #4695BD;
+.sidenav a:nth-of-type(1) {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 2rem;
+  color: white;
 }
 
-.show {
-  display: block;
+.sidenav a:not(a:nth-of-type(1)) {
+  margin: .5rem 0;
+}
+
+.sidenav a:hover {
+  border: 4px dotted #4695BD;
+  font-weight: bolder;
 }
 
 /* 7.Inputs==================================================================== */

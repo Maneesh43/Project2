@@ -34,7 +34,6 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
 //Window Event Handlers
 // Drop Down
 
-dropdownfunc();
 
 
 
@@ -44,6 +43,16 @@ dropdownfunc();
 document.addEventListener("DOMContentLoaded",()=>{
   pwainit('../sw.js');
 })
+
+
+ //Nav menu handler
+ document.querySelector('.dropbtn').addEventListener("click",openNav);
+ document.querySelector('.closebtn').addEventListener("click",closeNav);   
+
+
+
+
+
 
 
 // document.querySelector('.ad2hs-prompt p').addEventListener("click",()=>{
