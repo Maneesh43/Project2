@@ -47,7 +47,7 @@ firebase.auth()
   var token = credential.accessToken;
   // The signed-in user info.
   var user = result.user;
-  window.location.href='../pages/home.html';
+  window.location.replace("pages/home.html");
   // ...
 }).catch((error) => {
   // Handle Errors here.
