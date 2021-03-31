@@ -173,3 +173,6 @@ function geo_coding(){
 
 })
 }
+
+// PWA Banner
+

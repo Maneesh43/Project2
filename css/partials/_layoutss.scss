@@ -154,10 +154,11 @@ li{
     color: white;
 }
 .cards{
-    -webkit-box-shadow: 0px 1px 8px 0px black;
--moz-box-shadow: 0px 1px 8px 0px black;
+    -webkit-box-shadow: 0px 1px 4px 0px black;
+-moz-box-shadow: 0px 1px 4px 0px black;
 box-shadow: 0px 1px 8px 0px black;
-border: 3px solid $color_blue_4;
+border: 1px solid $color_blue_4;
+margin: 0 auto;
 }
 main .wrapperhome{
     display: flex;
@@ -286,7 +287,6 @@ main .wrapperhome{
         box-shadow: 0px 1px 8px 0px black;
         width: 80%;
         text-align: center;
-        margin: auto;
     }
 }
 
