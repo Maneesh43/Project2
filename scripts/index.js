@@ -1,5 +1,5 @@
+let sessstorage=window.sessionStorage;
 
-signout();
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -47,6 +47,8 @@ firebase.auth()
   var token = credential.accessToken;
   // The signed-in user info.
   var user = result.user;
+  sessstorage.setItem("is_logged_in",true);
+
   window.location.replace("pages/home.html");
   // ...
 }).catch((error) => {

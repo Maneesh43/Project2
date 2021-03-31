@@ -1,3 +1,9 @@
+
+
+let sessstorage=window.sessionStorage;
+let userrname=document.querySelector('.card2 p');
+
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -6,6 +12,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.querySelector(".loader").classList.toggle("hide");
     document.querySelector(".wrapperhome").classList.toggle("hide");
     useremail=user.email;
+    // console.log(user);
+    loadinfo(user);
     is_doc_available(useremail);
   } else {
     // No user is signed in.
@@ -14,30 +22,22 @@ firebase.auth().onAuthStateChanged(function(user) {
     window.location.replace('../index.html');
   }
 });
-
 // Signout
 document.querySelector('#signouthere').addEventListener('click',()=>{
   signout();
   
 })
+function loadinfo(user){
+if((sessstorage.getItem("is_doc_data"))){
+  let userdata=JSON.parse(sessstorage.getItem("is_doc_data"));
+  userrname.textContent=userdata.name;
 
+}else{
+  // console.log(getUsernameFromEmail(authuser));
+  userrname.textContent=getUsernameFromEmail(user.email);
 
-  //dropdown
-//Event Handler for menu
-
-//From W3 Schools Dropdown with click
-
-
-
-
-
-//Window Event Handlers
-// Drop Down
-
-
-
-
-
+}
+}
 // PWA
 
 document.addEventListener("DOMContentLoaded",()=>{

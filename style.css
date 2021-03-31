@@ -484,83 +484,6 @@ template {
 }
 
 /* 8.Layouts==================================================================== */
-.google-button {
-  height: 40px;
-  border-width: 0;
-  background: white;
-  color: #737373;
-  border-radius: 5px;
-  white-space: nowrap;
-  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
-          box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
-  -webkit-transition-property: background-color, -webkit-box-shadow;
-  transition-property: background-color, -webkit-box-shadow;
-  transition-property: background-color, box-shadow;
-  transition-property: background-color, box-shadow, -webkit-box-shadow;
-  -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  padding: 0;
-}
-
-.google-button:focus, .google-button:hover {
-  -webkit-box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.1);
-}
-
-.google-button:active {
-  background-color: #e5e5e5;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transition-duration: 10ms;
-          transition-duration: 10ms;
-}
-
-.google-button__icon {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 8px 0 8px 8px;
-  width: 18px;
-  height: 18px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.google-button__icon--plus {
-  width: 27px;
-}
-
-.google-button__text {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0 24px;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: 'Roboto',arial,sans-serif;
-}
-
-.headingmain {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 4rem;
-}
-
-.headingmain h2 {
-  color: #4270B3;
-}
-
-.headingmain p {
-  color: #4695BD;
-}
-
 /* Global layout */
 body {
   height: 100vh;
@@ -575,6 +498,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow-x: hidden;
+  line-height: 1.2;
 }
 
 header {
@@ -627,6 +551,55 @@ main {
 
 /*  */
 /* Index.html layout */
+.indexhome {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-signin {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.social-signin button {
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+.social-signin button i {
+  color: #4270B3;
+  padding: .5rem;
+}
+
+.social-signin button:hover {
+  background-color: #4270B3;
+}
+
+.social-signin button:hover i:hover {
+  color: white;
+}
+
+.socialinfo {
+  margin-top: 2rem;
+}
+
+.mainlogo {
+  margin-bottom: 2rem;
+}
+
+.mainlogo img {
+  width: 30%;
+}
+
 /*       */
 /* Login.html layout */
 /*  */
@@ -1018,37 +991,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 14.Toast===================================*/
 #snackbar {
-  visibility: hidden;
-  /* Hidden by default. Visible on click */
-  min-width: 250px;
-  /* Set a default minimum width */
-  margin-left: -125px;
-  /* Divide value of min-width by 2 */
+  display: none;
   background-color: #333;
-  /* Black background color */
   color: #fff;
-  /* White text color */
   text-align: center;
-  /* Centered text */
-  border-radius: 20px;
-  /* Rounded borders */
-  padding: 16px;
-  /* Padding */
-  position: fixed;
-  /* Sit on top of the screen */
-  z-index: 1;
-  /* Add a z-index if needed */
-  left: 50%;
-  /* Center the snackbar */
-  top: 30px;
-  /* 30px from the top */
   border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  width: 60%;
+  margin: 0 auto;
+  top: 30px;
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
 #snackbar.show {
-  visibility: visible;
-  /* Show the snackbar */
+  display: block;
   /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
     However, delay the fade out process for 2.5 seconds */
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
