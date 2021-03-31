@@ -123,34 +123,16 @@ function pwainit(a){
   }
 
 
-  // Drop down event handler
-  function dropdownfunc(){
-    document.querySelector('.dropbtn i').addEventListener('click',()=>{
-
-      document.getElementById("myDropdown").classList.toggle("show");
-    
-    
-    
-    })
-
-  window.addEventListener('click',(event)=>{
-
-    if (!event.target.matches('.dropbtn i')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
+  //Nav menu handler
+  function openNav() {
+    document.getElementById("mysidenav").style.width = "100%";
+  }
   
+  /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+  function closeNav() {
+    document.getElementById("mysidenav").style.width = "0";
+  }
   
-  
-  })
-}
-
 
 // Geocoding Address to lat and longitudes
 
