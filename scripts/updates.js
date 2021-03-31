@@ -54,7 +54,7 @@ function vaccine_coverage(){
                 if(this.value==element.country){
                     // console.log((element.timeline));
                     for (x in element.timeline){
-                        paradata.textContent=`Vaccines administered today in ${element.country} are ${element.timeline[x].toLocaleString()}`
+                        paradata.textContent=`Vaccines administered till today in ${element.country} are ${element.timeline[x].toLocaleString()}`
                     }
                    
                 }

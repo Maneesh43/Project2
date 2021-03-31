@@ -118,6 +118,8 @@ function pwainit(a){
     docRef.get().then((doc) => {
         if (doc.exists) {
             sessionstorage.setItem("is_doc",true);
+            sessstorage.setItem("is_doc_data",JSON.stringify(doc.data()));
+            console.log(doc);
         }
         });
   }
@@ -155,24 +157,26 @@ async function reverse_geocode(latitude,longitude){
 
 
 }
+async function geocode(location) {
+  let response =await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+          address: location,
+          key: 'AIzaSyD8wMTakMDfBHIHwKunjPkRV5D1Yzmsjhs',
+      }
+  })
+      .then(function (response) {
+          let lat = response.data.results[0].geometry.location;
+      //     console.log(response);
+      return lat;
+      hello(lat);
 
+      }).catch((error)=>{
+        console.log(error);
+      })
 
-function geo_coding(){
-    let location = "2047 E 53rd Ave, Vancouver, BC V5P 1X6, Canada";
-    axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-        params: {
-            address: location,
-            key: 'AIzaSyD8wMTakMDfBHIHwKunjPkRV5D1Yzmsjhs',
-        }
-    })
-        .then(function (response) {
-            let lat = response.data.results[0].geometry.location.lat;
-            let lng = response.data.results[0].geometry.location.lng;
-            console.log("Latitude = " + lat + " " + " longitude = " + lng);
-        //     console.log(response);
-
-})
-}
+      console.log(response);
+      return response;
+    }
 
 // PWA Banner
 

@@ -37,6 +37,7 @@ function getuserprofile() {
     if (doc.exists) {
       // console.log("Document data:", doc.data());
       setuserdata(doc);
+
     } else {
       
       // doc.data() will be undefined in this case
@@ -64,12 +65,13 @@ function getuserprofile() {
 }
 
 function setuserdata(datauser) {
+  console.log(datauser);
   document.querySelector('.loader').classList.add("hide");
   document.querySelector('.wrapper').classList.toggle("hide");
 
   // console.log(datauser.data());
   userdata = datauser.data();
-  console.log(userdata);
+  // console.log(userdata);
   console.log(userdata.created.toDate().toDateString());
 
   if ((userdata.priority + 1) > 0) {

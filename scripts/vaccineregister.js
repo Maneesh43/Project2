@@ -105,7 +105,19 @@ class Userobjectdata{
 
 
 document.querySelector('.vaccine_register_button').addEventListener('click', () => {
-
+    if(ss6.value!=null){
+        function geolocate(){
+            let a= geocode((ss6.value.toString())).then((value)=>{
+                latitude=value.lat;
+                console.log(latitude);
+                longitude=value.lng;
+                console.log(value);
+            });
+           
+            }
+        geolocate();
+        
+    }
 
 
 
@@ -146,13 +158,14 @@ if(is_doc==false){
 if(latitude==0 && longitude==0 && ss6.value==0){
     toaster("Please enter your location","darkred");
     register_stat=false;
-}if(ss6.value!=null){
-    geo_coding(ss6.value);
 }
+
 if(confirmreg==true && register_stat==true){
 let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userischronic,userhasprevious,latitude,longitude);
     let priorityvalue=prioritycalc();
     console.log(priorityvalue);
+
+    console.log(latitude);
   
     //////////////////////////////
 
@@ -179,7 +192,7 @@ let userdataobject=new Userobjectdata(username,useremail,userage,usersex,userisc
      .then(() => {
      console.log("Document successfully written!");
     //  alert("success")
-    toaster("Registered Succesfully","lightgreen");
+    toaster("Registered successfully","lightgreen");
     window.location.assign("/pages/home.html");
      })
      .catch((error) => {
