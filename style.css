@@ -449,6 +449,10 @@ template {
   font-weight: bolder;
 }
 
+.pwabanner {
+  display: none;
+}
+
 /* 7.Inputs==================================================================== */
 .input {
   width: 80%;
@@ -638,7 +642,7 @@ main {
   display: grid;
   padding-left: 0;
   width: 100%;
-  -ms-grid-columns: (1fr)[4];
+  /* -ms-grid-columns: (1fr)[4]; */
       grid-template-columns: repeat(4, 1fr);
 }
 
@@ -652,9 +656,10 @@ main {
 }
 
 .cards {
-  -webkit-box-shadow: 0px 1px 8px 0px black;
+  -webkit-box-shadow: 0px 1px 4px 0px black;
   box-shadow: 0px 1px 8px 0px black;
-  border: 3px solid #828282;
+  border: 1px solid #828282;
+  margin: 0 auto;
 }
 
 main .wrapperhome {
@@ -841,7 +846,6 @@ main .hide {
   box-shadow: 0px 1px 8px 0px black;
   width: 80%;
   text-align: center;
-  margin: auto;
 }
 
 /*    */

@@ -9,6 +9,7 @@ self.addEventListener('install', event => {
     // environment after the installation completes.
     console.log(`Event fired: ${event.type}`);
     console.dir(event);
+    // document.querySelector('.pwabanner').getElementsByClassName.display="none";
 });
 
 self.addEventListener('activate', event => {
