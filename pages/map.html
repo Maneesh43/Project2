@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css">
+   <script
+        src="https://kit.fontawesome.com/5149b952aa.js"
+        crossorigin="anonymous"></script>
+  <title>Locate your Vaccine center</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="headerarea">
+        <div class="backbutton"><i class="fas fa-chevron-left"></i></div>
+        <div class="logoarea"></div>
+        <nav><div class="navmenuwrapper">
+            <div class="dropbtn"><i class="fas fa-bars" aria-label="Menu" aria-hidden="true"></i></div>
+            <div id="mysidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn">&times;</a>
+              <a href="home.html">Home</a>
+              <a href="profile.html">Profile</a>
+              <a href="#" id="signouthere">Signout</a>
+              <a href="#" class="pwabanner">Install PWA</a>
+            </div>
+          </div>
+        </nav>
+
+    </div>
+ 
+  </header>
+
+
+
+  <main>
+
+    <div class="wrapper">
+        <div id="map">
+        </div>
+    
+        <ul id="list">
+             
+        </ul>
+    </div>
+    <!-- firestore scripts -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8wMTakMDfBHIHwKunjPkRV5D1Yzmsjhs&libraries=places"
+        
+     ></script>
+
+    <script src="../scripts/projectscript.js"></script>
+    <script src="../scripts/misc.js"></script>
+    <script src="../scripts/map.js"></script>
+  </main>
+
+  
+  <footer class="footerhome ">
+    <ul>
+        <li><a href="../pages/home.html">Home</a></li>
+        <li><a href="../pages/map.html">Map</a></li>
+        <li><a href="../pages/updates.html">Updates</a></li>
+        <li><a href="../pages/faq.html">FAQ</a></li>
+    </ul>
+</footer>
+</body>
+
+</html>
