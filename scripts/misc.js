@@ -74,10 +74,11 @@ firebase.auth().signOut().then(() => {
   // alert("signed out");
   toaster("Signed Out!","lightgreen");
   // Sign-out successful.
+  window.location.replace("../index.html");
 }).catch((error) => {
   // An error happened.
   // alert("sign-out failed");
-  toaster("Failed to signout","darkred");
+  toaster("Failed to signout");
 });
 }
 

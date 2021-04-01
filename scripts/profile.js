@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       // No user is signed in.
       // alert("user not logged in");
-      toaster("User not logged in","darkred");
+      toaster("User not logged in");
       window.location.replace('../pages/login.html');
     }
   });
@@ -194,3 +194,14 @@ window.addEventListener('beforeinstallprompt', function (e) {
       } 
       deferredPrompt = null; 
     }); } 
+
+    // Signout
+    document.querySelector('#signouthere').addEventListener('click',()=>{
+      signout();
+      
+    })
+
+
+document.querySelector(".backbutton i").addEventListener("click",()=>{
+  window.history.back();
+})

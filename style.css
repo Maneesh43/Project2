@@ -13,6 +13,7 @@
 /* 13.Mixins  */
 /* 14.Toast   */
 /* 15.Updates Page */
+/* 16.FAQ      */
 /* 1.Variables==================================================================== */
 /* 1.colors */
 /* 2.fonts */
@@ -449,6 +450,10 @@ template {
   font-weight: bolder;
 }
 
+.dropbtn i:hover {
+  color: #4270B3;
+}
+
 .pwabanner {
   display: none;
 }
@@ -503,8 +508,8 @@ body {
 
 header {
   width: 100%;
-  -webkit-box-shadow: 0 1px 4px 0px gray;
-          box-shadow: 0 1px 4px 0px gray;
+  -webkit-box-shadow: 0 1px 4px 0px #ccc;
+          box-shadow: 0 1px 4px 0px #ccc;
 }
 
 header h1 {
@@ -513,6 +518,20 @@ header h1 {
 
 main {
   width: 100%;
+}
+
+footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
 }
 
 .formarea {
@@ -541,12 +560,9 @@ main {
 .logoarea {
   background: url("../../assets/logo/logo.png");
   background-repeat: no-repeat;
-}
-
-.logoarea {
-  margin: 1rem auto 0 auto;
-  height: 60px;
-  width: 100px;
+  width: 180px;
+  height: 94px;
+  margin: 8px 0 0 0;
 }
 
 /*  */
@@ -562,30 +578,23 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.social-signin button {
-  border: none;
-  font-size: 1.7rem;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 50%;
+.social-signin img {
+  width: 45px;
+  height: 45px;
 }
 
-.social-signin button i {
-  color: #4270B3;
-  padding: .5rem;
+.social-signin img:nth-of-type(1) {
+  margin-right: 4rem;
 }
 
-.social-signin button:hover {
-  background-color: #4270B3;
-}
-
-.social-signin button:hover i:hover {
-  color: white;
+.social-signin img:nth-of-type(2) {
+  margin-left: 4rem;
 }
 
 .socialinfo {
@@ -593,11 +602,12 @@ main {
 }
 
 .mainlogo {
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
 }
 
 .mainlogo img {
   width: 30%;
+  margin-top: 1rem;
 }
 
 /*       */
@@ -629,9 +639,9 @@ main {
 }
 
 .cards {
-  -webkit-box-shadow: 0px 1px 4px 0px black;
-  box-shadow: 0px 1px 8px 0px black;
-  border: 1px solid #828282;
+  -webkit-box-shadow: 0px 1px 4px 0px #ccc;
+  box-shadow: 0px 1px 8px 0px #ccc;
+  border: 1px solid #ccc;
   margin: 0 auto;
 }
 
@@ -774,6 +784,35 @@ main .wrapperhome .cards h3 {
   width: calc(80% + 1rem);
 }
 
+.vaccine_register_wrapper .locationdiv input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.vaccine_register_wrapper .locationdiv button:hover {
+  background-color: #fff;
+}
+
+.vaccine_register_wrapper .locationdiv button:hover i {
+  color: #4270B3;
+}
+
+.vaccine_register_wrapper .locationdiv button {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  width: 10%;
+}
+
+.vaccine_register_wrapper .locationdiv button i {
+  font-size: 1.5rem;
+}
+
+.vaccine_register_wrapper .locationdiv button i:hover {
+  color: #4270B3;
+}
+
 .headerarea {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -812,11 +851,33 @@ main .hide {
   margin: auto;
 }
 
+.loginchange {
+  width: 100%;
+  grid-column: 1/-1;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.passwordchange {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+.passwordchange input:nth-of-type(1) {
+  margin-top: 0.5rem;
+}
+
 /*  */
 /* Updates Layout */
 .wrapperupdates .cards {
-  -webkit-box-shadow: 0px 1px 8px 0px black;
-  box-shadow: 0px 1px 8px 0px black;
+  -webkit-box-shadow: 0px 1px 4px 0px #ccc;
+  box-shadow: 0px 1px 4px 0px #ccc;
   width: 80%;
   text-align: center;
 }
@@ -951,6 +1012,14 @@ input[type="file"] {
   position: relative;
 }
 
+.imageholder button {
+  border: none;
+}
+
+.imageholder button:active {
+  border: none;
+}
+
 .imageholder img {
   max-width: 250px;
   height: 250px;
@@ -979,6 +1048,18 @@ input[type="file"] {
   opacity: 1;
 }
 
+.backbutton {
+  margin-left: 1rem;
+}
+
+.backbutton i {
+  font-size: 1.5rem;
+}
+
+.backbutton i:hover {
+  color: #4270B3;
+}
+
 /* 12.Typography==================================================================== */
 * {
   font-family: "Noto Sans JP", sans-serif;
@@ -992,7 +1073,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 14.Toast===================================*/
 #snackbar {
   display: none;
-  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   text-align: center;
   border-radius: 8px;
@@ -1004,6 +1085,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 60%;
   margin: 0 auto;
   top: 30px;
+}
+
+@supports ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+  #snackbar {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
@@ -1119,5 +1207,43 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.17rem;
   font-weight: bold;
   color: #4695BD;
+}
+
+/* 16.FAQ==============================================================*/
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\02795';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
 }
 /*# sourceMappingURL=style.css.map */

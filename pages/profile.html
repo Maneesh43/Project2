@@ -16,7 +16,9 @@
 
 <body>
     <header>
+        <div id="snackbar"></div>
         <div class="headerarea">
+            <div class="backbutton"><i class="fas fa-chevron-left"></i></div>
             <div class="logoarea"></div>
             <nav><div class="navmenuwrapper">
                 <div class="dropbtn"><i class="fas fa-bars" aria-label="Menu" aria-hidden="true"></i></div>
@@ -24,8 +26,8 @@
                   <a href="javascript:void(0)" class="closebtn">&times;</a>
                   <a href="home.html">Home</a>
                   <a href="profile.html">Profile</a>
-                  <a href="#" id="signouthere">Signout</a>
-                  <a href="#" class="pwabanner">Install PWA</a>
+                  <a href="../pages/login.html" id="signouthere">Signout</a>
+                  <a href="javascript:void(0);" class="pwabanner">Install PWA</a>
                 </div>
               </div>
             </nav>
@@ -46,7 +48,7 @@
 
                 <!-- <div class="userdetails"> -->
                 <div class="profileheading profileindividualdiv">
-                    <p>Your Info</p>
+                    <p>Profile page</p>
 
                 </div>
                 <div class="userprofile profileindividualdiv">
@@ -78,8 +80,14 @@
                     <p></p>
                     
                 </div>
-            </div>
-
+                <!-- <div class="loginchange">
+                <b class="loginpasswordchange">Change login Password ?</b>
+                <div class="passwordchange">
+                    <input type="password" class="input input1" placeholder="enter your new password">
+                    <input type="password" class="input input2" placeholder="Re enter your password">
+                    <button type="button" class="button button1">change password</button>
+                </div>
+            </div> -->
         </div>
         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
 
@@ -90,8 +98,11 @@
         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
-     <script src="../scripts/misc.js"></script>
+
         <script src="../scripts/projectscript.js"></script>
+
+        <script src="../scripts/misc.js"></script>
+
         <script src="../scripts/profile.js"></script>
     
 

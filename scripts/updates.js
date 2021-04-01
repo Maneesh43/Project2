@@ -2,6 +2,7 @@
 // Covid 19 statistics from worldometer and is Updated every 10 minutes.
 
 
+
 // Async function 
 async function fetchdata(a){
     let response=await fetch(a).then(response=>response.json()).then(function(myjson){
@@ -138,3 +139,16 @@ window.addEventListener('beforeinstallprompt', function (e) {
       deferredPrompt = null; 
     }); } 
 
+
+    
+// signout
+    document.querySelector('#signouthere').addEventListener('click',()=>{
+        signout();
+        
+      })
+    
+
+    //   Back button
+    document.querySelector('.backbutton i').addEventListener("click",()=>{
+        window.history.back();
+    })

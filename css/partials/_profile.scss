@@ -39,6 +39,12 @@ grid-template-columns: repeat(2,1fr);
 .imageholder{
     position: relative;
     // overflow: hidden;
+    button{
+        border: none;
+    }
+    button:active{
+        border: none;
+    }
 img{
     max-width: 250px;
     height: 250px;
@@ -65,5 +71,14 @@ transform: scale(1.5);
 }
 .sendbutton:hover{
     opacity: 1;
+}
+.backbutton{
+    margin-left: 1rem;
+    i{
+        font-size: 1.5rem;
+    }
+    i:hover{
+        color: $color_blue_1;
+    }
 }
 
