@@ -50,13 +50,13 @@ function loginuser() {
         var errorCode = error.code;
         var errorMessage = error.message;
         // alert(errorMessage);
-        toaster("User login failed", "darkred");
+        toaster("User login failed");
         console.log(errorMessage);
       });
   } else {
     console.log("email Validation failed");
     toaster("Email or password incorrect!");
-    document.querySelector("#email-input").style.borderColor = "red"
+    // document.querySelector("#email-input").style.borderColor = "red"
 
   }
 }

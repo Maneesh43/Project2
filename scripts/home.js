@@ -92,3 +92,5 @@ window.addEventListener('beforeinstallprompt', function (e) {
       } 
       deferredPrompt = null; 
     }); } 
+
+    

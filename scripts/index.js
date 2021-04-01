@@ -61,7 +61,7 @@ firebase.auth()
   var credential = error.credential;
   // ...
   // alert(errorMessage);
-  toaster("Google signin failed","darkred");
+  toaster("Google signin failed");
 });
 
 

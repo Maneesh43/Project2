@@ -1,7 +1,6 @@
 #snackbar {
-  display: none;
-  
-    background-color: #333; 
+   display: none;
+    background-color: rgba(0,0,0,.8); 
     color: #fff; 
     text-align: center; 
     border-radius: 8px; 
@@ -13,9 +12,16 @@
     width: 60%;
     margin: 0 auto;
     top: 30px; 
-
   }
   
+
+  @supports (backdrop-filter:blur(50px)){
+    #snackbar{
+      backdrop-filter:blur(10px);
+  }
+}
+
+
   /* Show the snackbar when clicking on a button (class added with JavaScript) */
   #snackbar.show {
     display: block;

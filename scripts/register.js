@@ -24,7 +24,7 @@ firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
     console.log(errorCode);
     if(errorCode){
         // alert(error.message);
-        toaster(errorMessage,"darkred");
+        toaster(errorMessage);
     }
     console.log(error);
     // ..
