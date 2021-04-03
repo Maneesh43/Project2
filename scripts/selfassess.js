@@ -61,8 +61,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
       document.querySelector("#btnassess").addEventListener("click",()=>{
         if(radiovalue=="yes"){
           console.log("yes");
-          ullist.innerHTML='';
         }else{
-
+          
         }
       })

@@ -504,6 +504,30 @@ body {
           justify-content: space-between;
   overflow-x: hidden;
   line-height: 1.2;
+  -webkit-animation: sloppy 1s ease-in-out 1;
+          animation: sloppy 1s ease-in-out 1;
+}
+
+@-webkit-keyframes sloppy {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes sloppy {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 header {
@@ -605,8 +629,14 @@ header {
   margin-bottom: 8rem;
 }
 
+@media screen and (min-width: 600px) {
+  .mainlogo img {
+    width: 30%;
+  }
+}
+
 .mainlogo img {
-  width: 30%;
+  width: 60%;
   margin-top: 1rem;
 }
 
@@ -919,6 +949,13 @@ main .hide {
   width: 80%;
   margin-bottom: 1rem;
   padding: 1rem;
+  border-radius: 10px;
+}
+
+.assessment li {
+  padding-bottom: .5rem;
+  list-style-type: decimal;
+  padding-left: 5px;
 }
 
 .assessment button {
@@ -936,12 +973,16 @@ main .hide {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: .5rem;
 }
 
 .checkboxes .radiogroup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .checkboxes label span {
@@ -950,6 +991,7 @@ main .hide {
   width: 10px;
   border: 2px solid black;
   border-radius: 50%;
+  margin-left: 10px;
 }
 
 .checkboxes input:checked + label span {

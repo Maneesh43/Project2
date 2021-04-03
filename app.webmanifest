@@ -1,6 +1,7 @@
 {
     "short_name": "Lifeline",
     "name": "Lifeline",
+    "description":"A vaccine rollout planner application",
     "icons": [
 
       {
@@ -35,7 +36,7 @@
 }
     ],
     "start_url": "/index.html",
-    "display": "fullscreen",
-    "background_color": "#FF6F6F",
-    "theme_color": "#FF6F6F"
+    "display": "standalone",
+    "background_color": "#469FA6",
+    "theme_color": "#469FA6"
   }

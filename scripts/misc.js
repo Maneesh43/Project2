@@ -1,4 +1,4 @@
-let sessionstorage=window.sessionStorage;
+let sessionstorages=window.sessionStorage;
 // Toaster 
 
 function toaster(errormsg,bgcolor,fgcolor){
@@ -118,8 +118,8 @@ function pwainit(a){
     console.log("hi");
     docRef.get().then((doc) => {
         if (doc.exists) {
-            sessionstorage.setItem("is_doc",true);
-            sessstorage.setItem("is_doc_data",JSON.stringify(doc.data()));
+            sessionstorages.setItem("is_doc",true);
+            sessionstorages.setItem("is_doc_data",JSON.stringify(doc.data()));
             console.log(doc);
         }
         });
