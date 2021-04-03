@@ -1,3 +1,5 @@
+let radiovalue;
+
 // Sidenav
 document.querySelector('.dropbtn').addEventListener("click",openNav);
 document.querySelector('.closebtn').addEventListener("click",closeNav); 
@@ -36,3 +38,31 @@ window.addEventListener('beforeinstallprompt', function (e) {
       } 
       deferredPrompt = null; 
     }); } 
+
+    // Radiobox code
+    // document.querySelectorAll(" input[type=radio] ").forEach(function(item){
+    //   item.addEventListener("change",(item)=>{
+
+    //     console.log(item.value);
+
+    //   })
+    // })
+    let ullist=document.querySelector(".selfassesslist");
+    let radios=document.querySelectorAll(' input[type=radio][name="assesment"] ');
+    radios.forEach(radio => radio.addEventListener('change', function(){
+      if(radio.value=="yes"){
+        radiovalue="yes";
+      }else{
+    radiovalue="no";
+      }
+    }
+      ));
+
+      document.querySelector("#btnassess").addEventListener("click",()=>{
+        if(radiovalue=="yes"){
+          console.log("yes");
+          ullist.innerHTML='';
+        }else{
+
+        }
+      })
