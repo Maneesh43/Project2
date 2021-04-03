@@ -31,6 +31,7 @@
                       <a href="home.html">Home</a>
                       <a href="profile.html">Profile</a>
                       <a href="#" id="signouthere">Signout</a>
+                      <a href="#" class="pwabanner">Install PWA</a>
                     </div>
                   </div>
             </nav>
@@ -66,15 +67,28 @@ If you have any concerns, feel very sick, or your symptoms are not improving, co
 COVID-19 and Children
 
 Children generally have milder symptoms of COVID-19 than adults. Children may also present symptoms of COVID-19 differently than adults. For example, symptoms in children may be a change in activity level, appetite, or behaviour. For children, it’s important to think about what is usual or unusual about their specific symptoms.</p>
-<div class="assessment">
+<div class="assessment cards">
     <h3>Are you experiencing any of the following:</h3>
-    <ul>
+    <ul class="selfassesslist">
         <li>Severe difficulty breathing (e.g. struggling to breathe or speaking in single words)</li>
         <li>Severe chest pain</li>
         <li>Having a very hard time waking up</li>
         <li>Feeling confused</li>
         <li>Losing consciousness</li>
     </ul>
+    <div class="checkboxes">
+        <div class="yeschecked radiogroup">
+            <input type="radio" value="yes"  id="checkbox1" name="assesment">
+        <label for="checkbox1">Yes<span class="check"></span></label>
+       
+    </div>
+    <div class="nochecked radiogroup">
+        <input type="radio" value="no" id="checkbox2" name="assesment" checked>
+        <label for="checkbox2">No <span class="check"></span></label>
+        
+    </div>
+    </div>
+    <button type="button" class="button" id="btnassess">Next</button>
 </div>
 
 </div>

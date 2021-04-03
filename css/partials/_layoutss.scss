@@ -150,9 +150,11 @@ main .wrapperhome{
     gap: 2rem;
     .card1{
         margin-top: 1rem;
+        margin-bottom: 1rem;
     }
     .card2{
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
     .cards{
         padding: 1rem;
@@ -237,10 +239,13 @@ main .wrapperhome{
             color: $color_blue_1;
         }
         button{
-            flex-grow: 0;
             width: 10%;
+            background-color: transparent;
             i{
+                display: block;
+                text-align: center;
                 font-size: 1.5rem;
+                width: 10%;
             }
             i:hover{
                 color: $color_blue_1;
@@ -305,6 +310,7 @@ main .wrapperhome{
         box-shadow: 0px 1px 4px 0px #ccc;
         width: 80%;
         text-align: center;
+        border-radius: 10px;
     }
 }
 
@@ -338,4 +344,42 @@ main .wrapperhome{
      color: white;
      cursor: pointer;
     }
+}
+
+
+
+/*  Self assesment   */
+.assessment{
+    width: 80%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    button{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: .5rem;
+        margin-top: 0.5rem;
+        padding: .5rem;
+    }
+}
+.checkboxes{
+    display: flex;
+    justify-content: center;
+   
+    label{
+        // display: block;
+    }
+    .radiogroup{
+        display: flex;
+    }
+label span{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border: 2px solid $color_black;
+    border-radius: 50%;
+}
+input:checked + label span{
+
+    background-color:$color_blue_2;
+}
 }
