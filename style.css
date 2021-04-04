@@ -629,15 +629,15 @@ header {
   margin-bottom: 8rem;
 }
 
+.mainlogo img {
+  width: 60%;
+  margin-top: 1rem;
+}
+
 @media screen and (min-width: 600px) {
   .mainlogo img {
     width: 30%;
   }
-}
-
-.mainlogo img {
-  width: 60%;
-  margin-top: 1rem;
 }
 
 /*       */

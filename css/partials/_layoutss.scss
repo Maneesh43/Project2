@@ -102,20 +102,21 @@ header{
 .socialinfo{
     margin-top: 2rem;
 }
+
 .mainlogo{
     margin-bottom: 8rem;
-    @media screen  and (min-width:600px){
-        img{
-            width: 30%;
-        }
-    }
+   
     img{
         width: 60%;
         margin-top: 1rem;
        
     }
 }
-
+@media screen  and (min-width:600px){
+    .mainlogo img{
+        width: 30%;
+    }
+}
 
 /*       */
 
