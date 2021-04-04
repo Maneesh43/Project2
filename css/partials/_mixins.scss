@@ -2,3 +2,6 @@
 border-radius: $border-radius;
 text-align: $align;
 }
+@mixin borderr($border-radius:10px){
+    border-radius: $border-radius;
+}

@@ -208,6 +208,87 @@ document.querySelector(".backbutton i").addEventListener("click",()=>{
 
 // Change Password of user
 
-document.querySelector(".chgpass").addEventListener("click",()=>{
-  
+
+// Prompt the user to re-provide their sign-in credentials
+// console.log(reauthenticateWithCredential(credential));
+
+
+
+
+// user.updatePassword(newPassword).then(function() {
+//   // Update successful.
+// }).catch(function(error) {
+//   // An error happened.
+// });
+
+
+let popupps=document.querySelector(".chgpass");
+popupps.addEventListener("click",()=>{
+  document.querySelector(".passwordchangepopup").style.display="flex";
+
+})
+
+document.querySelector(".clsbuttons").addEventListener("click",()=>{
+  document.querySelector(".passwordchangepopup").style.display="none";
+})
+
+
+// Password update button
+document.querySelector(".updatepass").addEventListener("click",()=>{
+  is_valid=false;
+  var cpassword=document.querySelector(".cpassword").value;
+  var newpassword=document.querySelector(".newpassword").value;
+  var newpasswordretype=document.querySelector(".newpasswordretype").value;
+  if(is_empty(cpassword)){
+    toaster("current password cannot be empty");
+    is_valid=false;
+  }else{
+is_valid=true;
+  }
+  if(is_empty(newpassword) || is_empty(newpasswordretype)){
+    toaster("password field cannot be empty");
+    is_valid=false;
+
+  }else{
+    is_valid=true;
+  }
+  if(is_valid && (newpassword===newpasswordretype)){
+    is_valid=true
+  }else{
+    is_valid=false;
+  }
+  console.log(is_valid);
+if(is_valid){
+var credential = firebase.auth.EmailAuthProvider.credential(userinfo.email, cpassword);
+
+
+console.log(credential);
+reauthenticateuser();
+
+function reauthenticateuser(){
+  userinfo.reauthenticateWithCredential(credential).then(function() {
+    // User re-authenticated.
+    console.log("Reauthenticated");
+    changepasswordnow();
+  }).catch(function(error) {
+    // An error happened.
+    console.log("failed");
+    toaster("Failed to reauthenticate,pls check your current password");
+  });
+
+  }
+
+function changepasswordnow(){
+  userinfo.updatePassword(newpassword).then(function() {
+    // Update successful.
+    console.log("updated ");
+    toaster("Your password has updated")
+    toaster("please login");
+    window.location.replace("../index.html");
+  }).catch(function(error) {
+    // An error happened.
+    toaster("Failed to update password");
+  });
+}
+}
 })
