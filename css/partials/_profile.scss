@@ -57,9 +57,9 @@ img{
         position: absolute;
         border: none;
         background-color: transparent;
-        top: 83%;
+        top: 85%;
         // right: 4%;
-        left: 80%;
+        left: 85%;
         opacity: .4;
         transition: all .25s;
     }
@@ -82,3 +82,43 @@ transform: scale(1.5);
     }
 }
 
+.profilewrapper{
+    justify-content: center;
+    margin-top: 1rem;
+    grid-column: 1/-1;
+    border-radius: 10px;
+    width: 90%;
+    .profileindividualdiv{
+        border-bottom: .2px solid rgb(231, 229, 229);
+    }
+}
+.passwordchangemodal{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    grid-column: 1/-1;
+    justify-content: center;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    b{
+        margin-left: 1rem;
+        text-align: left;
+    }
+    button{
+        margin: 1rem;
+        background-color: transparent;
+        text-align: right;
+        &:hover{
+            background-color: transparent;
+            i{
+                color: initial;
+            }
+        }
+        i:hover{
+            color: $color_blue_1;
+            transform: scale(1.5);
+        }
+    }
+}

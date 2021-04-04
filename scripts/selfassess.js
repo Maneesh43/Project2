@@ -1,4 +1,10 @@
-let radiovalue;
+// let radiovalue;
+
+
+// Back button
+document.querySelector(".backbutton i").addEventListener("click",()=>{
+  window.history.back();
+})
 
 // Sidenav
 document.querySelector('.dropbtn').addEventListener("click",openNav);
@@ -47,22 +53,21 @@ window.addEventListener('beforeinstallprompt', function (e) {
 
     //   })
     // })
-    let ullist=document.querySelector(".selfassesslist");
-    let radios=document.querySelectorAll(' input[type=radio][name="assesment"] ');
-    radios.forEach(radio => radio.addEventListener('change', function(){
-      if(radio.value=="yes"){
-        radiovalue="yes";
-      }else{
-    radiovalue="no";
-      }
-    }
-      ));
+    // let ullist=document.querySelector(".selfassesslist");
+    // let radios=document.querySelectorAll(' input[type=radio][name="assesment"] ');
+    // radios.forEach(radio => radio.addEventListener('change', function(){
+    //   if(radio.value=="yes"){
+    //     radiovalue="yes";
+    //   }else{
+    // radiovalue="no";
+    //   }
+    // }
+    //   ));
 
-      document.querySelector("#btnassess").addEventListener("click",()=>{
-        if(radiovalue=="yes"){
-          console.log("yes");
-          ullist.innerHTML='';
-        }else{
-
-        }
-      })
+    //   document.querySelector("#btnassess").addEventListener("click",()=>{
+    //     if(radiovalue=="yes"){
+    //       console.log("yes");
+    //     }else{
+          
+    //     }
+    //   })

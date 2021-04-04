@@ -48,6 +48,7 @@ firebase.auth()
   // The signed-in user info.
   var user = result.user;
   sessstorage.setItem("is_logged_in",true);
+  sessstorage.setItem("loginuser",JSON.stringify(user));
 
   window.location.replace("pages/home.html");
   // ...

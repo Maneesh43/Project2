@@ -44,6 +44,7 @@ function loginuser() {
         var user = userCredential.user;
         console.log(user);
         window.location.href = 'home.html';
+        sessstorage.setItem("loginuser",JSON.stringify(user));
         // ...
       })
       .catch((error) => {

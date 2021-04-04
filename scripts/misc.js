@@ -1,4 +1,4 @@
-let sessionstorage=window.sessionStorage;
+sessionstorages=window.sessionStorage;
 // Toaster 
 
 function toaster(errormsg,bgcolor,fgcolor){
@@ -75,6 +75,9 @@ firebase.auth().signOut().then(() => {
   toaster("Signed Out!","lightgreen");
   // Sign-out successful.
   window.location.replace("../index.html");
+  // alert("sign out");
+  var deletingAll = browser.history.deleteAll()
+  console.log(browser.history());
 }).catch((error) => {
   // An error happened.
   // alert("sign-out failed");
@@ -118,8 +121,8 @@ function pwainit(a){
     console.log("hi");
     docRef.get().then((doc) => {
         if (doc.exists) {
-            sessionstorage.setItem("is_doc",true);
-            sessstorage.setItem("is_doc_data",JSON.stringify(doc.data()));
+            sessionstorages.setItem("is_doc",true);
+            sessionstorages.setItem("is_doc_data",JSON.stringify(doc.data()));
             console.log(doc);
         }
         });
