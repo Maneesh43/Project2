@@ -504,14 +504,12 @@ body {
           justify-content: space-between;
   overflow-x: hidden;
   line-height: 1.2;
-  -webkit-animation: sloppy 1s ease-in-out 1;
-          animation: sloppy 1s ease-in-out 1;
 }
 
 @-webkit-keyframes sloppy {
   0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -521,8 +519,8 @@ body {
 
 @keyframes sloppy {
   0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -548,6 +546,8 @@ footer {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
+  -webkit-box-shadow: 0 -1px 4px 0px #ccc;
+          box-shadow: 0 -1px 4px 0px #ccc;
 }
 
 header {
@@ -642,8 +642,17 @@ header {
 
 /*       */
 /* Login.html layout */
+.loginformarea button {
+  margin-top: 2rem;
+}
+
 /*  */
 /* Home page styling */
+.bodyhome {
+  -webkit-animation: sloppy 1s ease-in-out 1;
+          animation: sloppy 1s ease-in-out 1;
+}
+
 .footerhome {
   display: block;
   width: 100%;
@@ -662,6 +671,29 @@ header {
 .footerhome ul li {
   -ms-grid-column-align: center;
       justify-self: center;
+}
+
+.footerhome ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerhome ul li a i {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.footerhome ul li i {
+  font-size: 2rem;
 }
 
 .footerhome a {
@@ -998,6 +1030,11 @@ main .hide {
   background-color: #4695BD;
 }
 
+.wrapperassessment .cdc-widget-color-white {
+  display: block !important;
+  text-align: center;
+}
+
 /* 9.Links==================================================================== */
 a {
   text-decoration: none;
@@ -1119,8 +1156,8 @@ input[type="file"] {
   position: absolute;
   border: none;
   background-color: transparent;
-  top: 83%;
-  left: 80%;
+  top: 85%;
+  left: 85%;
   opacity: .4;
   -webkit-transition: all .25s;
   transition: all .25s;
@@ -1146,6 +1183,65 @@ input[type="file"] {
 
 .backbutton i:hover {
   color: #4270B3;
+}
+
+.profilewrapper {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  grid-column: 1/-1;
+  border-radius: 10px;
+  width: 90%;
+}
+
+.profilewrapper .profileindividualdiv {
+  border-bottom: 0.2px solid #e7e5e5;
+}
+
+.passwordchangemodal {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-column: 1/-1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.passwordchangemodal b {
+  margin-left: 1rem;
+  text-align: left;
+}
+
+.passwordchangemodal button {
+  margin: 1rem;
+  background-color: transparent;
+  text-align: right;
+}
+
+.passwordchangemodal button:hover {
+  background-color: transparent;
+}
+
+.passwordchangemodal button:hover i {
+  color: initial;
+}
+
+.passwordchangemodal button i:hover {
+  color: #4270B3;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 /* 12.Typography==================================================================== */
@@ -1342,6 +1438,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   width: 80%;
   margin: 2rem auto;
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
 .custom-map-control-button {
@@ -1378,17 +1476,32 @@ ul#list {
 }
 
 #list li {
-  margin: 1rem;
-  border: 1px solid black;
+  margin: 1rem 0;
+  -webkit-box-shadow: 0px 1px 4px 0px #ccc;
+  box-shadow: 0px 1px 8px 0px #ccc;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.wrappermaps h3 {
+  text-align: center;
+  color: #4695BD;
+}
+
+.mapbutton {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */

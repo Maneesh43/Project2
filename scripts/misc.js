@@ -1,4 +1,4 @@
-let sessionstorages=window.sessionStorage;
+sessionstorages=window.sessionStorage;
 // Toaster 
 
 function toaster(errormsg,bgcolor,fgcolor){
@@ -75,6 +75,9 @@ firebase.auth().signOut().then(() => {
   toaster("Signed Out!","lightgreen");
   // Sign-out successful.
   window.location.replace("../index.html");
+  // alert("sign out");
+  var deletingAll = browser.history.deleteAll()
+  console.log(browser.history());
 }).catch((error) => {
   // An error happened.
   // alert("sign-out failed");

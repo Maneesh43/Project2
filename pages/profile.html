@@ -26,7 +26,7 @@
                   <a href="javascript:void(0)" class="closebtn">&times;</a>
                   <a href="home.html">Home</a>
                   <a href="profile.html">Profile</a>
-                  <a href="../pages/login.html" id="signouthere">Signout</a>
+                  <a href="javascript:void(0)" id="signouthere">Signout</a>
                   <a href="javascript:void(0);" class="pwabanner">Install PWA</a>
                 </div>
               </div>
@@ -55,9 +55,10 @@
                     <div class="imageholder">
                         <img src="../assets/images/default_image.png" alt="user image">
                         <input type="file" id="fileupload" accept=".jpg, .png">
-                        <button id="send" class="sendbutton"><i class="fas fa-pencil-alt"></i><span class="hidelabel">upload</span></button>
+                        <button id="send" class="sendbutton"><i class="fas fa-user-edit"></i><span class="hidelabel">upload</span></button>
                     </div>
                 </div>
+                <div class="profilewrapper cards">
                 <div class="username profileindividualdiv">
                     <b>Name:</b>
                     <p></p>
@@ -79,6 +80,11 @@
                     <b>User Registered:</b>
                     <p></p>
                     
+                </div>
+                </div>
+                <div class="passwordchangemodal cards">
+                    <b>Change Password</b>
+                    <button type="button" class="button"><i class="fas fa-pencil-alt chgpass"></i></button>
                 </div>
                 <!-- <div class="loginchange">
                 <b class="loginpasswordchange">Change login Password ?</b>
@@ -109,10 +115,10 @@
     </main>
     <footer class="footerhome">
         <ul>
-            <li><a href="../pages/home.html">Home</a></li>
-            <li><a href="../pages/vaccine_register.html">Vaccination</a></li>
-            <li><a href="../pages/updates.html">Updates</a></li>
-            <li><a href="../pages/faq.html">FAQ</a></li>
+            <li title="Home"><a href="../pages/home.html">Home<i class="fas fa-home"></i></a></li>
+            <li><a href="../pages/map.html">Map<i class="fas fa-map-marker-alt"></i></a></li>
+            <li><a href="../pages/updates.html">Updates<i class="fas fa-info"></i></a></li>
+            <li><a href="../pages/faq.html">FAQ<i class="fas fa-question"></i></a></li>
         </ul>
     </footer>
 </body>

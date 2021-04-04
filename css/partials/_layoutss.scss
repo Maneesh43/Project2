@@ -16,11 +16,11 @@ body{
     overflow-x: hidden;
     // background-color:$color_background ;
     line-height: 1.2;
-    animation: sloppy 1s ease-in-out 1 ;
+    
 }
 @keyframes sloppy{
     0%{
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
     100%{
         transform: translateX(0);
@@ -40,6 +40,7 @@ main{
 footer{
     position: sticky;
     bottom: 0;
+    box-shadow: 0 -1px 4px 0px #ccc;
 }
 header{
     position: sticky;
@@ -124,7 +125,9 @@ header{
 
 /* Login.html layout */
 
-
+.loginformarea button{
+    margin-top: 2rem;
+}
 
 
 /*  */
@@ -134,6 +137,9 @@ header{
 
 
 /* Home page styling */
+.bodyhome{
+    animation: sloppy 1s ease-in-out 1;
+}
 .footerhome{
     display: block;
     width: 100%;
@@ -146,6 +152,17 @@ width: 100%;
 grid-template-columns: repeat(4,1fr);
 li{
     justify-self: center;
+    a{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        i{
+            order: -1;
+        }
+    }
+    i{
+        font-size: 2rem;
+    }
 }
 }
 .footerhome a{
@@ -370,6 +387,7 @@ main .wrapperhome{
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 10px;
+
     li{
         padding-bottom: .5rem;
         list-style-type:decimal;
@@ -407,4 +425,13 @@ input:checked + label span{
 
     background-color:$color_blue_2;
 }
+}
+
+
+
+.wrapperassessment{
+    .cdc-widget-color-white{
+        display: block !important;
+        text-align: center;
+    }
 }

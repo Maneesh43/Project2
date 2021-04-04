@@ -201,7 +201,13 @@ window.addEventListener('beforeinstallprompt', function (e) {
       
     })
 
-
+// Go back button
 document.querySelector(".backbutton i").addEventListener("click",()=>{
   window.history.back();
+})
+
+// Change Password of user
+
+document.querySelector(".chgpass").addEventListener("click",()=>{
+  
 })
