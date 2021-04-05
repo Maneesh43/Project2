@@ -1,5 +1,8 @@
 let sessionstoragem=window.sessionStorage;
 let userinfo;
+var a1=[];
+is_doc=false;
+var counter=0;
 if(sessionstoragem.getItem("loginuser")){
     let loginuser=sessionstoragem.getItem("loginuser")
     // console.log(JSON.parse(loginuser));
@@ -21,7 +24,12 @@ if(sessionstoragem.getItem("loginuser")){
         }
       });
 }
-
+if(sessionstoragem.getItem("is_doc")){
+    // alert("doc exists");
+    is_doc=true;
+}else{
+    // alert("doc doesn't exist");
+}
 // PWA
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -86,12 +94,24 @@ let map;
 let infoWindow;
 let request;
 let service;
+let lat=null;
+let long=null;
 let markers = [];
+let maploc=[];
 let list = document.getElementById('list');
 function initialize() {
-
+    getlocation();
     //initial view
-    let center = new google.maps.LatLng(49.2578263, -123.1939441);
+    function getlocation(){
+        if(sessionstoragem.getItem("latitude")){
+        lat=sessionstoragem.getItem("latitude");
+        long=sessionstoragem.getItem("longitude");
+        }else{
+            lat="not available";
+            console.log(lat);
+        }
+    }
+    let center = new google.maps.LatLng(lat,long);
     map = new google.maps.Map(document.getElementById('map'), {
         center: center,
         zoom: 13,
@@ -172,7 +192,20 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (let i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
-            list.innerHTML += `<li><span>${results[i].name}</span> <span><button type="button" class="button mapbutton">Book appointment</button></span></li>`;
+            console.log(results[i]);
+            var lat=results[i].geometry.location.lat();
+            var lng=results[i].geometry.location.lng();
+            maploc.push([lat,lng]);
+            list.innerHTML += `<li class="vaccinecenter"><span>${results[i].name}</span> <span><button type="button" class="button mapbutton">Book appointment</button></span><span class="center"></span><span></li>`;
+            // let mapaddress=document.getElementsByClassName("center");
+            // console.log(mapaddress)
+        //  let viewdetails=document.querySelectorAll(".bdetails");
+        //  for(i1=0;i1<viewdetails.length;i++){
+        //      console.log(maploc[i1]);
+        //  }
+               
+
+            
             document.querySelectorAll(".mapbutton").forEach(function(item){
                 item.addEventListener("click",(v)=>{
                     console.log(v);
@@ -202,6 +235,7 @@ function callback(results, status) {
                         .catch((error) => {
                             // The document probably doesn't exist.
                             console.error("Error updating document: ", error);
+
                             
                         });
     
@@ -215,6 +249,19 @@ function callback(results, status) {
                 })
             })
         }
+        // let l=document.querySelectorAll(".center");
+        // console.log(maploc)
+        // let mapaddress=[];
+        // for(i=0;i<l.length;i++){
+        //     let a =reverse_geocode(maploc[i][0],maploc[i][1]).then((value)=>{
+        //         // console.log(value);
+        //         mapaddress.push((value.results[0].formatted_address).toString());
+        //         // setdata(value.results[0].formatted_address);
+        //     });
+        //     // console.log(i);
+        //     console.log(mapaddress);
+      
+        // }
     }
 }
 

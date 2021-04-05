@@ -35,12 +35,14 @@ document.querySelector('#log-in').addEventListener('click', loginuser);
 function loginuser() {
   let a = document.querySelector('#email-input').value;
   let a1 = document.querySelector('#password-input').value;
+  window.sessionStorage.clear();
 
   console.log(a);
   if (is_email(a) && !(is_empty(a1))) {
     firebase.auth().signInWithEmailAndPassword(a, a1)
       .then((userCredential) => {
         // Signed in
+    
         var user = userCredential.user;
         console.log(user);
         window.location.href = 'home.html';

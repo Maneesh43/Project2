@@ -79,7 +79,8 @@ function setuserdata(datauser) {
     document.querySelector('.useremail p').textContent = userdata.email;
     document.querySelector('.userage p').textContent = userdata.age;
     document.querySelector('.userhasregisteredforvaccine p').textContent = "Yes";
-    document.querySelector('.userregistered p').textContent = userdata.created.toDate().toDateString();
+    console.log(userdata);
+    document.querySelector('.userregistered p').textContent =getItem("time_created");
 
   }
 }

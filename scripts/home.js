@@ -1,17 +1,19 @@
 
 
 let sessstorage=window.sessionStorage;
-let userrname=document.querySelector('.card2 p');
-
+let userrname=document.querySelector('.username');
+let vaccinecenter=document.querySelector('.vaccinecenter');
+let vaccinedate=document.querySelector('.vaccinedate');
+let userdata=null;
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     // alert("success");
     // console.log(user.email);
+    useremail=user.email;
     document.querySelector(".loader").classList.toggle("hide");
     document.querySelector(".wrapperhome").classList.toggle("hide");
-    useremail=user.email;
     // console.log(user);
     loadinfo(user);
     is_doc_available(useremail);
@@ -28,13 +30,25 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
   
 })
 function loadinfo(user){
-if((sessstorage.getItem("is_doc_data"))){
-  let userdata=JSON.parse(sessstorage.getItem("is_doc_data"));
-  userrname.textContent=userdata.name;
+ if((sessstorage.getItem("is_doc_data"))){
+  let a=sessionstorages.getItem("time_created");
+  var date =new Date(a);    
+  var newDate = new Date(date.getFullYear(),date.getMonth(),date.getDate()+28);
+  console.log(newDate);
+  userdata=JSON.parse(sessstorage.getItem("is_doc_data"));
+  // userrname.textContent=user.name;
+  console.log(userdata);
+  userrname.innerHTML=`${userdata.name}`;
+  vaccinecenter.innerHTML=`<b>Vaccine Center</b>: ${userdata.vaccinecenter}`;
+  console.log("here");
+  vaccinedate.innerHTML=`<b>Vaccination date</b>: ${newDate.toDateString()}`;
+  console.log(userdata);
 
 }else{
   // console.log(getUsernameFromEmail(authuser));
+  console.log(user);
   userrname.textContent=getUsernameFromEmail(user.email);
+
 
 }
 }
@@ -92,5 +106,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
       } 
       deferredPrompt = null; 
     }); } 
+
+
 
     

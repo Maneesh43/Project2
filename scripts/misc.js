@@ -1,6 +1,6 @@
 sessionstorages=window.sessionStorage;
 // Toaster 
-
+is_doc_updated();
 function toaster(errormsg,bgcolor,fgcolor){
     var x = document.getElementById("snackbar");
   
@@ -78,6 +78,7 @@ firebase.auth().signOut().then(() => {
   // alert("sign out");
   var deletingAll = browser.history.deleteAll()
   console.log(browser.history());
+  window.sessionStorage.clear();
 }).catch((error) => {
   // An error happened.
   // alert("sign-out failed");
@@ -182,5 +183,8 @@ async function geocode(location) {
       return response;
     }
 
-// PWA Banner
+    function is_doc_updated(){
 
+    }
+
+// PWA Banner

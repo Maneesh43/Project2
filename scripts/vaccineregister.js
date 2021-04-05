@@ -112,9 +112,12 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
         function geolocate() {
             let a = geocode((ss6.value.toString())).then((value) => {
                 latitude = value.lat;
+                sessstorage.setItem("latitude",latitude);
                 console.log(latitude);
                 longitude = value.lng;
                 console.log(value);
+                sessstorage.setItem("longitude",longitude);
+                // locations(latitude,longitude);
                 var locationupdate = db.collection("userdata").doc(useremail);
 
                 // Set the "capital" field of the city 'DC'
@@ -124,6 +127,9 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
                 })
                     .then(() => {
                         console.log("Document successfully updated!");
+                        sessstorage.setItem("latitude",latitude);
+                        sessstorage.setItem("longitude",longitude);
+                        // locations(latitude,longitude);
                     })
                     .catch((error) => {
                         // The document probably doesn't exist.
@@ -170,6 +176,8 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     }
     if (is_doc) {
         confirmreg = window.confirm("Proceeding will rewrite your registration data");
+    }else{
+        confirmreg=true;
     }
     if (is_doc == false) {
         confirmreg = true;
@@ -212,6 +220,7 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
                 console.log("Document successfully written!");
                 //  alert("success")
                 toaster("Registered successfully", "lightgreen");
+                is_doc_available();
                 setTimeout(() => {
                     // window.location.assign("/pages/home.html");
                 }, 800)
