@@ -159,10 +159,8 @@ li{
         align-items: center;
         i{
             order: -1;
+            font-size: 1.3rem;
         }
-    }
-    i{
-        font-size: 2rem;
     }
 }
 }
@@ -234,30 +232,39 @@ main .wrapperhome{
             }
         }
     }
-    .radiobuttons{
-        display: grid;
-        grid-template-columns:1fr;
-        gap: 1rem;
-        margin-bottom: 1rem;
-        width: calc(80% + 1rem);
+    // .radiobuttons{
+    //     display: grid;
+    //     grid-template-columns:1fr;
+    //     gap: 1rem;
+    //     margin-bottom: 1rem;
+    //     width: calc(80% + 1rem);
       
-        .diseaseprev{
-          justify-self: center;
-          display: flex;
-          flex-flow: column nowrap;
-          align-items: center;
-        }
-        .diseaseselect{
-           justify-self: center;
-           display: flex;
-           flex-flow: column nowrap;
-           align-items: center;
-        }
-        .diseaseprev,.diseaseselect{
-            align-items: center;
+    //     .diseaseprev{
+    //       justify-self: center;
+    //       display: flex;
+    //       flex-flow: column nowrap;
+    //       align-items: center;
+    //     }
+    //     .diseaseselect{
+    //        justify-self: center;
+    //        display: flex;
+    //        flex-flow: column nowrap;
+    //        align-items: center;
+    //     }
+    //     .diseaseprev,.diseaseselect{
+    //         align-items: center;
 
-        }
+    //     }
     
+    // }
+
+    .radiobuttons{
+        width: calc(80% + 1rem);
+        .radiogroup{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
     .locationdiv{
         display: flex;
@@ -275,11 +282,13 @@ main .wrapperhome{
         button{
             width: 10%;
             background-color: transparent;
+            display: grid;
             i{
                 display: block;
                 text-align: center;
                 font-size: 1.5rem;
                 width: 10%;
+                justify-self: flex-end;
             }
             i:hover{
                 color: $color_blue_1;
@@ -382,38 +391,68 @@ main .wrapperhome{
 
 
 
-/*  Self assesment   */
-.assessment{
-    width: 80%;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
+// /*  Self assesment   */
+// .assessment{
+//     width: 80%;
+//     margin-bottom: 1rem;
+//     padding: 1rem;
+//     border-radius: 10px;
 
-    li{
-        padding-bottom: .5rem;
-        list-style-type:decimal;
-        padding-left: 5px;
-    }
-    button{
-        display: block;
-        margin: 0 auto;
-        margin-bottom: .5rem;
-        margin-top: 0.5rem;
-        padding: .5rem;
-    }
-}
-.checkboxes{
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
+//     li{
+//         padding-bottom: .5rem;
+//         list-style-type:decimal;
+//         padding-left: 5px;
+//     }
+//     button{
+//         display: block;
+//         margin: 0 auto;
+//         margin-bottom: .5rem;
+//         margin-top: 0.5rem;
+//         padding: .5rem;
+//     }
+// }
+// .checkboxes{
+//     display: flex;
+//     justify-content: center;
+//     gap: .5rem;
    
-    label{
-        // display: block;
-    }
-    .radiogroup{
-        display: flex;
-        align-items: center;
-    }
+//     label{
+//         // display: block;
+//     }
+//     .radiogroup{
+//         display: flex;
+//         align-items: center;
+//     }
+// label span{
+//     display: inline-block;
+//     height: 10px;
+//     width: 10px;
+//     border: 2px solid $color_black;
+//     border-radius: 50%;
+//     margin-left: 10px;
+// }
+// input:checked + label span{
+
+//     background-color:$color_blue_2;
+// }
+// }
+
+
+
+
+
+
+// .wrapperassessment{
+//     .cdc-widget-color-white{
+//         display: block !important;
+//         text-align: center;
+//     }
+// }
+
+
+
+
+
 label span{
     display: inline-block;
     height: 10px;
@@ -425,14 +464,5 @@ label span{
 input:checked + label span{
 
     background-color:$color_blue_2;
-}
-}
 
-
-
-.wrapperassessment{
-    .cdc-widget-color-white{
-        display: block !important;
-        text-align: center;
-    }
 }

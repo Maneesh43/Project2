@@ -66,19 +66,41 @@
             </div>
 
         <div class="radiobuttons">
-            <div class="diseaseselect">
-                <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label>
-                <select name="selectdisease" id="diseaseinfo" class="select">
+            <div class="diseaseselect radiogroup">
+                <p>Did you have any chronic diseases</p>
+                <!-- <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label> -->
+                <!-- <select name="selectdisease" id="diseaseinfo" class="select">
                     <option value="yes">Yes</option>
                     <option value="No" selected>No</option>
-                </select>
+                </select> -->
+                <div class="radiogroups">
+                <input type="radio" name="radioselect" value="yes" id="yesselect">
+                <label for="yesselect">Yes<span class="check"></span></label>
+                <input type="radio" name="radioselect" value="No" id="noselect">
+                <label for="noselect">No<span class="check"></span></label>
+                </div>
             </div>
-            <div class="diseaseprev">
-                <label for="diseaseinfoprevious" class="showlabel">Did you get a vaccine shot previously?</label>
-                <select name="selectdiseaseprevious" id="diseaseinfoprevious" class="select">
+            <div class="diseaseprev radiogroup">
+                <!-- <label for="diseaseinfoprevious" class="showlabel">Did you get a vaccine shot previously?</label> -->
+                <!-- <select name="selectdiseaseprevious" id="diseaseinfoprevious" class="select">
                     <option value="yes">Yes</option>
                     <option value="No" selected>No</option>
-                </select>
+                </select> -->
+
+                <p>Is this your first vaccine</p>
+                <!-- <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label> -->
+                <!-- <select name="selectdisease" id="diseaseinfo" class="select">
+                    <option value="yes">Yes</option>
+                    <option value="No" selected>No</option>
+                </select> -->
+                <div class="radiogroups">
+                <input type="radio" name="radioselect" value="yes" id="yesselectprev">
+                <label for="yesselectprev">Yes<span class="check"></span></label>
+                <input type="radio" name="radioselect" value="No" id="noselectprev">
+                <label for="noselectprev">No<span class="check"></span></label>
+                </div>
+
+
             </div>
         </div>
 
