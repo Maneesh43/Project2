@@ -656,7 +656,7 @@ header {
 .footerhome {
   display: block;
   width: 100%;
-  background-color: #4270B3;
+  background-color: #ffffff;
 }
 
 .footerhome ul {
@@ -691,10 +691,11 @@ header {
       -ms-flex-order: -1;
           order: -1;
   font-size: 1.3rem;
+  color: #504b4b;
 }
 
 .footerhome a {
-  color: white;
+  color: #504b4b;
 }
 
 .cards {
@@ -984,6 +985,15 @@ label span {
 
 input:checked + label span {
   background-color: #4695BD;
+}
+
+.footerhome .current {
+  color: #4270B3;
+}
+
+.footerhome .current i {
+  color: #4270B3;
+  font-weight: bolder;
 }
 
 /* 9.Links==================================================================== */
@@ -1499,6 +1509,7 @@ ul#list {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
   padding: 1rem;
   -webkit-box-shadow: 0px 1px 4px 0px #ccc;
   box-shadow: 0px 1px 8px 0px #ccc;

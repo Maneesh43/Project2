@@ -1,5 +1,7 @@
 let sessionstoragem=window.sessionStorage;
 let userinfo;
+var a1=[];
+var counter=0;
 if(sessionstoragem.getItem("loginuser")){
     let loginuser=sessionstoragem.getItem("loginuser")
     // console.log(JSON.parse(loginuser));
@@ -89,6 +91,7 @@ let service;
 let lat=null;
 let long=null;
 let markers = [];
+let maploc=[];
 let list = document.getElementById('list');
 function initialize() {
     getlocation();
@@ -178,7 +181,20 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (let i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
-            list.innerHTML += `<li><span>${results[i].name}</span> <span><button type="button" class="button mapbutton">Book appointment</button></span></li>`;
+            console.log(results[i]);
+            var lat=results[i].geometry.location.lat();
+            var lng=results[i].geometry.location.lng();
+            maploc.push([lat,lng]);
+            list.innerHTML += `<li class="vaccinecenter"><span>${results[i].name}</span> <span><button type="button" class="button mapbutton">Book appointment</button></span><span class="center"></span><span></li>`;
+            // let mapaddress=document.getElementsByClassName("center");
+            // console.log(mapaddress)
+        //  let viewdetails=document.querySelectorAll(".bdetails");
+        //  for(i1=0;i1<viewdetails.length;i++){
+        //      console.log(maploc[i1]);
+        //  }
+               
+
+            
             document.querySelectorAll(".mapbutton").forEach(function(item){
                 item.addEventListener("click",(v)=>{
                     console.log(v);
@@ -221,6 +237,19 @@ function callback(results, status) {
                 })
             })
         }
+        // let l=document.querySelectorAll(".center");
+        // console.log(maploc)
+        // let mapaddress=[];
+        // for(i=0;i<l.length;i++){
+        //     let a =reverse_geocode(maploc[i][0],maploc[i][1]).then((value)=>{
+        //         // console.log(value);
+        //         mapaddress.push((value.results[0].formatted_address).toString());
+        //         // setdata(value.results[0].formatted_address);
+        //     });
+        //     // console.log(i);
+        //     console.log(mapaddress);
+      
+        // }
     }
 }
 
