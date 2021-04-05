@@ -261,34 +261,43 @@ main .wrapperhome{
     .radiobuttons{
         width: calc(80% + 1rem);
         .radiogroup{
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-between;
             align-items: center;
-            justify-content: space-between;
+            .radiogroups{
+                justify-self: flex-end;
+            }
         }
     }
     .locationdiv{
         display: flex;
+        position: relative;
         gap: 1rem;
         width: calc(80% + 1rem);
         input{
             flex-grow: 1;
+            width: 100%;
         }
-        button:hover{
-            background-color: #fff;
-        }
+        // button:hover{
+        //     background-color: #fff;
+        // }
         button:hover  i{
             color: $color_blue_1;
         }
         button{
-            width: 10%;
             background-color: transparent;
-            display: grid;
+            position: absolute;
+            left: 88%;
+            z-index: 5;
             i{
                 display: block;
                 text-align: center;
                 font-size: 1.5rem;
                 width: 10%;
-                justify-self: flex-end;
+                justify-self: center;
             }
             i:hover{
                 color: $color_blue_1;
@@ -296,7 +305,9 @@ main .wrapperhome{
         }
     }
 }
-
+.rememberme{
+    width: calc(80% + 1rem);
+}
 .headerarea{
     display: flex;
     align-items: center;
