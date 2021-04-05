@@ -86,12 +86,18 @@ let map;
 let infoWindow;
 let request;
 let service;
+let lat=null;
+let long=null;
 let markers = [];
 let list = document.getElementById('list');
 function initialize() {
-
+    getlocation();
     //initial view
-    let center = new google.maps.LatLng(49.2578263, -123.1939441);
+    function getlocation(){
+        lat=sessionstoragem.getItem("latitude");
+        long=sessionstoragem.getItem("longitude");
+    }
+    let center = new google.maps.LatLng(lat,long);
     map = new google.maps.Map(document.getElementById('map'), {
         center: center,
         zoom: 13,

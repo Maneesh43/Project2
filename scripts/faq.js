@@ -54,29 +54,27 @@ document.addEventListener("DOMContentLoaded",()=>{
   // sidenav
   document.querySelector('.dropbtn').addEventListener("click",openNav);
   document.querySelector('.closebtn').addEventListener("click",closeNav); 
-  
-// //   Accordion
-// var acc = document.getElementsByClassName("accordion");
-// var i;
-// for (i = 0; i < acc.length; i++) {
-//   acc[i].addEventListener("click", function() {
-//     // console.log(this.childNodes);
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    // console.log(this.childNodes);
 
-//     this.classList.toggle("active");
-//     var panel = this.nextElementSibling;
-//     if (panel.style.maxHeight) {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
 
-//       panel.style.maxHeight = null;
-//       // console.log(this.childNodes);
-//       this.childNodes[1].style.transform="rotate(0deg)"
-//     } else {
-//       panel.style.maxHeight = panel.scrollHeight + "px";
-//       // console.log(this.childNodes[1]);
-//       this.childNodes[1].style.transform="rotate(90deg)"
-//       // this.childNodes[1].style.color="blue";
-//     }
-//   });
-// }
+      panel.style.maxHeight = null;
+      // console.log(this.childNodes);
+      this.childNodes[1].style.transform="rotate(0deg)"
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      // console.log(this.childNodes[1]);
+      this.childNodes[1].style.transform="rotate(90deg)"
+      // this.childNodes[1].style.color="blue";
+    }
+  });
+}
 
 
 

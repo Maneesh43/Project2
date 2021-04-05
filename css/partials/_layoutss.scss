@@ -232,6 +232,18 @@ main .wrapperhome{
             }
         }
     }
+
+
+.radiobuttons{
+    width: 80%;
+    .diseaseselect,.diseaseprev{
+     display: flex;
+     flex-flow: column nowrap;
+    }
+    .diseaseprev label{
+        margin-top: 1rem;
+    }
+}
     // .radiobuttons{
     //     display: grid;
     //     grid-template-columns:1fr;
@@ -239,62 +251,76 @@ main .wrapperhome{
     //     margin-bottom: 1rem;
     //     width: calc(80% + 1rem);
       
-    //     .diseaseprev{
-    //       justify-self: center;
-    //       display: flex;
-    //       flex-flow: column nowrap;
-    //       align-items: center;
-    //     }
-    //     .diseaseselect{
-    //        justify-self: center;
-    //        display: flex;
-    //        flex-flow: column nowrap;
-    //        align-items: center;
-    //     }
-    //     .diseaseprev,.diseaseselect{
-    //         align-items: center;
+        // .diseaseprev{
+        //   justify-self: center;
+        //   display: flex;
+        //   flex-flow: column nowrap;
+        //   align-items: center;
+        // }
+        // .diseaseselect{
+        //    justify-self: center;
+        //    display: flex;
+        //    flex-flow: column nowrap;
+        //    align-items: center;
+        // }
+        // .diseaseprev,.diseaseselect{
+        //     align-items: center;
 
-    //     }
+        // }
     
     // }
 
-    .radiobuttons{
-        width: calc(80% + 1rem);
-        .radiogroup{
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            // display: flex;
-            // align-items: center;
-            // justify-content: space-between;
-            align-items: center;
-            .radiogroups{
-                justify-self: flex-end;
-            }
-        }
+    // .radiobuttons{
+    //     width: calc(80% + 1rem);
+    //     .radiogroup{
+    //         display: grid;
+    //         grid-template-columns:1fr;
+    //         // display: flex;
+    //         // align-items: center;
+    //         // justify-content: space-between;
+    //         align-items: center;
+    //         // .radiogroups{
+    //         //     justify-self: flex-start;
+    //         //     label:nth-of-type(2){
+    //         //         margin-left: 2rem;
+            //     }
+        //     }
+        // }
     }
     .locationdiv{
+        margin-top: 1rem;
         display: flex;
         position: relative;
         gap: 1rem;
         width: calc(80% + 1rem);
         input{
             flex-grow: 1;
-            width: 100%;
+            width: 80%;
         }
         // button:hover{
         //     background-color: #fff;
         // }
-        button:hover  i{
-            color: $color_blue_1;
-        }
         button{
             background-color: transparent;
-            position: absolute;
-            left: 88%;
-            z-index: 5;
+            &:hover{
+                background-color: transparent;
+            }
             i{
-                display: block;
-                text-align: center;
+                transition:all .5s;
+            }
+        }
+        button:hover  i{
+            // color: $color_blue_1;
+            transform: scale(1.5);
+        }
+        button{
+            width:10%;
+            flex-grow: 1;
+            background-color: transparent;
+            display: grid;
+            i{
+                // display: block;
+                // text-align: center;
                 font-size: 1.5rem;
                 width: 10%;
                 justify-self: center;
@@ -304,7 +330,6 @@ main .wrapperhome{
             }
         }
     }
-}
 .rememberme{
     width: calc(80% + 1rem);
 }
@@ -323,7 +348,9 @@ main .wrapperhome{
         font-size: 2rem;
     }
 }
-
+.vaccine_register_button{
+    margin-top: 2rem;
+}
 
 /*  */
 
