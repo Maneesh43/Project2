@@ -30,6 +30,7 @@ input[type="file"]{
 }
 .profileformarea{
 display: grid;
+position: relative;
 grid-template-columns: repeat(2,1fr);
 @media screen and(min-width:500px){
     max-width: 500px;
@@ -49,6 +50,11 @@ img{
     max-width: 250px;
     height: 250px;
     @include imground;
+    border: 2px solid transparent;
+    &:hover{
+        filter: brightness(.88);
+        border-color: white;
+    }
 
 }
 
@@ -121,4 +127,36 @@ transform: scale(1.5);
             transform: scale(1.5);
         }
     }
+}
+
+.passwordchangepopup{
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
+z-index: 0;
+height: 50%;
+display: none;
+position: fixed;
+width: 80%;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+@supports(backdrop-filter:blur(10px)){
+    backdrop-filter: blur(20px);
+}
+margin-bottom: 1rem;
+@include borderr;
+padding: 2rem;
+button{
+    margin-bottom: 0;
+}
+.clsbuttons{
+    position: absolute;
+    left: 90%;
+    bottom: 88%;
+    font-weight: bolder;
+    font-size: 2rem;
+    cursor:pointer;
+}
 }

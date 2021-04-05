@@ -403,7 +403,7 @@ input[type="radio"], .hidelabel {
   /* 0 width - change this with JavaScript */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 5;
   /* Stay on top */
   top: 0;
   /* Stay at the top */
@@ -690,10 +690,7 @@ header {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
-}
-
-.footerhome ul li i {
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 .footerhome a {
@@ -797,47 +794,19 @@ main .wrapperhome .cards h3 {
 }
 
 .vaccine_register_wrapper .radiobuttons {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
   width: calc(80% + 1rem);
 }
 
-.vaccine_register_wrapper .radiobuttons .diseaseprev {
-  justify-self: center;
+.vaccine_register_wrapper .radiobuttons .radiogroup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.vaccine_register_wrapper .radiobuttons .diseaseselect {
-  justify-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.vaccine_register_wrapper .radiobuttons .diseaseprev, .vaccine_register_wrapper .radiobuttons .diseaseselect {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .vaccine_register_wrapper .locationdiv {
@@ -865,6 +834,8 @@ main .wrapperhome .cards h3 {
 .vaccine_register_wrapper .locationdiv button {
   width: 10%;
   background-color: transparent;
+  display: -ms-grid;
+  display: grid;
 }
 
 .vaccine_register_wrapper .locationdiv button i {
@@ -872,6 +843,7 @@ main .wrapperhome .cards h3 {
   text-align: center;
   font-size: 1.5rem;
   width: 10%;
+  justify-self: flex-end;
 }
 
 .vaccine_register_wrapper .locationdiv button i:hover {
@@ -976,48 +948,7 @@ main .hide {
   cursor: pointer;
 }
 
-/*  Self assesment   */
-.assessment {
-  width: 80%;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-.assessment li {
-  padding-bottom: .5rem;
-  list-style-type: decimal;
-  padding-left: 5px;
-}
-
-.assessment button {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: .5rem;
-  margin-top: 0.5rem;
-  padding: .5rem;
-}
-
-.checkboxes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: .5rem;
-}
-
-.checkboxes .radiogroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.checkboxes label span {
+label span {
   display: inline-block;
   height: 10px;
   width: 10px;
@@ -1026,13 +957,8 @@ main .hide {
   margin-left: 10px;
 }
 
-.checkboxes input:checked + label span {
+input:checked + label span {
   background-color: #4695BD;
-}
-
-.wrapperassessment .cdc-widget-color-white {
-  display: block !important;
-  text-align: center;
 }
 
 /* 9.Links==================================================================== */
@@ -1122,6 +1048,7 @@ input[type="file"] {
 .profileformarea {
   display: -ms-grid;
   display: grid;
+  position: relative;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
 }
@@ -1150,6 +1077,13 @@ input[type="file"] {
   height: 250px;
   border-radius: 50%;
   text-align: center;
+  border: 2px solid transparent;
+}
+
+.imageholder img:hover {
+  -webkit-filter: brightness(0.88);
+          filter: brightness(0.88);
+  border-color: white;
 }
 
 .imageholder button {
@@ -1242,6 +1176,54 @@ input[type="file"] {
   color: #4270B3;
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
+}
+
+.passwordchangepopup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 0;
+  height: 50%;
+  display: none;
+  position: fixed;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .passwordchangepopup {
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+  }
+}
+
+.passwordchangepopup button {
+  margin-bottom: 0;
+}
+
+.passwordchangepopup .clsbuttons {
+  position: absolute;
+  left: 90%;
+  bottom: 88%;
+  font-weight: bolder;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* 12.Typography==================================================================== */
@@ -1422,13 +1404,20 @@ h1, h2, h3, h4, h5, h6 {
   transition: max-height 0.2s ease-out;
 }
 
-.accordion:after {
-  content: '\02795';
-  /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
+.wrapperfaq {
+  max-width: 600px;
+  margin: 1rem auto;
+  line-height: 1.5;
+}
+
+.iconaccordion {
   float: right;
-  margin-left: 5px;
+}
+
+.iconaccordion i {
+  font-size: 1.5rem;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 /* 17.Maps==========================================================*/
@@ -1476,22 +1465,16 @@ ul#list {
 }
 
 #list li {
-  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
   -webkit-box-shadow: 0px 1px 4px 0px #ccc;
   box-shadow: 0px 1px 8px 0px #ccc;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin: 1rem 0;
 }
 
 .wrappermaps h3 {
