@@ -176,6 +176,8 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
     }
     if (is_doc) {
         confirmreg = window.confirm("Proceeding will rewrite your registration data");
+    }else{
+        confirmreg=true;
     }
     if (is_doc == false) {
         confirmreg = true;

@@ -1,7 +1,6 @@
 sessionstorages=window.sessionStorage;
 // Toaster 
-let latitude1=null;
-let longitude1=null;
+is_doc_updated();
 function toaster(errormsg,bgcolor,fgcolor){
     var x = document.getElementById("snackbar");
   
@@ -79,6 +78,7 @@ firebase.auth().signOut().then(() => {
   // alert("sign out");
   var deletingAll = browser.history.deleteAll()
   console.log(browser.history());
+  window.sessionStorage.clear();
 }).catch((error) => {
   // An error happened.
   // alert("sign-out failed");
@@ -119,17 +119,12 @@ function pwainit(a){
   function is_doc_available(a){
     var db=firebase.firestore();
     let docRef=db.collection("userdata").doc(a);
-    // console.log("hi");
+    console.log("hi");
     docRef.get().then((doc) => {
         if (doc.exists) {
             sessionstorages.setItem("is_doc",true);
             sessionstorages.setItem("is_doc_data",JSON.stringify(doc.data()));
-            console.log(doc.data().created.toDate().toLocaleDateString());
-            sessionstorages.setItem("time_created",doc.data().created.toDate().toLocaleDateString());
-            sessionstorages.setItem("latitude",doc.data().userlocationlatitude)
-            sessionstorages.setItem("longitude",doc.data().userlocationlongitude);
             console.log(doc);
-            return doc.data();
         }
         });
   }
@@ -188,6 +183,8 @@ async function geocode(location) {
       return response;
     }
 
+    function is_doc_updated(){
+
+    }
 
 // PWA Banner
-

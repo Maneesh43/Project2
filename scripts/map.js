@@ -1,6 +1,7 @@
 let sessionstoragem=window.sessionStorage;
 let userinfo;
 var a1=[];
+is_doc=false;
 var counter=0;
 if(sessionstoragem.getItem("loginuser")){
     let loginuser=sessionstoragem.getItem("loginuser")
@@ -23,7 +24,12 @@ if(sessionstoragem.getItem("loginuser")){
         }
       });
 }
-
+if(sessionstoragem.getItem("is_doc")){
+    // alert("doc exists");
+    is_doc=true;
+}else{
+    // alert("doc doesn't exist");
+}
 // PWA
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -97,8 +103,13 @@ function initialize() {
     getlocation();
     //initial view
     function getlocation(){
+        if(sessionstoragem.getItem("latitude")){
         lat=sessionstoragem.getItem("latitude");
         long=sessionstoragem.getItem("longitude");
+        }else{
+            lat="not available";
+            console.log(lat);
+        }
     }
     let center = new google.maps.LatLng(lat,long);
     map = new google.maps.Map(document.getElementById('map'), {
@@ -224,6 +235,7 @@ function callback(results, status) {
                         .catch((error) => {
                             // The document probably doesn't exist.
                             console.error("Error updating document: ", error);
+
                             
                         });
     
