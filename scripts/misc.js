@@ -1,6 +1,29 @@
+// init();
+// function init(){
+//   window.sessionStorage.clear();
+// }
+
 sessionstorages=window.sessionStorage;
-// Toaster 
-is_doc_updated();
+// Toaster
+
+firebase.firestore().enablePersistence()
+  .catch((err) => {
+      if (err.code == 'failed-precondition') {
+          // Multiple tabs open, persistence can only be enabled
+          // in one tab at a a time.
+          // ...
+      } else if (err.code == 'unimplemented') {
+          // The current browser does not support all of the
+          // features required to enable persistence
+          // ...
+      }
+  });
+// Subsequent queries will use persistence, if it was enabled successfully
+
+
+
+
+
 function toaster(errormsg,bgcolor,fgcolor){
     var x = document.getElementById("snackbar");
   
@@ -70,6 +93,7 @@ function validateAndUpload(input){
 
 // Signout
 function signout(){
+  window.sessionStorage.clear();
 firebase.auth().signOut().then(() => {
   // alert("signed out");
   toaster("Signed Out!","lightgreen");
@@ -118,14 +142,21 @@ function pwainit(a){
 // DOC exists in table.
   function is_doc_available(a){
     var db=firebase.firestore();
+ 
     let docRef=db.collection("userdata").doc(a);
-    console.log("hi");
+    // console.log("hi");
     docRef.get().then((doc) => {
         if (doc.exists) {
+          is_doc_updated(a);
             sessionstorages.setItem("is_doc",true);
             sessionstorages.setItem("is_doc_data",JSON.stringify(doc.data()));
+            sessionstorages.setItem("latitude",doc.data().userlocationlatitude);
+        sessionstorages.setItem("longitude",doc.data().userlocationlongitude);
             console.log(doc);
         }
+        },(error)=>{
+          console.log(error);
+          console.log("doc not available");
         });
   }
 
@@ -183,8 +214,19 @@ async function geocode(location) {
       return response;
     }
 
-    function is_doc_updated(){
-
+    function is_doc_updated(a){
+      // console.log(a);
+      var db=firebase.firestore();
+      db.collection("userdata").doc(a)
+    .onSnapshot((doc) => {
+      
+        console.log("Current data: ", doc.data());
+        sessionstorages.setItem("is_doc_data",JSON.stringify(doc.data()));
+        sessionstorages.setItem("time_created",doc.data().created.toDate().toLocaleDateString())
+        sessionstorages.setItem("latitude",doc.data().userlocationlatitude);
+        sessionstorages.setItem("longitude",doc.data().userlocationlongitude);
+        loadinfo();
+    });
     }
 
 // PWA Banner

@@ -13,7 +13,7 @@ if(sessionstoragem.getItem("loginuser")){
         if (user) {
           // User is signed in.
           console.log("user signed in");
-          if(!loginuser){
+          if(user){
               sessionstoragem.setItem("loginuser",JSON.stringify(user));
               userinfo=user;
           }
@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       // Signout
       document.querySelector('#signouthere').addEventListener('click',()=>{
         signout();
+        window.sessionStorage.clear();
         
       })
   
@@ -109,6 +110,9 @@ function initialize() {
         }else{
             lat="not available";
             console.log(lat);
+            lat="49.059676";
+            long="-123.090657"
+            document.querySelector("#list").innerHTML=`<li><p>Not Registered for vaccine,<a>Register here</a>`
         }
     }
     let center = new google.maps.LatLng(lat,long);

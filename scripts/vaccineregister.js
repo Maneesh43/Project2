@@ -106,7 +106,7 @@ class Userobjectdata {
 
 document.querySelector('.vaccine_register_button').addEventListener('click', () => {
 
-
+sessstorage.setItem("vaccinecenter","Not booked");
 
     if (ss6.value != null) {
         function geolocate() {
@@ -214,7 +214,8 @@ document.querySelector('.vaccine_register_button').addEventListener('click', () 
             userhasprevious: userhasprevious,
             priority: priorityvalue,
             isadmin: "false",
-            created: firebase.firestore.FieldValue.serverTimestamp()
+            created: firebase.firestore.FieldValue.serverTimestamp(),
+            vaccinecenter:"Not Selected",
         }, { merge: true })
             .then(() => {
                 console.log("Document successfully written!");

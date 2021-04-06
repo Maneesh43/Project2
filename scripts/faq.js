@@ -41,6 +41,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
     // Signout
     document.querySelector('#signouthere').addEventListener('click',()=>{
       signout();
+      window.sessionStorage.clear();
       
     })
 

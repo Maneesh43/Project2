@@ -795,7 +795,7 @@ main .wrapperhome .cards h3 {
 }
 
 .vaccine_register_wrapper .radiobuttons {
-  width: 80%;
+  width: calc(80% + 1rem);
 }
 
 .vaccine_register_wrapper .radiobuttons .diseaseselect, .vaccine_register_wrapper .radiobuttons .diseaseprev {
@@ -806,6 +806,10 @@ main .wrapperhome .cards h3 {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+}
+
+.vaccine_register_wrapper .radiobuttons .diseaseselect select {
+  text-align: center;
 }
 
 .vaccine_register_wrapper .radiobuttons .diseaseprev label {
@@ -860,8 +864,8 @@ main .wrapperhome .cards h3 {
 .locationdiv button i {
   font-size: 1.5rem;
   width: 10%;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  -ms-grid-column-align: left;
+      justify-self: left;
 }
 
 .locationdiv button i:hover {
@@ -972,6 +976,23 @@ main .hide {
   font-size: 1rem;
   color: white;
   cursor: pointer;
+}
+
+.wrapperassessment .cdc-widget-color-white {
+  display: block !important;
+  text-align: center;
+}
+
+.wrapperassessment .button {
+  text-align: center;
+}
+
+.wrapperassessment .button i {
+  margin-left: 5px;
+}
+
+.wrapperassessment .button i:hover {
+  color: white;
 }
 
 label span {

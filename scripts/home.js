@@ -27,13 +27,15 @@ firebase.auth().onAuthStateChanged(function(user) {
 // Signout
 document.querySelector('#signouthere').addEventListener('click',()=>{
   signout();
+  window.sessionStorage.clear();
   
 })
 function loadinfo(user){
- if((sessstorage.getItem("is_doc_data"))){
+  console.log(user);
+ if(sessstorage.getItem("is_doc") && (sessstorage.getItem("is_doc_data"))){
   let a=sessionstorages.getItem("time_created");
   var date =new Date(a);    
-  var newDate = new Date(date.getFullYear(),date.getMonth(),date.getDate()+28);
+  var newDate = new Date(date.getFullYear(),date.getMonth(),date.getDate()+7);
   console.log(newDate);
   userdata=JSON.parse(sessstorage.getItem("is_doc_data"));
   // userrname.textContent=user.name;
