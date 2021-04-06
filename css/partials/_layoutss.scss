@@ -237,10 +237,13 @@ main .wrapperhome{
 
 
 .radiobuttons{
-    width: 80%;
+    width: calc(80% + 1rem );
     .diseaseselect,.diseaseprev{
      display: flex;
      flex-flow: column nowrap;
+    }
+    .diseaseselect select{
+        text-align: center;
     }
     .diseaseprev label{
         margin-top: 1rem;
@@ -325,7 +328,7 @@ main .wrapperhome{
                 // text-align: center;
                 font-size: 1.5rem;
                 width: 10%;
-                justify-self: center;
+                justify-self: left;
             }
             i:hover{
                 color: $color_blue_1;
@@ -482,12 +485,22 @@ main .wrapperhome{
 
 
 
-// .wrapperassessment{
-//     .cdc-widget-color-white{
-//         display: block !important;
-//         text-align: center;
-//     }
-// }
+.wrapperassessment{
+    .cdc-widget-color-white{
+        display: block !important;
+        text-align: center;
+    }
+    .button{
+        text-align: center;
+        i{
+            margin-left: 5px;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+   
+}
 
 
 

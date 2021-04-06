@@ -80,7 +80,7 @@ function setuserdata(datauser) {
     document.querySelector('.userage p').textContent = userdata.age;
     document.querySelector('.userhasregisteredforvaccine p').textContent = "Yes";
     console.log(userdata);
-    document.querySelector('.userregistered p').textContent =getItem("time_created");
+    document.querySelector('.userregistered p').textContent =userdata.created.toDate().toDateString();
 
   }
 }
