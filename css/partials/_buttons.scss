@@ -6,11 +6,27 @@
     background-color: rgba(0,0,0,.1);
     border: 2px solid transparent;
     margin-bottom: 1rem;
+    background-color: $color_blue_1;
+    color: $color_white;
 
 }
 .button:hover{
 // border-color: $color-hover-border ;    
-background-color: $color-active;
-color: white;
+// background-color: $color-active;
+// color: white;
 }
+
+
+// .ripple {
+//     background-position: center;
+//     transition: background 0.8s;
+//   }
+//   .ripple:hover {
+//     background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+//   }
+//   .ripple:active {
+//     background-color: #6eb9f7;
+//     background-size: 100%;
+//     transition: background 0s;
+//   }
 

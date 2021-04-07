@@ -1,6 +1,14 @@
+const cacheName = 'lifeline-cache';
+const appShellFiles = [
 
+'/pages/faq.html',
+'/style.css',
+'scripts/faq.js',
+'scripts/misc.js',
+'/assets/logo/logo.png',
+'/pages/home.html',
 
-
+]
 self.addEventListener('install', event => {
     // fires when the browser installs the app
     // here we're just logging the event and the contents
@@ -10,6 +18,13 @@ self.addEventListener('install', event => {
     console.log(`Event fired: ${event.type}`);
     console.dir(event);
     // document.querySelector('.pwabanner').getElementsByClassName.display="none";
+
+
+    event.waitUntil((async () => {
+        const cache = await caches.open(cacheName);
+        console.log('[Service Worker] Caching all: app shell and content');
+        await cache.addAll(appShellFiles);
+      })());
 });
 
 self.addEventListener('activate', event => {
@@ -28,8 +43,6 @@ self.addEventListener('fetch', event => {
     // covering different cache strategies, so I'm not going to say 
     // any more about this here
     console.log(`Fetching ${event.request.url}`);
-    // console.dir(event.request);
-    // Next, go get the requested resource from the network, 
-    // nothing fancy going on here.
-    event.respondWith(fetch(event.request));
+   
+
 });

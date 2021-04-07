@@ -174,7 +174,7 @@ function initialize() {
 
 
     //code to get the list below map
-    google.maps.event.addListener(map, 'rightclick', function (event) {
+    google.maps.event.addListener(map, 'click', function (event) {
         map.setCenter(event.latLng)
         clearResults(markers)
 

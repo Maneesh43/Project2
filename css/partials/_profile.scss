@@ -47,7 +47,7 @@ grid-template-columns: repeat(2,1fr);
         border: none;
     }
 img{
-    max-width: 250px;
+    width: 250px;
     height: 250px;
     @include imground;
     border: 2px solid transparent;
@@ -97,6 +97,9 @@ transform: scale(1.5);
     width: 90%;
     .profileindividualdiv{
         border-bottom: .2px solid rgb(231, 229, 229);
+        p{
+            text-align: right;
+        }
     }
 }
 main{
@@ -122,10 +125,13 @@ main{
         margin: 1rem;
         background-color: transparent;
         text-align: right;
+        i{
+            color: black;
+        }
         &:hover{
             background-color: transparent;
             i{
-                color: initial;
+                color: black;
             }
         }
         i:hover{
