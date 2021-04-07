@@ -16,6 +16,8 @@ body{
     overflow-x: hidden;
     // background-color:$color_background ;
     line-height: 1.2;
+    max-width: 500px;
+    margin: 0 auto;
     
 }
 @keyframes sloppy{
@@ -61,6 +63,9 @@ header{
     gap: .5rem;
     padding-bottom: 1rem;
 }
+.remember1{
+    width: 100% !important;
+}
 #chckbox{
     width: auto;
     margin-bottom: 0;
@@ -69,7 +74,7 @@ header{
     background: url("../../assets/logo/logo.png");
     background-repeat: no-repeat;
     width: 180px;
-    height: 94px;
+   height: 94px;
     margin: 8px 0 0 0;
 }
 
@@ -345,6 +350,7 @@ main .wrapperhome{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 94px;
     .logoarea{
         margin: initial;
         order: 1;
@@ -358,6 +364,9 @@ main .wrapperhome{
 }
 .vaccine_register_button{
     margin-top: 2rem;
+}
+.fa-search-location{
+    color: black;
 }
 
 /*  */
@@ -530,5 +539,22 @@ input:checked + label span{
     i{
         // color: $color_blue_1;
         font-weight: bolder;
+    }
+}
+
+
+.nologoheader{
+    background-color: #4270B3 !important;
+    i{
+        color: white !important;
+        &:hover{
+            color: white !important;
+        }
+    }
+}
+
+.backbutton{
+    i{
+        color: white;
     }
 }

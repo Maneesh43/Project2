@@ -85,9 +85,9 @@ let p1=document.querySelector(".precautions");
 let m1=document.querySelector(".myths");
 
 p.addEventListener("click",()=>{
-f1.style.display="none"
-m1.style.display="none"
-p1.style.display="block"
+f1.style.display="none";
+m1.style.display="none";
+p1.style.display="block";
 })
 
 f.addEventListener("click",()=>{

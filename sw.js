@@ -36,12 +36,6 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    // Fires whenever the app requests a resource (file or data)
-    // normally this is where the service worker would check to see
-    // if the requested resource is in the local cache before going
-    // to the server to get it. There's a whole chapter in the book
-    // covering different cache strategies, so I'm not going to say 
-    // any more about this here
     console.log(`Fetching ${event.request.url}`);
    
 
