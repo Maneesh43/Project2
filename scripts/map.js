@@ -112,7 +112,7 @@ function initialize() {
             console.log(lat);
             lat="49.059676";
             long="-123.090657"
-            document.querySelector("#list").innerHTML=`<li><p>Not Registered for vaccine,<a>Register here</a>`
+            document.querySelector("#list").innerHTML=`<li><p style="grid-column:1/-1;justify-self:center">Not Registered for vaccine,<a>Register here</a>`
         }
     }
     let center = new google.maps.LatLng(lat,long);
@@ -174,7 +174,7 @@ function initialize() {
 
 
     //code to get the list below map
-    google.maps.event.addListener(map, 'rightclick', function (event) {
+    google.maps.event.addListener(map, 'click', function (event) {
         map.setCenter(event.latLng)
         clearResults(markers)
 

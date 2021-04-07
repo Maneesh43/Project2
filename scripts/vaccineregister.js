@@ -222,9 +222,10 @@ sessstorage.setItem("vaccinecenter","Not booked");
                 //  alert("success")
                 toaster("Registered successfully", "lightgreen");
                 is_doc_available();
-                setTimeout(() => {
-                    // window.location.assign("/pages/home.html");
-                }, 800)
+                window.location.href="map.html";
+                // setTimeout(() => {
+                //     // window.location.assign("/pages/home.html");
+                // }, 800)
 
             })
             .catch((error) => {

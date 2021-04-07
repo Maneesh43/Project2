@@ -14,6 +14,7 @@
 /* 14.Toast   */
 /* 15.Updates Page */
 /* 16.FAQ      */
+/* 17.Admin   */
 /* 1.Variables==================================================================== */
 /* 1.colors */
 /* 2.fonts */
@@ -387,9 +388,6 @@ input[type="radio"], .hidelabel {
   background-color: rgba(0, 0, 0, 0.1);
   border: 2px solid transparent;
   margin-bottom: 1rem;
-}
-
-.button:hover {
   background-color: #4270B3;
   color: white;
 }
@@ -408,8 +406,9 @@ input[type="radio"], .hidelabel {
   top: 0;
   /* Stay at the top */
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
   /* Black*/
+  background-color: white;
+  opacity: 1;
   overflow-x: hidden;
   /* Disable horizontal scroll */
   -webkit-transition: all 0.5s;
@@ -428,7 +427,7 @@ input[type="radio"], .hidelabel {
 }
 
 .sidenav a {
-  color: white;
+  color: black;
   border: 4px dotted transparent;
   padding: 0.5rem;
   font-size: 1.5rem;
@@ -438,7 +437,7 @@ input[type="radio"], .hidelabel {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-right: 2rem;
-  color: white;
+  color: black;
 }
 
 .sidenav a:not(a:nth-of-type(1)) {
@@ -468,7 +467,7 @@ input[type="radio"], .hidelabel {
   border: 2px solid transparent;
   -webkit-transition: all .5s;
   transition: all .5s;
-  height: 25px;
+  height: 30px;
 }
 
 .input:hover, .select:hover {
@@ -504,6 +503,8 @@ body {
           justify-content: space-between;
   overflow-x: hidden;
   line-height: 1.2;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 @-webkit-keyframes sloppy {
@@ -574,6 +575,10 @@ header {
           justify-content: center;
   gap: .5rem;
   padding-bottom: 1rem;
+}
+
+.remember1 {
+  width: 100% !important;
 }
 
 #chckbox {
@@ -656,7 +661,7 @@ header {
 .footerhome {
   display: block;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #4270B3;
 }
 
 .footerhome ul {
@@ -690,12 +695,13 @@ header {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
+  margin-bottom: 8px;
   font-size: 1.3rem;
-  color: #504b4b;
+  color: white;
 }
 
 .footerhome a {
-  color: #504b4b;
+  color: white;
 }
 
 .cards {
@@ -886,6 +892,7 @@ main .wrapperhome .cards h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 94px;
 }
 
 .headerarea .logoarea {
@@ -906,6 +913,10 @@ main .wrapperhome .cards h3 {
 
 .vaccine_register_button {
   margin-top: 2rem;
+}
+
+.fa-search-location {
+  color: black;
 }
 
 /*  */
@@ -1008,13 +1019,24 @@ input:checked + label span {
   background-color: #4695BD;
 }
 
-.footerhome .current {
-  color: #4270B3;
+.footerhome .current i {
+  font-weight: bolder;
 }
 
-.footerhome .current i {
-  color: #4270B3;
-  font-weight: bolder;
+.nologoheader {
+  background-color: #4270B3 !important;
+}
+
+.nologoheader i {
+  color: white !important;
+}
+
+.nologoheader i:hover {
+  color: white !important;
+}
+
+.backbutton i {
+  color: white;
 }
 
 /* 9.Links==================================================================== */
@@ -1129,7 +1151,7 @@ input[type="file"] {
 }
 
 .imageholder img {
-  max-width: 250px;
+  width: 250px;
   height: 250px;
   border-radius: 50%;
   text-align: center;
@@ -1189,6 +1211,10 @@ input[type="file"] {
   border-bottom: 0.2px solid #e7e5e5;
 }
 
+.profilewrapper .profileindividualdiv p {
+  text-align: right;
+}
+
 main i {
   -webkit-transition: all .5s;
   transition: all .5s;
@@ -1225,12 +1251,16 @@ main i {
   text-align: right;
 }
 
+.passwordchangemodal button i {
+  color: black;
+}
+
 .passwordchangemodal button:hover {
   background-color: transparent;
 }
 
 .passwordchangemodal button:hover i {
-  color: initial;
+  color: black;
 }
 
 .passwordchangemodal button i:hover {
@@ -1413,7 +1443,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .wrapperupdates .vaccinecand h3 {
   color: #4695BD;
-  font-size: 1.17rem;
+  font-size: 1.4rem;
 }
 
 .wrapperupdates .cardsvaccine {
@@ -1423,6 +1453,7 @@ h1, h2, h3, h4, h5, h6 {
 .wrapperupdates .cardsvaccine h3 {
   color: #4695BD;
   font-family: "Noto Sans JP",sans-serif;
+  font-size: 1.4rem;
 }
 
 .wrapperupdates .cardstoday {
@@ -1431,7 +1462,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapperupdates .cardstoday caption {
-  font-size: 1.17rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #4695BD;
 }
@@ -1479,6 +1510,22 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+}
+
+.precautions, .myths {
+  display: none;
+}
+
+.inheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  gap: 5px;
+  margin: 0 10px;
 }
 
 /* 17.Maps==========================================================*/
@@ -1548,5 +1595,30 @@ ul#list {
   display: block;
   width: 100%;
   margin-bottom: 0;
+}
+
+/* 17.Admin================================================================*/
+.adminheader {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.admindata {
+  display: block;
+}
+
+.admindata table {
+  margin: 1rem auto;
+  width: 90%;
+}
+
+.admindata table, .admindata th, .admindata td {
+  border-collapse: collapse;
+  border: 1px solid gray;
+}
+
+.admindata th {
+  padding: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */

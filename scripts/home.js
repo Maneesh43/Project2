@@ -50,6 +50,7 @@ function loadinfo(user){
   // console.log(getUsernameFromEmail(authuser));
   console.log(user);
   userrname.textContent=getUsernameFromEmail(user.email);
+  vaccinedate.innerHTML=``;
 
 
 }

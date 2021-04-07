@@ -15,17 +15,17 @@
 </head>
 
 
-<body >
+<body class="admindata">
   
   
-    <header class="nologoheader">
+    <header>
 
         <div id="snackbar"></div>
 
-        <div class="headerarea">
-            <div class="backbutton"><i class="fas fa-chevron-left"></i></div>
-            <!-- <div class="logoarea"></div> -->
-            <nav><div class="navmenuwrapper">
+        <div class="headerarea adminheader">
+            <!-- <div class="backbutton"><i class="fas fa-chevron-left"></i></div> -->
+            <div class="logoarea"></div>
+            <!-- <nav><div class="navmenuwrapper">
                 <div class="dropbtn"><i class="fas fa-bars" aria-label="Menu" aria-hidden="true"></i></div>
                 <div id="mysidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn">&times;</a>
@@ -35,7 +35,7 @@
                   <a href="javascript:void(0);" class="pwabanner">Install PWA</a>
                 </div>
               </div>
-            </nav>
+            </nav> -->
 
         </div>
 
@@ -43,34 +43,29 @@
       
     </header>
   
-    <main>
-  <div class="wrapperupdates">
-      <div class="cards cardstoday">
-    
-          </div>
+    <main class="dataholder">
+        <table class="table1">
+            <thead>
+            <tr><th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Priority</th>
+            <th>Vaccine center</th>
+        </tr>
+    </thead>
+    <tbody class="userdata">
 
-          <div class="cards cardsvaccine">
-              <h3>Covid-19 vaccination info</h3>
-              <p>Select any country to view the statistics</p>
-              <select id="selectcountry" class="select"></select>
-              <p class="pdata"></p>
-          </div>
-          <div class="cards vaccinecand">
-              <h3>Vaccine Candidates</h3>
-              <p>Select a vaccine to view details</p>
-              <select id="vaccinecandidate" class="select"></select>
-              <div class="vaccinedata"></div>
-          </div>
-</div>
+    </tbody>
+        </table>
     </main>
-    <footer class="footerhome ">
+    <!-- <footer class="footerhome ">
         <ul>
             <li title="Home"><a href="../pages/home.html">Home<i class="fas fa-home"></i></a></li>
             <li><a href="../pages/map.html">Map<i class="fas fa-map-marker-alt"></i></a></li>
             <li><a href="../pages/updates.html" class="current">Updates<i class="fas fa-info"></i></a></li>
             <li><a href="../pages/faq.html">FAQ<i class="fas fa-question"></i></a></li>
         </ul>
-    </footer>
+    </footer> -->
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         
@@ -80,8 +75,6 @@
          <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
          <script src="../scripts/projectscript.js"></script>
          <script src="../scripts/misc.js"></script>
-         <script src="../scripts/updates.js"></script>
- 
-
+         <script src="../scripts/admin.js"></script>
 </body>
 </html>

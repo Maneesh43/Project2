@@ -1,0 +1,18 @@
+.adminheader{
+    justify-content: center;
+}
+.admindata{
+    display: block;
+    table{
+
+        margin: 1rem auto;
+        width: 90%;
+    }
+    table,th,td{
+        border-collapse: collapse;
+        border: 1px solid gray;
+    }
+    th{
+        padding: 0.5rem;
+    }
+}
