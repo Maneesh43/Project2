@@ -506,9 +506,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow-x: hidden;
-  line-height: 1.2;
-  max-width: 500px;
-  margin: 0 auto;
+  line-height: 1.5;
 }
 
 @-webkit-keyframes sloppy {

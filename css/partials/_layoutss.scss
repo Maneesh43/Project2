@@ -18,9 +18,7 @@ body{
     justify-content: space-between;
     overflow-x: hidden;
     // background-color:$color_background ;
-    line-height: 1.2;
-    max-width: 500px;
-    margin: 0 auto;
+    line-height: 1.5;
     
 }
 @keyframes sloppy{
@@ -572,3 +570,5 @@ input:checked + label span{
         color: white;
     }
 }
+
+

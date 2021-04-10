@@ -41,8 +41,8 @@ function loadinfo(user){
   // userrname.textContent=user.name;
   console.log(userdata);
   userrname.innerHTML=`<p style="grid-column:1/-1;justify-self:center;margin-bottom:5px";>${userdata.name}</p>`;
-  vaccinecenter.innerHTML=`<b style="margin:5px 0 5px 0">Vaccine Center:</b> <p style="justify-self:flex-start;margin:5px 0 5px 0">${userdata.vaccinecenter}</p>`;
-  vaccinedate.innerHTML=`<b style="margin:5px 0 5px 0">Vaccination date:</b> <p style="justify-self:flex-start;margin:5px 0 5px 0">${newDate.toDateString()}</p>`;
+  vaccinecenter.innerHTML=`<b style="margin:5px 0 5px 0">Vaccine Center:</b> <p style="justify-self:center;margin:5px 0 5px 0">${userdata.vaccinecenter}</p>`;
+  vaccinedate.innerHTML=`<b style="margin:5px 0 5px 0">Vaccination date:</b> <p style="justify-self:center;margin:5px 0 5px 0">${newDate.toDateString()}</p>`;
   console.log(userdata);
 
 }else{
