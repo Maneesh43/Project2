@@ -55,7 +55,7 @@ function vaccine_coverage(){
                 if(this.value==element.country){
                     // console.log((element.timeline));
                     for (x in element.timeline){
-                        paradata.textContent=`Vaccines administered till today in ${element.country} are ${element.timeline[x].toLocaleString()}`
+                        paradata.innerHTML=`Vaccines administered till today in <b>${element.country}</b>  are <b>${element.timeline[x].toLocaleString()}</b>`
                     }
                    
                 }
@@ -87,9 +87,32 @@ function vaccinecandidates(){
             arrayvaccine.forEach(item=>{
                 console.log(item);
                if(this.value==item.candidate){
-                   container.innerHTML=`<table><tr><th>Candidate</th><th>Mechanism</th><th>Sponsors</th><th>Trial Phase</th></tr>
-                   <tr>       <td>${item.candidate}</td>  <td>${item.mechanism}</td>  <td>${item.sponsors}</td>  <td>${item.trialPhase}</td>  </tr>
-                   
+                   container.innerHTML=`<table>
+                   <tbody>
+                   <tr><td><b>Candidate</b>
+                   </td>
+                   <td>${item.candidate}</td>
+                   </tr>
+
+
+                   <tr><td><b>Mechanism</b>
+                   </td>
+                   <td>${item.mechanism}</td>
+                   </tr>
+
+
+                   <tr><td><b>Sponsors</b>
+                   </td>
+                   <td>${item.sponsors}</td>
+                   </tr>
+
+
+                   <tr><td><b>Trial phase</b>
+                   </td>
+                   <td>${item.trialPhase}</td>
+                   </tr>
+
+                   </tbody>
                    
                    </table>`
                }

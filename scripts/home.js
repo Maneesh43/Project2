@@ -40,16 +40,15 @@ function loadinfo(user){
   userdata=JSON.parse(sessstorage.getItem("is_doc_data"));
   // userrname.textContent=user.name;
   console.log(userdata);
-  userrname.innerHTML=`${userdata.name}`;
-  vaccinecenter.innerHTML=`<b>Vaccine Center</b>: ${userdata.vaccinecenter}`;
-  console.log("here");
-  vaccinedate.innerHTML=`<b>Vaccination date</b>: ${newDate.toDateString()}`;
+  userrname.innerHTML=`<p style="grid-column:1/-1;justify-self:center;margin-bottom:5px";>${userdata.name}</p>`;
+  vaccinecenter.innerHTML=`<b style="margin:5px 0 5px 0">Vaccine Center:</b> <p style="justify-self:flex-start;margin:5px 0 5px 0">${userdata.vaccinecenter}</p>`;
+  vaccinedate.innerHTML=`<b style="margin:5px 0 5px 0">Vaccination date:</b> <p style="justify-self:flex-start;margin:5px 0 5px 0">${newDate.toDateString()}</p>`;
   console.log(userdata);
 
 }else{
   // console.log(getUsernameFromEmail(authuser));
   console.log(user);
-  userrname.textContent=getUsernameFromEmail(user.email);
+  userrname.innerHTML=`<p style="grid-column:1/-1;justify-self:center";>${getUsernameFromEmail(user.email)}</p>`;
   vaccinedate.innerHTML=``;
 
 

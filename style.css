@@ -488,6 +488,10 @@ input[type="radio"], .hidelabel {
 }
 
 /* 8.Layouts==================================================================== */
+p, b {
+  line-height: 1.5;
+}
+
 /* Global layout */
 body {
   height: 100vh;
@@ -737,6 +741,10 @@ main .wrapperhome .card2 {
   margin-top: 1rem;
 }
 
+main .wrapperhome .card2 h3 {
+  margin-bottom: 0;
+}
+
 main .wrapperhome .cards {
   padding: 1rem;
   border-radius: 10px;
@@ -746,6 +754,20 @@ main .wrapperhome .cards {
 
 main .wrapperhome .cards h3 {
   color: #4695BD;
+}
+
+.homecard1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homecard1 p {
+  margin-top: 0;
 }
 
 /*  */
@@ -1412,12 +1434,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.wrapperupdates .vaccinedata {
-  overflow-x: auto;
+.wrapperupdates .cardstoday tbody tr td:nth-of-type(1) {
+  text-align: left;
 }
 
-.wrapperupdates td {
-  text-align: center;
+.wrapperupdates .cardstoday tbody tr td:nth-of-type(2) {
+  text-align: right;
+  font-weight: bold;
+}
+
+.wrapperupdates .vaccinedata {
+  overflow-x: auto;
 }
 
 .wrapperupdates .pdata {
@@ -1465,6 +1492,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.4rem;
   font-weight: bold;
   color: #4695BD;
+}
+
+.vaccinedata tbody tr td:nth-of-type(2) {
+  text-align: right;
 }
 
 /* 16.FAQ==============================================================*/
@@ -1516,6 +1547,17 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+.faqspage {
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+}
+
+.faqspage main {
+  height: 100vh;
+  overflow-y: auto;
+}
+
 .inheader {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1526,6 +1568,18 @@ h1, h2, h3, h4, h5, h6 {
           flex-flow: row nowrap;
   gap: 5px;
   margin: 0 10px;
+  margin-top: .5rem;
+}
+
+.faqlist li {
+  list-style-type: disc;
+  padding: 1rem;
+  margin-bottom: .5rem;
+}
+
+.animatefaq {
+  -webkit-animation: sloppy 1s ease-in-out 1;
+          animation: sloppy 1s ease-in-out 1;
 }
 
 /* 17.Maps==========================================================*/
@@ -1595,6 +1649,11 @@ ul#list {
   display: block;
   width: 100%;
   margin-bottom: 0;
+}
+
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* 17.Admin================================================================*/

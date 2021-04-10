@@ -163,7 +163,7 @@ function pwainit(a){
 
   //Nav menu handler
   function openNav() {
-    document.getElementById("mysidenav").style.width = "100%";
+    document.getElementById("mysidenav").style.width = "72%";
   }
   
   /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
