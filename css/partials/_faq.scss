@@ -39,6 +39,11 @@
     display: none;
   }
   .faqspage{
+    justify-content: initial;
+    main{
+      height: 100vh;
+      overflow-y: auto;
+    }
 
   }
   .inheader{
@@ -46,4 +51,15 @@
     flex-flow: row nowrap;
     gap: 5px;
     margin: 0 10px;
+    margin-top: .5rem;
+  }
+  .faqlist{
+    li{
+      list-style-type: disc;
+      padding: 1rem;
+      margin-bottom: .5rem;
+    }
+  }
+  .animatefaq{
+    animation:sloppy 1s ease-in-out 1;
   }

@@ -112,7 +112,8 @@ function initialize() {
             console.log(lat);
             lat="49.059676";
             long="-123.090657"
-            document.querySelector("#list").innerHTML=`<li><p style="grid-column:1/-1;justify-self:center">Not Registered for vaccine,<a>Register here</a>`
+            document.querySelector("#list").innerHTML=`<li><p style="grid-column:1/-1;text-align
+            :center">Not Registered for vaccine,<a href="vaccine_register.html">Register here</a>`
         }
     }
     let center = new google.maps.LatLng(lat,long);
@@ -307,6 +308,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 //         console.log(this.value);
 //     })
 // })
+
+
+
+
+
 
 
 
