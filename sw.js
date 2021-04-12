@@ -1,32 +1,46 @@
+const cacheName="lifecache-v21";
 
-const staticCacheName = 'pages-cache-v1';
-const filesToCache = [
-    'style.css',
-    'index.html',
-    'pages/offline.html',
-    'pages/faq.html'
-  ];
-
-
-//   Install event
-
+var filesToCache = ['/pages/updates.html','/pages/faq.html','/pages/offline.html','/style.css','https://kit.fontawesome.com/5149b952aa.js'];
 
 self.addEventListener('install', event => {
-    console.log('Attempting to install service worker and cache static assets');
-    event.waitUntil(
-      caches.open(staticCacheName)
-      .then(cache => {
+
+  event.waitUntil(
+    caches.open(cacheName).then(cache => {
         return cache.addAll(filesToCache);
-      })
-    );
-  });
+    })
+  );
+  
 
+});
 
+self.addEventListener('activate', event => {
+
+ event.waitUntil(
+   caches.keys().then(keys=>{
+    return Promise.all(keys.filter(key=>key!==cacheName).map(key=>caches.delete(key)))
+
+   })
+ );
+
+ 
+});
 
 // Fetch
 
 self.addEventListener('fetch', (event) => {
 
- 
+  event.respondWith(async function() {
+    // Try the cache
+    const cachedResponse = await caches.match(event.request);
+    if (cachedResponse) return cachedResponse;
 
+    try {
+     
+      return await fetch(event.request);
+    } catch (err) {
+      
+      return caches.match('/pages/offline.html');
+     
+    }
+  }());
 });
