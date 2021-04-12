@@ -19,8 +19,15 @@ db.collection("userdata").get().then((querySnapshot) => {
         // console.log(doc.id, " => ", doc.data());
         // console.log(a);
         data.push(doc.data());
+        console.log("changed");
     });
     console.log(data);
+    populatedata(data);
+});
+
+function populatedata(data){
+
+
     let tablebody=document.querySelector(".dataholder tbody");
     for(i=0;i<data.length;i++){
         let tr=document.createElement("tr")
@@ -32,4 +39,6 @@ db.collection("userdata").get().then((querySnapshot) => {
     for(i=0;i<trlist.length;i++){
         trlist[i].innerHTML=`<td>${data[i].name}</td><td>${data[i].age}</td><td>${data[i].sex}</td><td>${data[i].priority}</td><td>${data[i].vaccinecenter}</td>`
     }
-});
+
+
+}

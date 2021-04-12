@@ -506,9 +506,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow-x: hidden;
-  line-height: 1.2;
-  max-width: 500px;
-  margin: 0 auto;
+  line-height: 1.5;
 }
 
 @-webkit-keyframes sloppy {
@@ -793,7 +791,19 @@ main .wrapperhome .cards h3 {
 }
 
 .vaccine_register_wrapper .select {
-  padding: 0.5rem;
+  padding: .9rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='black'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+  background-size: 12px;
+  background-position: calc(100% - 2px) center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.vaccine_register_wrapper .select:hover, .vaccine_register_wrapper .select:active {
+  background-color: #fff;
 }
 
 .vaccine_register_wrapper .personaldetails {
@@ -894,6 +904,12 @@ main .wrapperhome .cards h3 {
   width: 10%;
   -ms-grid-column-align: left;
       justify-self: left;
+}
+
+@media screen and (min-width: 600px) {
+  .locationdiv button i {
+    justify-self: flex-end;
+  }
 }
 
 .locationdiv button i:hover {
