@@ -255,6 +255,9 @@ main .wrapperhome{
         display: flex;
         gap: 1rem;
         flex-flow: row nowrap;
+        .genderdiv{
+            margin-left: 1px;
+        }
         .agediv{
             flex: 1 0 50%;
             input{

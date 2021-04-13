@@ -818,6 +818,10 @@ main .wrapperhome .cards h3 {
           flex-flow: row nowrap;
 }
 
+.vaccine_register_wrapper .personaldetails .genderdiv {
+  margin-left: 1px;
+}
+
 .vaccine_register_wrapper .personaldetails .agediv {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 50%;

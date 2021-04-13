@@ -371,3 +371,4 @@ function addToHomeScreen() {
 document.querySelector('.backbutton i').addEventListener("click",()=>{
     window.history.back();
 })
+

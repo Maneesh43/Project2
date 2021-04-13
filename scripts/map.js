@@ -240,6 +240,7 @@ function callback(results, status) {
                         .catch((error) => {
                             // The document probably doesn't exist.
                             console.error("Error updating document: ", error);
+                            window.location.replace("vaccine_register.html");
 
                             
                         });
