@@ -1,6 +1,11 @@
-const cacheName="lifecache-v1";
+const cacheName="lifecache-v3";
 var filesToCache = ['./pages/offline.html','./pages/faqoffline.html','./style.css','./scripts/offlinefaq.js','./scripts/offline.js',
-'https://kit.fontawesome.com/5149b952aa.js',
+
+
+
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
+
+
 
 
 
