@@ -808,32 +808,15 @@ main .wrapperhome .cards h3 {
 
 .vaccine_register_wrapper .personaldetails {
   width: calc(80% + 1rem);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr .2fr;
+      grid-template-columns: 1fr .2fr;
+  gap: .5rem;
 }
 
-.vaccine_register_wrapper .personaldetails .genderdiv {
-  margin-left: 1px;
-}
-
-.vaccine_register_wrapper .personaldetails .agediv {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
-}
-
-.vaccine_register_wrapper .personaldetails .agediv input {
-  width: 95%;
-}
-
-.vaccine_register_wrapper .personaldetails .agediv select {
-  width: 20%;
+.vaccine_register_wrapper .personaldetails .agediv .input {
+  width: 90%;
 }
 
 .vaccine_register_wrapper .radiobuttons {

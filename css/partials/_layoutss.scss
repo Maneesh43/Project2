@@ -252,21 +252,15 @@ main .wrapperhome{
     }
     .personaldetails{
         width: calc(80% + 1rem);
-        display: flex;
-        gap: 1rem;
-        flex-flow: row nowrap;
-        .genderdiv{
-            margin-left: 1px;
-        }
+        display: grid;
+        grid-template-columns: 1fr .2fr;
+        gap: .5rem;
         .agediv{
-            flex: 1 0 50%;
-            input{
-                width: 95%;
-            }
-            select{
-                width: 20%;
+            .input{
+                width: 90%;
             }
         }
+       
     }
 
 
