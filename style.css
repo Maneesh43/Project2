@@ -815,8 +815,18 @@ main .wrapperhome .cards h3 {
   gap: .5rem;
 }
 
+.vaccine_register_wrapper .personaldetails .genderdiv {
+  justify-self: flex-end;
+}
+
 .vaccine_register_wrapper .personaldetails .agediv .input {
   width: 90%;
+}
+
+@media screen and (min-width: 750px) {
+  .vaccine_register_wrapper .personaldetails .agediv .input {
+    width: 100%;
+  }
 }
 
 .vaccine_register_wrapper .radiobuttons {

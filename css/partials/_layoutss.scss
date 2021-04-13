@@ -255,9 +255,15 @@ main .wrapperhome{
         display: grid;
         grid-template-columns: 1fr .2fr;
         gap: .5rem;
+        .genderdiv{
+            justify-self: flex-end;
+        }
         .agediv{
             .input{
                 width: 90%;
+                @media screen and (min-width:750px){
+                    width: 100%;
+                }
             }
         }
        
