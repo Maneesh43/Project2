@@ -8,7 +8,9 @@
 p,b{
     line-height: 1.5;
 }
-
+a{
+    color: $color_blue_1;
+}
 
 /* Global layout */
 body{
@@ -124,6 +126,73 @@ header{
     }
 }
 
+.logobottomanimate{
+   p{
+        margin-top: -20px;
+        text-transform: uppercase;
+        font-size: .95rem;
+        animation: bottomanimation 2s linear 0s 1 normal,bottomanimate2 1.2s linear 0s;
+        color: $color_blue_3;
+        animation-fill-mode: forwards;
+   }
+}
+
+.logoanimate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5px;
+    p{
+        font-size: 4rem;
+        transition: all .5s;
+        margin: 0;
+    }
+    p:nth-of-type(1){
+        animation:leftlogo 1s linear 0s 1 normal;
+        animation-fill-mode: forwards;
+        color: $color_blue_3;
+    }
+    p:nth-of-type(2){
+        animation:rightlogo 1s linear 0s 1 normal;
+        color: $color_blue_2;
+        font-weight: lighter;
+    }
+}
+@keyframes leftlogo{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+        font-weight: bolder;
+    }
+}
+
+@keyframes rightlogo{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes bottomanimation{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+        font-weight: bolder;
+    }
+}
+@keyframes bottomanimate2{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
 /*       */
 
 
@@ -134,6 +203,11 @@ header{
 
 .loginformarea button{
     margin-top: 2rem;
+}
+.loginheader{
+    .logoarea{
+        margin: auto;
+    }
 }
 
 

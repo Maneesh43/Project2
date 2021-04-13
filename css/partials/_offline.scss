@@ -1,0 +1,49 @@
+.useroffline {
+    .logoarea{
+        margin: auto;
+    }
+}
+main{
+    text-align: left;
+}
+
+.offlinefaqspage{
+    i{
+        color: black;
+        &:hover{
+            color: $color_blue_1;
+        }
+    }
+}
+.offlinemain{
+    height: 100%;
+    p{
+        text-align: left;
+    }
+}
+
+#retry{
+    width: 20%;
+    margin-top: 1rem;
+    height: 40px;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all .5s;
+    &:hover{
+        border-color: $color_blue_2;
+    }
+}
+
+.offlinemain1{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    a{
+        margin: 1rem 0;
+    }
+    h3{
+        font-size: 2.5rem;
+        text-align: center;
+        color: $color_blue_1;
+    }
+}
