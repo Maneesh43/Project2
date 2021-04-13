@@ -15,6 +15,7 @@
 /* 15.Updates Page */
 /* 16.FAQ      */
 /* 17.Admin   */
+/* 18.Offline  */
 /* 1.Variables==================================================================== */
 /* 1.colors */
 /* 2.fonts */
@@ -492,6 +493,10 @@ p, b {
   line-height: 1.5;
 }
 
+a {
+  color: #4270B3;
+}
+
 /* Global layout */
 body {
   height: 100vh;
@@ -647,10 +652,152 @@ header {
   }
 }
 
+.logobottomanimate p {
+  margin-top: -20px;
+  text-transform: uppercase;
+  font-size: .95rem;
+  -webkit-animation: bottomanimation 2s linear 0s 1 normal,bottomanimate2 1.2s linear 0s;
+          animation: bottomanimation 2s linear 0s 1 normal,bottomanimate2 1.2s linear 0s;
+  color: #469FA6;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.logoanimate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5px;
+}
+
+.logoanimate p {
+  font-size: 4rem;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  margin: 0;
+}
+
+.logoanimate p:nth-of-type(1) {
+  -webkit-animation: leftlogo 1s linear 0s 1 normal;
+          animation: leftlogo 1s linear 0s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  color: #469FA6;
+}
+
+.logoanimate p:nth-of-type(2) {
+  -webkit-animation: rightlogo 1s linear 0s 1 normal;
+          animation: rightlogo 1s linear 0s 1 normal;
+  color: #4695BD;
+  font-weight: lighter;
+}
+
+@-webkit-keyframes leftlogo {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    font-weight: bolder;
+  }
+}
+
+@keyframes leftlogo {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    font-weight: bolder;
+  }
+}
+
+@-webkit-keyframes rightlogo {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes rightlogo {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes bottomanimation {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    font-weight: bolder;
+  }
+}
+
+@keyframes bottomanimation {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    font-weight: bolder;
+  }
+}
+
+@-webkit-keyframes bottomanimate2 {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bottomanimate2 {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 /*       */
 /* Login.html layout */
 .loginformarea button {
   margin-top: 2rem;
+}
+
+.loginheader .logoarea {
+  margin: auto;
 }
 
 /*  */
@@ -1692,5 +1839,67 @@ ul#list {
 
 .admindata th {
   padding: 0.5rem;
+}
+
+/* 18.Offline============================================================  */
+.useroffline .logoarea {
+  margin: auto;
+}
+
+main {
+  text-align: left;
+}
+
+.offlinefaqspage i {
+  color: black;
+}
+
+.offlinefaqspage i:hover {
+  color: #4270B3;
+}
+
+.offlinemain {
+  height: 100%;
+}
+
+.offlinemain p {
+  text-align: left;
+}
+
+#retry {
+  width: 20%;
+  margin-top: 1rem;
+  height: 40px;
+  outline: none;
+  border: 2px solid transparent;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#retry:hover {
+  border-color: #4695BD;
+}
+
+.offlinemain1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offlinemain1 a {
+  margin: 1rem 0;
+}
+
+.offlinemain1 h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #4270B3;
 }
 /*# sourceMappingURL=style.css.map */
