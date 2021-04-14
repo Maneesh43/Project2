@@ -7,19 +7,19 @@ if(sessionstoragem.getItem("loginuser")){
     let loginuser=sessionstoragem.getItem("loginuser")
     // console.log(JSON.parse(loginuser));
     userinfo=JSON.parse(loginuser);
-    console.log(userinfo);
+    // console.log(userinfo);
 }else{
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
-          console.log("user signed in");
+        //   console.log("user signed in");
           if(user){
               sessionstoragem.setItem("loginuser",JSON.stringify(user));
               userinfo=user;
           }
         } else {
           // No user is signed in.
-          console.log("no user");
+        //   console.log("no user");
           window.location.replace("../index.html");
         }
       });
@@ -49,12 +49,12 @@ document.addEventListener("DOMContentLoaded",()=>{
   window.addEventListener('beforeinstallprompt', function (e) { 
     deferredPrompt = e; 
     showAddToHomeScreen(deferredPrompt);
-    console.log(deferredPrompt);
+    // console.log(deferredPrompt);
    }); 
   
    function showAddToHomeScreen() { 
      var a2hsBtn = document.querySelector(".pwabanner"); 
-     console.log(a2hsBtn);
+    //  console.log(a2hsBtn);
      a2hsBtn.style.display = "block";
     //  a2hsBtn.style.justifyContent="space-around"; 
      a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -66,11 +66,11 @@ document.addEventListener("DOMContentLoaded",()=>{
       deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
       deferredPrompt.userChoice .then(function(choiceResult){ 
         if (choiceResult.outcome === 'accepted') { 
-          console.log('User accepted the A2HS prompt'); 
+        //   console.log('User accepted the A2HS prompt'); 
         } 
         else 
         { 
-          console.log('User dismissed the A2HS prompt'); 
+        //   console.log('User dismissed the A2HS prompt'); 
         } 
         deferredPrompt = null; 
       }); } 
@@ -109,7 +109,7 @@ function initialize() {
         long=sessionstoragem.getItem("longitude");
         }else{
             lat="not available";
-            console.log(lat);
+            // console.log(lat);
             lat="49.059676";
             long="-123.090657"
             document.querySelector("#list").innerHTML=`<li><p style="grid-column:1/-1;text-align
@@ -197,7 +197,7 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (let i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
-            console.log(results[i]);
+            // console.log(results[i]);
             var lat=results[i].geometry.location.lat();
             var lng=results[i].geometry.location.lng();
             maploc.push([lat,lng]);
@@ -213,18 +213,18 @@ function callback(results, status) {
             
             document.querySelectorAll(".mapbutton").forEach(function(item){
                 item.addEventListener("click",(v)=>{
-                    console.log(v);
-                    console.log(v.path[2].childNodes[0].innerText);
+                    // console.log(v);
+                    // console.log(v.path[2].childNodes[0].innerText);
                     vaccinecentername=v.path[2].childNodes[0].innerText;
                     // console.log(userinfo);
                     // console.log(results);
                     results.forEach(function h(item){
                         // console.log(item);
                     if(item.name==v.path[2].childNodes[0].innerText){
-                        console.log((item.name).localeCompare(v.path[2].childNodes[0].innerText));
-                        console.log(item.name);
-                        console.log(v.path[2].childNodes[0].innerText);
-                            console.log(item);
+                        // console.log((item.name).localeCompare(v.path[2].childNodes[0].innerText));
+                        // console.log(item.name);
+                        // console.log(v.path[2].childNodes[0].innerText);
+                            // console.log(item);
                             sessionstoragem.setItem("vaccinecenter",item.name);
                             var vaccinecenterupdate = db.collection("userdata").doc(userinfo.email);
 
@@ -233,7 +233,7 @@ function callback(results, status) {
                         vaccinecenter:vaccinecentername,
                     })
                         .then(() => {
-                            console.log("Document successfully updated!");
+                            // console.log("Document successfully updated!");
                             toaster("Appointement booked!","lightgreen");
                             window.location.href="../pages/home.html";
                         })
@@ -246,7 +246,7 @@ function callback(results, status) {
                         });
     
                         }else{
-                            console.log("item did not match");
+                            // console.log("item did not match");
                         }
 
                        

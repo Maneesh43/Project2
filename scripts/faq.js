@@ -12,12 +12,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
-  console.log(deferredPrompt);
+  // console.log(deferredPrompt);
  }); 
 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwaa"); 
-   console.log(a2hsBtn);
+  //  console.log(a2hsBtn);
    a2hsBtn.style.display = "block";
   //  a2hsBtn.style.justifyContent="space-around"; 
    a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -29,11 +29,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice .then(function(choiceResult){ 
       if (choiceResult.outcome === 'accepted') { 
-        console.log('User accepted the A2HS prompt'); 
+        // console.log('User accepted the A2HS prompt'); 
       } 
       else 
       { 
-        console.log('User dismissed the A2HS prompt'); 
+        // console.log('User dismissed the A2HS prompt'); 
       } 
       deferredPrompt = null; 
     }); } 
@@ -68,11 +68,12 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = null;
       // console.log(this.childNodes);
       this.childNodes[1].style.transform="rotate(0deg)"
+      this.childNodes[1].style.color="initial";
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
       // console.log(this.childNodes[1]);
       this.childNodes[1].style.transform="rotate(90deg)"
-      // this.childNodes[1].style.color="blue";
+      this.childNodes[1].style.color="#4270B3";
     }
   });
 }

@@ -3,20 +3,30 @@
         margin: auto;
     }
 }
-main{
-    text-align: left;
+
+.offlineheader{
+    .backbutton{
+        font-size: 1.5rem;
+    }
 }
-
 .offlinefaqspage{
+    .iconaccordion{
+        font-size: 1.5rem;
+        transform: rotate(180deg);
+    }
     justify-content: inherit;
-
+    main{
+        text-align: left;
+    }
     i{
+        font-size: 1.5rem;
         color: black;
         &:hover{
             color: $color_blue_1;
         }
     }
 }
+
 .offlinemain{
     height: 100%;
     p{

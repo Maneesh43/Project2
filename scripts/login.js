@@ -10,12 +10,12 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
     // alert("success");
-    console.log(user);
+    // console.log(user);
 
   } else {
     // No user is signed in.
     // alert("login fail");
-    console.log("login failed");
+    // console.log("login failed");
   }
 });
 
@@ -37,14 +37,14 @@ function loginuser() {
   let a1 = document.querySelector('#password-input').value;
   window.sessionStorage.clear();
 
-  console.log(a);
+  // console.log(a);
   if (is_email(a) && !(is_empty(a1))) {
     firebase.auth().signInWithEmailAndPassword(a, a1)
       .then((userCredential) => {
         // Signed in
     
         var user = userCredential.user;
-        console.log(user);
+        // console.log(user);
         window.location.href = 'home.html';
         sessstorage.setItem("loginuser",JSON.stringify(user));
         // ...
@@ -54,10 +54,10 @@ function loginuser() {
         var errorMessage = error.message;
         // alert(errorMessage);
         toaster("User login failed");
-        console.log(errorMessage);
+        // console.log(errorMessage);
       });
   } else {
-    console.log("email Validation failed");
+    // console.log("email Validation failed");
     toaster("Email or password incorrect!");
     // document.querySelector("#email-input").style.borderColor = "red"
 
@@ -92,11 +92,11 @@ document.querySelector('#forgot').addEventListener('click', () => {
 
     auth.sendPasswordResetEmail(emailAddress).then(function () {
       // Email sent.
-      console.log("email sent");
+      // console.log("email sent");
       toaster("Reset Email has been sent.!");
     }).catch(function (error) {
       // An error happened.
-      console.log("failed to send email");
+      // console.log("failed to send email");
       toaster("Make sure you entered email addess! ");
       document.querySelector("#email-input").focus();
     });
@@ -141,12 +141,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
-  console.log(deferredPrompt);
+  // console.log(deferredPrompt);
  }); 
 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwabanner"); 
-   console.log(a2hsBtn);
+  //  console.log(a2hsBtn);
    a2hsBtn.style.display = "block";
   //  a2hsBtn.style.justifyContent="space-around"; 
    a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -158,11 +158,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice .then(function(choiceResult){ 
       if (choiceResult.outcome === 'accepted') { 
-        console.log('User accepted the A2HS prompt'); 
+        // console.log('User accepted the A2HS prompt'); 
       } 
       else 
       { 
-        console.log('User dismissed the A2HS prompt'); 
+        // console.log('User dismissed the A2HS prompt'); 
       } 
       deferredPrompt = null; 
     }); } 

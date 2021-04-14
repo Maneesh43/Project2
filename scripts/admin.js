@@ -19,9 +19,9 @@ db.collection("userdata").get().then((querySnapshot) => {
         // console.log(doc.id, " => ", doc.data());
         // console.log(a);
         data.push(doc.data());
-        console.log("changed");
+        // console.log("changed");
     });
-    console.log(data);
+    // console.log(data);
     populatedata(data);
 });
 

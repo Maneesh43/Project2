@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // alert("success");
       //   console.log(user);
       userinfo = user;
-      console.log(userinfo);
+      // console.log(userinfo);
       getuserprofile();
       loadprofileimage();
     } else {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // User Profile data
 function getuserprofile() {
-  console.log(userinfo.email);
+  // console.log(userinfo.email);
 
   var docRef = db.collection("userdata").doc(userinfo.email);
 
@@ -41,7 +41,7 @@ function getuserprofile() {
     } else {
       
       // doc.data() will be undefined in this case
-      console.log("No such document!");
+      // console.log("No such document!");
     
       document.querySelector('.loader').classList.add("hide");
       document.querySelector('.wrapper').classList.toggle("hide");
@@ -60,26 +60,26 @@ function getuserprofile() {
 
     }
   }).catch((error) => {
-    console.log("Error getting document:", error);
+    // console.log("Error getting document:", error);
   });
 }
 
 function setuserdata(datauser) {
-  console.log(datauser);
+  // console.log(datauser);
   document.querySelector('.loader').classList.add("hide");
   document.querySelector('.wrapper').classList.toggle("hide");
 
   // console.log(datauser.data());
   userdata = datauser.data();
   // console.log(userdata);
-  console.log(userdata.created.toDate().toDateString());
+  // console.log(userdata.created.toDate().toDateString());
 
   if ((userdata.priority + 1) > 0) {
     document.querySelector('.username p').textContent = userdata.name;
     document.querySelector('.useremail p').textContent = userdata.email;
     document.querySelector('.userage p').textContent = userdata.age;
     document.querySelector('.userhasregisteredforvaccine p').textContent = "Yes";
-    console.log(userdata);
+    // console.log(userdata);
     document.querySelector('.userregistered p').textContent =userdata.created.toDate().toDateString();
 
   }
@@ -100,7 +100,7 @@ function loadprofileimage(){
     })
     .catch((error) => {
       // Handle any errors
-      console.log(error);
+      // console.log(error);
       if(userinfo.providerData[0].providerId=="google.com"){
         document.querySelector(".imageholder img").src = userinfo.photoURL;
           }
@@ -125,9 +125,9 @@ fileUploader.click();
   
     // Create a storage reference from our storage service
     var storageRef = storage.ref('user-images/'+userinfo.email);
-    console.log('files', files[0].type); // Printing the file object to the console.
+    // console.log('files', files[0].type); // Printing the file object to the console.
     // if(files[0].type.split("/",1))
-    console.log(files[0].type);
+    // console.log(files[0].type);
     if((files[0].type.split("/",1)).toString()=="image"){
 
     uploadfile(storageRef,files);
@@ -139,11 +139,11 @@ fileUploader.click();
   function uploadfile(storageRef,files){
     storageRef.put(files[0])
     .then((snapshot) => {
-      console.log('Uploaded a blob or file!');
-      console.log(snapshot);
+      // console.log('Uploaded a blob or file!');
+      // console.log(snapshot);
       loadprofileimage();
     }).catch((error)=>{
-      console.log(error);
+      // console.log(error);
     })
  
   }
@@ -170,12 +170,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
-  console.log(deferredPrompt);
+  // console.log(deferredPrompt);
  }); 
 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwabanner"); 
-   console.log(a2hsBtn);
+  //  console.log(a2hsBtn);
    a2hsBtn.style.display = "block";
   //  a2hsBtn.style.justifyContent="space-around"; 
    a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -187,11 +187,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice .then(function(choiceResult){ 
       if (choiceResult.outcome === 'accepted') { 
-        console.log('User accepted the A2HS prompt'); 
+        // console.log('User accepted the A2HS prompt'); 
       } 
       else 
       { 
-        console.log('User dismissed the A2HS prompt'); 
+        // console.log('User dismissed the A2HS prompt'); 
       } 
       deferredPrompt = null; 
     }); } 
@@ -258,7 +258,7 @@ is_valid=true;
   }else{
     is_valid=false;
   }
-  console.log(is_valid);
+  // console.log(is_valid);
 if(is_valid){
 var credential = firebase.auth.EmailAuthProvider.credential(userinfo.email, cpassword);
 
@@ -269,11 +269,11 @@ reauthenticateuser();
 function reauthenticateuser(){
   userinfo.reauthenticateWithCredential(credential).then(function() {
     // User re-authenticated.
-    console.log("Reauthenticated");
+    // console.log("Reauthenticated");
     changepasswordnow();
   }).catch(function(error) {
     // An error happened.
-    console.log("failed");
+    // console.log("failed");
     toaster("Failed to reauthenticate,pls check your current password");
   });
 
@@ -282,7 +282,7 @@ function reauthenticateuser(){
 function changepasswordnow(){
   userinfo.updatePassword(newpassword).then(function() {
     // Update successful.
-    console.log("updated ");
+    // console.log("updated ");
     toaster("Your password has updated")
     toaster("please login");
     window.location.replace("../index.html");
@@ -292,4 +292,18 @@ function changepasswordnow(){
   });
 }
 }
+})
+
+
+// Checkbox allow notifications
+document.querySelector('#switch-1').addEventListener("change",function(event){
+
+  if(event.target.checked){
+    setnotifications();
+    
+}else{
+  disablenotifications();
+}
+
+
 })

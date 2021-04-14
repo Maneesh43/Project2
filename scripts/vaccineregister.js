@@ -1,3 +1,4 @@
+
 let objectadata = {};
 let latitude = 0;
 let longitude = 0;
@@ -16,7 +17,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         // User is signed in.
         // alert("success");
-        console.log(user);
+        // console.log(user);
         useremail = user.email;
     } else {
         // No user is signed in.
@@ -26,7 +27,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
-console.log(useremail);
+// console.log(useremail);
 
 //   var db = firebase.firestore();
 //   var docRef = db.collection("userdata").doc(useremail);
@@ -49,8 +50,8 @@ function getLocation() {
     function success(position) {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
-        console.log(latitude);
-        console.log(longitude);
+        // console.log(latitude);
+        // console.log(longitude);
         // locatevalue.value = "lat:" + latitude + "lon" + longitude;
         let location = reverse_geocode(latitude, longitude).then((values) => {
             locatevalue.value = values.results[0].formatted_address;
@@ -82,12 +83,12 @@ function getLocation() {
 document.querySelector('#diseaseinfoprevious').addEventListener('change', () => {
     let confirmdec = window.confirm("do you want to track your second dose");
     if (confirmdec == true) {
-        console.log(confirmdec);
+        // console.log(confirmdec);
     }
 })
 
 
-console.log(latitude);
+// console.log(latitude);
 
 
 class Userobjectdata {
@@ -113,9 +114,9 @@ sessstorage.setItem("vaccinecenter","Not booked");
             let a = geocode((ss6.value.toString())).then((value) => {
                 latitude = value.lat;
                 sessstorage.setItem("latitude",latitude);
-                console.log(latitude);
+                // console.log(latitude);
                 longitude = value.lng;
-                console.log(value);
+                // console.log(value);
                 sessstorage.setItem("longitude",longitude);
                 // locations(latitude,longitude);
                 var locationupdate = db.collection("userdata").doc(useremail);
@@ -126,9 +127,10 @@ sessstorage.setItem("vaccinecenter","Not booked");
                     userlocationlongitude:longitude
                 })
                     .then(() => {
-                        console.log("Document successfully updated!");
+                        // console.log("Document successfully updated!");
                         sessstorage.setItem("latitude",latitude);
                         sessstorage.setItem("longitude",longitude);
+                        askNotificationPermission();
                         // locations(latitude,longitude);
                     })
                     .catch((error) => {
@@ -151,7 +153,7 @@ sessstorage.setItem("vaccinecenter","Not booked");
 
     let username = document.querySelector('#name').value;
     let userage = document.querySelector('#age').value;
-    console.log(userage);
+    // console.log(userage);
 
     let usersex = document.querySelector('#sex').value;
     let userischronic = document.querySelector('#diseaseinfo').value;
@@ -190,7 +192,7 @@ sessstorage.setItem("vaccinecenter","Not booked");
     if (confirmreg == true && register_stat == true) {
         let userdataobject = new Userobjectdata(username, useremail, userage, usersex, userischronic, userhasprevious, latitude, longitude);
         let priorityvalue = prioritycalc();
-        console.log(priorityvalue);
+        // console.log(priorityvalue);
 
         console.log(latitude);
 
@@ -218,10 +220,11 @@ sessstorage.setItem("vaccinecenter","Not booked");
             vaccinecenter:"Not Selected",
         }, { merge: true })
             .then(() => {
-                console.log("Document successfully written!");
+                // console.log("Document successfully written!");
                 //  alert("success")
                 toaster("Registered successfully", "lightgreen");
                 is_doc_available();
+               
                 window.location.href="map.html";
                 // setTimeout(() => {
                 //     // window.location.assign("/pages/home.html");
@@ -233,12 +236,12 @@ sessstorage.setItem("vaccinecenter","Not booked");
             });
 
         function prioritycalc() {
-            console.log("update")
-            console.log(userdataobject);
+            // console.log("update")
+            // console.log(userdataobject);
             if (userdataobject.userage >= 55) {
                 userpriority += 1;
 
-                console.log(userpriority);
+                // console.log(userpriority);
             } if (userdataobject.usersex === "Female") {
                 userpriority += 1;
             } if (userdataobject.userischronic === "yes") {
@@ -246,9 +249,9 @@ sessstorage.setItem("vaccinecenter","Not booked");
             } if (userdataobject.userhasprevious === "yes") {
                 userpriority += 1;
             }
-            console.log(userpriority);
+            // console.log(userpriority);
             return userpriority / 4;
-            console.log(userpriority);
+            // console.log(userpriority);
         }
     }
     else if (confirmreg == false) {
@@ -341,12 +344,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt = e;
     showAddToHomeScreen(deferredPrompt);
-    console.log(deferredPrompt);
+    // console.log(deferredPrompt);
 });
 
 function showAddToHomeScreen() {
     var a2hsBtn = document.querySelector(".pwabanner");
-    console.log(a2hsBtn);
+    // console.log(a2hsBtn);
     a2hsBtn.style.display = "block";
     //  a2hsBtn.style.justifyContent="space-around"; 
     a2hsBtn.addEventListener("click", addToHomeScreen);
@@ -358,10 +361,10 @@ function addToHomeScreen() {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice.then(function (choiceResult) {
         if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
+            // console.log('User accepted the A2HS prompt');
         }
         else {
-            console.log('User dismissed the A2HS prompt');
+            // console.log('User dismissed the A2HS prompt');
         }
         deferredPrompt = null;
     });
