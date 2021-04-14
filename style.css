@@ -692,8 +692,8 @@ header {
 }
 
 .logoanimate p:nth-of-type(1) {
-  -webkit-animation: leftlogo 2s ease-out .2s 1 normal;
-          animation: leftlogo 2s ease-out .2s 1 normal;
+  -webkit-animation: leftlogo 2s ease-out .2s 1 normal,leftbold 2s ease-in-out 0s 1 normal;
+          animation: leftlogo 2s ease-out .2s 1 normal,leftbold 2s ease-in-out 0s 1 normal;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   color: #469FA6;
@@ -740,12 +740,30 @@ header {
   margin-bottom: -5rem;
   width: 180px;
   opacity: 0;
-  -webkit-animation: imganimate 2s linear .2s 1 normal;
-          animation: imganimate 2s linear .2s 1 normal;
+  -webkit-animation: imganimate 1.5s linear .2s 1 normal;
+          animation: imganimate 1.5s linear .2s 1 normal;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+@-webkit-keyframes leftbold {
+  from {
+    font-weight: normal;
+  }
+  to {
+    font-weight: bolder;
+  }
+}
+
+@keyframes leftbold {
+  from {
+    font-weight: normal;
+  }
+  to {
+    font-weight: bolder;
+  }
 }
 
 @-webkit-keyframes imganimate {
@@ -793,13 +811,9 @@ header {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  50% {
-    font-weight: bolder;
-  }
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    font-weight: bolder;
   }
 }
 
@@ -808,13 +822,9 @@ header {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  50% {
-    font-weight: bolder;
-  }
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    font-weight: bolder;
   }
 }
 
@@ -855,6 +865,10 @@ header {
 .bodyhome {
   -webkit-animation: sloppy .3s ease-in-out 1;
           animation: sloppy .3s ease-in-out 1;
+}
+
+.current {
+  font-weight: bolder;
 }
 
 .headerhome h2 {
@@ -1910,6 +1924,12 @@ ul#list {
 
 main {
   text-align: left;
+}
+
+.offlinefaqspage {
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
 }
 
 .offlinefaqspage i {

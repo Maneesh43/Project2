@@ -153,7 +153,7 @@ header{
         margin: 0;
     }
     p:nth-of-type(1){
-        animation:leftlogo 2s ease-out .2s 1 normal;
+        animation:leftlogo 2s ease-out .2s 1 normal,leftbold 2s ease-in-out 0s 1 normal;
         animation-fill-mode: forwards;
         color: $color_blue_3;
     }
@@ -180,10 +180,18 @@ header{
         margin-bottom: -5rem;
         width: 180px;
         opacity: 0;
-        animation: imganimate 2s linear .2s 1 normal;
+        animation: imganimate 1.5s linear .2s 1 normal;
         animation-fill-mode: forwards;
         transition: all .5s;
        
+    }
+}
+@keyframes leftbold{
+    from{
+        font-weight: normal;
+    }
+    to{
+        font-weight: bolder;
     }
 }
 @keyframes imganimate{
@@ -208,13 +216,9 @@ header{
     0%{
         transform: translateX(-100%);
     }
-    50%{
-       
-        font-weight: bolder;
-    }
     100%{
         transform: translateX(0);
-        font-weight: bolder;
+        // font-weight: bolder;
     }
        
 }
@@ -253,6 +257,9 @@ header{
 /* Home page styling */
 .bodyhome{
     animation: sloppy .3s ease-in-out 1;
+}
+.current{
+    font-weight: bolder;
 }
 .headerhome{
     h2{
