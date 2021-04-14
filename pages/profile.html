@@ -95,8 +95,24 @@
                 </div>
                 </div>
                 <div class="passwordchangemodal cards">
-                    <b>Change Password</b>
-                    <button type="button" class="button"><i class="fas fa-pencil-alt chgpass"></i></button>
+                    <div class="passworddiv">
+                        <b>Change Password</b>
+                        <button type="button" class="button"><i class="fas fa-pencil-alt chgpass"></i></button>
+                    </div>
+
+                    <div class="notificationspermissiondiv">
+                        <b>Enable Notifications</b>
+                        <div class="switchwidget">
+
+                            <div class="switch">
+                                <input id="switch-1" type="checkbox" class="switch-input" />
+                                <label for="switch-1" class="switch-label">Switch</label>
+                              </div>
+
+                        </div>
+                    </div>
+
+
                 </div>
                 <div class="passwordchangepopup cards">
                     <span class="clsbuttons">&times;</span>
@@ -104,6 +120,7 @@
                     <input type="password" class="input newpassword" placeholder="enter new password">
                     <input type="password" class="input newpasswordretype" placeholder="Re-enter your password">
                     <button type="button" class="button updatepass">Update password</button>
+        
                 </div>
                 <!-- <div class="loginchange">
                 <b class="loginpasswordchange">Change login Password ?</b>
@@ -129,6 +146,7 @@
         <script src="../scripts/misc.js"></script>
 
         <script src="../scripts/profile.js"></script>
+        <script src="../scripts/notificationsapi.js"></script>
     
 
     </main>
@@ -137,7 +155,7 @@
             <li title="Home"><a href="../pages/home.html">Home<i class="fas fa-home"></i></a></li>
             <li><a href="../pages/map.html">Map<i class="fas fa-map-marker-alt"></i></a></li>
             <li><a href="../pages/updates.html">Updates<i class="fas fa-info"></i></a></li>
-            <li><a href="../pages/faq.html">FAQ<i class="fas fa-question"></i></a></li>
+            <li><a href="../pages/faq.html">Faq's<i class="fas fa-question"></i></a></li>
         </ul>
     </footer>
 </body>

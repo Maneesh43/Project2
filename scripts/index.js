@@ -3,13 +3,14 @@ let sessstorage=window.sessionStorage;
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    console.log(user.displayName);
-    console.log("user signedin");
+    // console.log(user.displayName);
+    // console.log("user signedin");
 
   } else {
     // No user is signed in.
     // alert("login fail");
-    console.log("login failed");
+    // console.log("login failed");
+    toaster("Login failed");
   }
 });
 
@@ -84,9 +85,9 @@ firebase
 
     // The signed-in user info.
     var user = result.user;
-    console.log(result);
-    console.log(user);
-    console.log(credential);
+    // console.log(result);
+    // console.log(user);
+    // console.log(credential);
 
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     var accessToken = credential.accessToken;
@@ -101,8 +102,8 @@ firebase
     var email = error.email;
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
-    console.log(error);
-  console.log(errorMessage);
+    // console.log(error);
+  // console.log(errorMessage);
 
     // ...
   });
@@ -123,12 +124,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
-  console.log(deferredPrompt);
+  // console.log(deferredPrompt);
  }); 
 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwabanner"); 
-   console.log(a2hsBtn);
+  //  console.log(a2hsBtn);
    a2hsBtn.style.display = "block";
   //  a2hsBtn.style.justifyContent="space-around"; 
    a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -140,11 +141,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice .then(function(choiceResult){ 
       if (choiceResult.outcome === 'accepted') { 
-        console.log('User accepted the A2HS prompt'); 
+        // console.log('User accepted the A2HS prompt'); 
       } 
       else 
       { 
-        console.log('User dismissed the A2HS prompt'); 
+        // console.log('User dismissed the A2HS prompt'); 
       } 
       deferredPrompt = null; 
     }); } 

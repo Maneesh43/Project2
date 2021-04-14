@@ -4,14 +4,14 @@
 document.querySelector('#register').addEventListener('click',()=>{
 
 let useremail=document.querySelector('#useremail').value;
-console.log(useremail);
+// console.log(useremail);
 
 let userpassword=document.querySelector("#userpassword").value;
 firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
   .then((userCredential) => {
     // Signed in 
     var user = userCredential.user;
-    console.log("User Registered successfully");
+    // console.log("User Registered successfully");
     // alert("registration successfull");
     toaster("Registered Successfully","lightgreen");
     window.location.href="home.html";
@@ -20,13 +20,13 @@ firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorMessage);
-    console.log(errorCode);
+    // console.log(errorMessage);
+    // console.log(errorCode);
     if(errorCode){
         // alert(error.message);
         toaster(errorMessage);
     }
-    console.log(error);
+    // console.log(error);
     // ..
   });
 })
@@ -41,12 +41,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
-  console.log(deferredPrompt);
+  // console.log(deferredPrompt);
  }); 
 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwabanner"); 
-   console.log(a2hsBtn);
+  //  console.log(a2hsBtn);
    a2hsBtn.style.display = "block";
   //  a2hsBtn.style.justifyContent="space-around"; 
    a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -58,11 +58,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice .then(function(choiceResult){ 
       if (choiceResult.outcome === 'accepted') { 
-        console.log('User accepted the A2HS prompt'); 
+        // console.log('User accepted the A2HS prompt'); 
       } 
       else 
       { 
-        console.log('User dismissed the A2HS prompt'); 
+        // console.log('User dismissed the A2HS prompt'); 
       } 
       deferredPrompt = null; 
     }); } 

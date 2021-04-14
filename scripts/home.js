@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   } else {
     // No user is signed in.
     // alert("user not logged in");
-    console.log("User not signed in")
+    // console.log("User not signed in")
     window.location.replace('../index.html');
   }
 });
@@ -31,15 +31,15 @@ document.querySelector('#signouthere').addEventListener('click',()=>{
   
 })
 function loadinfo(user){
-  console.log(user);
+  // console.log(user);
  if(sessstorage.getItem("is_doc") && (sessstorage.getItem("is_doc_data"))){
   let a=sessionstorages.getItem("time_created");
   var date =new Date(a);    
   var newDate = new Date(date.getFullYear(),date.getMonth(),date.getDate()+7);
-  console.log(newDate);
+  // console.log(newDate);
   userdata=JSON.parse(sessstorage.getItem("is_doc_data"));
   // userrname.textContent=user.name;
-  console.log(userdata);
+  // console.log(userdata);
   userrname.innerHTML=`<p style="grid-column:1/-1;justify-self:center;margin-bottom:5px";>${userdata.name}</p>`;
   vaccinecenter.innerHTML=`<b style="margin:5px 0 5px 0">Vaccine Center:</b> <p style="justify-self:center;margin:5px 0 5px 0">${userdata.vaccinecenter}<a class="navigateuser"><i class="fas fa-location-arrow direction" style="margin-left:5px;"></i></a></p>`;
   vaccinedate.innerHTML=`<b style="margin:5px 0 5px 0">Vaccination date:</b> <p style="justify-self:center;margin:5px 0 5px 0">${newDate.toDateString()} </p>`;
@@ -59,7 +59,7 @@ function loadinfo(user){
 
 }else{
   // console.log(getUsernameFromEmail(authuser));
-  console.log(user);
+  // console.log(user);
   userrname.innerHTML=`<p style="grid-column:1/-1;justify-self:center";>${getUsernameFromEmail(user.email)}</p>`;
   vaccinedate.innerHTML=``;
 
@@ -95,12 +95,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
-  console.log(deferredPrompt);
+  // console.log(deferredPrompt);
  }); 
 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwabanner"); 
-   console.log(a2hsBtn);
+  //  console.log(a2hsBtn);
    a2hsBtn.style.display = "block";
   //  a2hsBtn.style.justifyContent="space-around"; 
    a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -112,11 +112,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice .then(function(choiceResult){ 
       if (choiceResult.outcome === 'accepted') { 
-        console.log('User accepted the A2HS prompt'); 
+        // console.log('User accepted the A2HS prompt'); 
       } 
       else 
       { 
-        console.log('User dismissed the A2HS prompt'); 
+        // console.log('User dismissed the A2HS prompt'); 
       } 
       deferredPrompt = null; 
     }); } 

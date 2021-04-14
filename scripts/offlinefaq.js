@@ -10,12 +10,13 @@ for (i = 0; i < acc.length; i++) {
 
      panel.style.maxHeight = null;
      // console.log(this.childNodes);
-     this.childNodes[1].style.transform="rotate(0deg)"
+     this.childNodes[1].style.transform="rotate(180deg)"
+     this.childNodes[1].style.color="initial";
    } else {
      panel.style.maxHeight = panel.scrollHeight + "px";
      // console.log(this.childNodes[1]);
-     this.childNodes[1].style.transform="rotate(90deg)";
-     // this.childNodes[1].style.color="blue";
+     this.childNodes[1].style.transform="rotate(270deg)";
+     this.childNodes[1].style.color="#4270B3";
    }
  });
 }

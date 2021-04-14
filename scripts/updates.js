@@ -24,7 +24,7 @@ setInterval(()=>{
 function gettodaysdata(){
 // getting todays cases
     let a=fetchdata("https://disease.sh/v3/covid-19/all").then(function(value){
-    console.log(value);
+    // console.log(value);
     document.querySelector(".cardstoday").innerHTML=`<table><caption>COVID-19 statistics (Worldwide)</caption><tr><td>Total covid-19 cases:</td><td> ${(value.cases).toLocaleString()} </td></tr>
     <tr><td>Cases Today:</td> <td>${value.todayCases.toLocaleString()}</td></tr>
     <tr><td>Cases Active: </td><td>${value.active.toLocaleString()}</td></tr>
@@ -55,7 +55,8 @@ function vaccine_coverage(){
                 if(this.value==element.country){
                     // console.log((element.timeline));
                     for (x in element.timeline){
-                        paradata.innerHTML=`Vaccines administered till today in <b>${element.country}</b>  are <b>${element.timeline[x].toLocaleString()}</b>`
+                        paradata.innerHTML=`
+                        Total vaccines administered in <b>${element.country}</b>  are <b>${element.timeline[x].toLocaleString()}</b>`
                     }
                    
                 }
@@ -85,7 +86,7 @@ function vaccinecandidates(){
             // console.log(this.value);
             // if(this.value==)
             arrayvaccine.forEach(item=>{
-                console.log(item);
+                // console.log(item);
                if(this.value==item.candidate){
                    container.innerHTML=`<table>
                    <tbody>
@@ -107,10 +108,7 @@ function vaccinecandidates(){
                    </tr>
 
 
-                   <tr><td><b>Trial phase</b>
-                   </td>
-                   <td>${item.trialPhase}</td>
-                   </tr>
+              
 
                    </tbody>
                    
@@ -136,12 +134,12 @@ var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
-  console.log(deferredPrompt);
+//   console.log(deferredPrompt);
  }); 
 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwabanner"); 
-   console.log(a2hsBtn);
+//    console.log(a2hsBtn);
    a2hsBtn.style.display = "block";
   //  a2hsBtn.style.justifyContent="space-around"; 
    a2hsBtn.addEventListener("click", addToHomeScreen); 
@@ -153,11 +151,11 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt.prompt(); // Wait for the user to respond to the prompt 
     deferredPrompt.userChoice .then(function(choiceResult){ 
       if (choiceResult.outcome === 'accepted') { 
-        console.log('User accepted the A2HS prompt'); 
+        // console.log('User accepted the A2HS prompt'); 
       } 
       else 
       { 
-        console.log('User dismissed the A2HS prompt'); 
+        // console.log('User dismissed the A2HS prompt'); 
       } 
       deferredPrompt = null; 
     }); } 

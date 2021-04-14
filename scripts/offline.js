@@ -19,7 +19,7 @@ function toaster(errormsg,bgcolor,fgcolor){
 document.querySelector("#retry").addEventListener("click",()=>{
 
   // window.location.replace("home.html");
-  console.log(navigator.onLine);
+  // console.log(navigator.onLine);
 (navigator.onLine)? window.location.replace("../index.html") : toaster("you are offline");
 
 })

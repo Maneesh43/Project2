@@ -54,8 +54,8 @@ function toaster(errormsg,bgcolor,fgcolor){
   
 function is_email(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  console.log(re.test(String(email)));
-  console.log(email);
+  // console.log(re.test(String(email)));
+  // console.log(email);
  
   return re.test(String(email).toLowerCase());
 
@@ -83,7 +83,7 @@ function validateAndUpload(input){
 
       image.onload = function() {
           if (this.width) {
-               console.log('Image has width, I think it is real image');
+              //  console.log('Image has width, I think it is real image');
                //TODO: upload to backend
       };
 
@@ -101,7 +101,7 @@ firebase.auth().signOut().then(() => {
   window.location.replace("../index.html");
   // alert("sign out");
   var deletingAll = browser.history.deleteAll()
-  console.log(browser.history());
+  // console.log(browser.history());
   window.sessionStorage.clear();
 }).catch((error) => {
   // An error happened.
@@ -119,7 +119,7 @@ function pwainit(a){
     // fires when the service worker is ready
     navigator.serviceWorker.ready.then(reg => {
       // we have an active service worker working for us
-      console.log(`Service Worker ready (Scope: ${reg.scope})`);
+      // console.log(`Service Worker ready (Scope: ${reg.scope})`);
       // do something interesting, if you want...
 
     });
@@ -127,11 +127,11 @@ function pwainit(a){
     navigator.serviceWorker.register(a, { scope: '/' })
       .then(function (reg) {
         // display a success message
-        console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+        // console.log(`Service Worker Registration (Scope: ${reg.scope})`);
       })
       .catch(function (error) {
         // display an error message
-        console.log(`Service Worker Error (${error})`);
+        // console.log(`Service Worker Error (${error})`);
       });
   } else {
     // happens when the app isn't served over a TLS connection (HTTPS)
@@ -152,11 +152,11 @@ function pwainit(a){
             sessionstorages.setItem("is_doc_data",JSON.stringify(doc.data()));
             sessionstorages.setItem("latitude",doc.data().userlocationlatitude);
         sessionstorages.setItem("longitude",doc.data().userlocationlongitude);
-            console.log(doc);
+            // console.log(doc);
         }
         },(error)=>{
-          console.log(error);
-          console.log("doc not available");
+          // console.log(error);
+          // console.log("doc not available");
         });
   }
 
@@ -204,13 +204,13 @@ async function geocode(location) {
           let lat = response.data.results[0].geometry.location;
       //     console.log(response);
       return lat;
-      hello(lat);
+      // hello(lat);
 
       }).catch((error)=>{
-        console.log(error);
+        // console.log(error);
       })
 
-      console.log(response);
+      // console.log(response);
       return response;
     }
 
@@ -220,7 +220,7 @@ async function geocode(location) {
       db.collection("userdata").doc(a)
     .onSnapshot((doc) => {
       
-        console.log("Current data: ", doc.data());
+        // console.log("Current data: ", doc.data());
         sessionstorages.setItem("is_doc_data",JSON.stringify(doc.data()));
         sessionstorages.setItem("time_created",doc.data().created.toDate().toLocaleDateString())
         sessionstorages.setItem("latitude",doc.data().userlocationlatitude);
@@ -229,4 +229,3 @@ async function geocode(location) {
     });
     }
 
-// PWA Banner

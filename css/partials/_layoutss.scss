@@ -135,10 +135,12 @@ header{
    p{
         margin-top: -20px;
         text-transform: uppercase;
-        font-size: .95rem;
+        font-size: .84rem;
         animation: bottomanimation 2s linear .2s 1 normal,bottomanimate2 1s linear .2s;
         color: $color_blue_3;
         animation-fill-mode: forwards;
+        font-family: $font-montserrat;
+        font-kerning: none;
    }
 }
 
@@ -153,26 +155,24 @@ header{
         margin: 0;
     }
     p:nth-of-type(1){
-        animation:leftlogo 2s ease-out .2s 1 normal,leftbold 2s ease-in-out 0s 1 normal;
+        animation:leftlogo 1.2s ease-out .2s 1 normal,leftbold 1.5s ease-in-out .2s 1 normal;
         animation-fill-mode: forwards;
         color: $color_blue_3;
+        font-family: $font-logo-left;
     }
     p:nth-of-type(2){
         animation:rightlogo 1s linear .2s 1 normal;
         color: $color_blue_2;
-        font-weight: lighter;
+        // font-weight: 500;
+        font-family: $font-montserrat;
     }
 }
 @keyframes leftlogo{
     0%{
         transform: translateX(-100%);
     }
-    50%{
-        transform: translateX(0);
-        font-weight: bold;
-    }
     100%{
-        font-weight: bolder;
+        transform: translateX(0);
     }
 }
 .vaccineanimated{
@@ -210,6 +210,7 @@ header{
     }
     to{
         transform: translateX(0);
+        // font-weight: 600;
     }
 }
 @keyframes bottomanimation{
@@ -218,7 +219,7 @@ header{
     }
     100%{
         transform: translateX(0);
-        // font-weight: bolder;
+        font-weight: 600;
     }
        
 }

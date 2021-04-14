@@ -16,10 +16,12 @@
 /* 16.FAQ      */
 /* 17.Admin   */
 /* 18.Offline  */
+/* 19.Custom Fonts   */
+/* 19.Custom Fonts=============================*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&family=Noto+Sans+JP&family=Roboto:wght@700&display=swap");
 /* 1.Variables==================================================================== */
 /* 1.colors */
 /* 2.fonts */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@700&display=swap");
 /* 1.colors====================================================== */
 /* 2.fonts======================================================== */
 /* 13.Mixins=================================*/
@@ -663,12 +665,15 @@ header {
 .logobottomanimate p {
   margin-top: -20px;
   text-transform: uppercase;
-  font-size: .95rem;
+  font-size: .84rem;
   -webkit-animation: bottomanimation 2s linear .2s 1 normal,bottomanimate2 1s linear .2s;
           animation: bottomanimation 2s linear .2s 1 normal,bottomanimate2 1s linear .2s;
   color: #469FA6;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  font-family: "Montserrat", "sans-serif";
+  -webkit-font-kerning: none;
+          font-kerning: none;
 }
 
 .logoanimate {
@@ -692,18 +697,19 @@ header {
 }
 
 .logoanimate p:nth-of-type(1) {
-  -webkit-animation: leftlogo 2s ease-out .2s 1 normal,leftbold 2s ease-in-out 0s 1 normal;
-          animation: leftlogo 2s ease-out .2s 1 normal,leftbold 2s ease-in-out 0s 1 normal;
+  -webkit-animation: leftlogo 1.2s ease-out .2s 1 normal,leftbold 1.5s ease-in-out .2s 1 normal;
+          animation: leftlogo 1.2s ease-out .2s 1 normal,leftbold 1.5s ease-in-out .2s 1 normal;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   color: #469FA6;
+  font-family: "Corbel", "Montserrat", "sans-serif";
 }
 
 .logoanimate p:nth-of-type(2) {
   -webkit-animation: rightlogo 1s linear .2s 1 normal;
           animation: rightlogo 1s linear .2s 1 normal;
   color: #4695BD;
-  font-weight: lighter;
+  font-family: "Montserrat", "sans-serif";
 }
 
 @-webkit-keyframes leftlogo {
@@ -711,13 +717,9 @@ header {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  50% {
+  100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    font-weight: bold;
-  }
-  100% {
-    font-weight: bolder;
   }
 }
 
@@ -726,13 +728,9 @@ header {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  50% {
+  100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    font-weight: bold;
-  }
-  100% {
-    font-weight: bolder;
   }
 }
 
@@ -814,6 +812,7 @@ header {
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    font-weight: 600;
   }
 }
 
@@ -825,6 +824,7 @@ header {
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    font-weight: 600;
   }
 }
 
@@ -1491,6 +1491,98 @@ main i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.passwordchangemodal .switchwidget .switch {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.passwordchangemodal .switchwidget .switch-input {
+  display: none;
+}
+
+.passwordchangemodal .switchwidget .switch-label {
+  display: block;
+  width: 44px;
+  height: 20px;
+  text-indent: -150%;
+  clip: rect(0 0 0 0);
+  color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.passwordchangemodal .switchwidget .switch-label::before,
+.passwordchangemodal .switchwidget .switch-label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.passwordchangemodal .switchwidget .switch-label::before {
+  width: 100%;
+  height: 100%;
+  background-color: #dedede;
+  border-radius: 9999em;
+  -webkit-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+}
+
+.passwordchangemodal .switchwidget .switch-label::after {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+  -webkit-transition: left 0.25s ease;
+  transition: left 0.25s ease;
+}
+
+.passwordchangemodal .switchwidget .switch-input:checked + .switch-label::before {
+  background-color: #4270B3;
+}
+
+.passwordchangemodal .switchwidget .switch-input:checked + .switch-label::after {
+  left: 24px;
+}
+
+.passwordchangemodal .passworddiv {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.passwordchangemodal .notificationspermissiondiv {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
 }
 
 .passwordchangemodal b {
@@ -1782,6 +1874,8 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
+  width: 95%;
+  margin: auto;
 }
 
 .faqspage main {
@@ -1922,8 +2016,8 @@ ul#list {
   margin: auto;
 }
 
-main {
-  text-align: left;
+.offlineheader .backbutton {
+  font-size: 1.5rem;
 }
 
 .offlinefaqspage {
@@ -1932,7 +2026,18 @@ main {
           justify-content: inherit;
 }
 
+.offlinefaqspage .iconaccordion {
+  font-size: 1.5rem;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.offlinefaqspage main {
+  text-align: left;
+}
+
 .offlinefaqspage i {
+  font-size: 1.5rem;
   color: black;
 }
 
