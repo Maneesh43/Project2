@@ -35,6 +35,9 @@ body{
 header{
     width: 100%;
     box-shadow: 0 1px 4px 0px #ccc;
+    h2{
+        color: $color_white;
+    }
 }
 header h1{
     text-align: center;
@@ -150,7 +153,7 @@ header{
         margin: 0;
     }
     p:nth-of-type(1){
-        animation:leftlogo 1s linear .2s 1 normal;
+        animation:leftlogo 2s ease-out .2s 1 normal;
         animation-fill-mode: forwards;
         color: $color_blue_3;
     }
@@ -166,7 +169,7 @@ header{
     }
     50%{
         transform: translateX(0);
-        // font-weight: bolder;
+        font-weight: bold;
     }
     100%{
         font-weight: bolder;
@@ -250,6 +253,12 @@ header{
 /* Home page styling */
 .bodyhome{
     animation: sloppy .3s ease-in-out 1;
+}
+.headerhome{
+    h2{
+        order: 1;
+        color: $color_blue_1;
+    }
 }
 .footerhome{
     display: block;

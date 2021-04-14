@@ -47,11 +47,12 @@ function loadinfo(user){
 
   document.querySelector(".navigateuser").addEventListener("click",()=>{
     let alert=window.confirm("Proceeding will take you to external app.");
-    if(alert){
     let attributedata=document.querySelector('.navigateuser');
+    if(alert && ((attributedata.previousSibling.textContent).split(" ").join("")).toLowerCase()!=="notselected"){
     attributedata.setAttribute("href",`https://www.google.com/maps/dir/?api=1&destination=${attributedata.previousSibling.textContent}`);
     }else{
-      return false;
+      // return false;
+      toaster("Location not set.")
     }
   })
  
