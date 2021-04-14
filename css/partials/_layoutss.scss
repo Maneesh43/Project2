@@ -161,11 +161,14 @@ header{
     }
 }
 @keyframes leftlogo{
-    from{
+    0%{
         transform: translateX(-100%);
     }
-    to{
+    50%{
         transform: translateX(0);
+        // font-weight: bolder;
+    }
+    100%{
         font-weight: bolder;
     }
 }

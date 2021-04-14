@@ -703,25 +703,29 @@ header {
 }
 
 @-webkit-keyframes leftlogo {
-  from {
+  0% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  to {
+  50% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+  100% {
     font-weight: bolder;
   }
 }
 
 @keyframes leftlogo {
-  from {
+  0% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  to {
+  50% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+  100% {
     font-weight: bolder;
   }
 }
