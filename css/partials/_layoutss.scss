@@ -86,6 +86,9 @@ header{
 
 
 /* Index.html layout */
+.indexheader,.navhidden{
+    display: none;
+}
 .indexhome{
     justify-content: center;
 }
@@ -125,13 +128,12 @@ header{
         width: 30%;
     }
 }
-
 .logobottomanimate{
    p{
         margin-top: -20px;
         text-transform: uppercase;
         font-size: .95rem;
-        animation: bottomanimation 2s linear 0s 1 normal,bottomanimate2 1s linear 0s;
+        animation: bottomanimation 2s linear .2s 1 normal,bottomanimate2 1s linear .2s;
         color: $color_blue_3;
         animation-fill-mode: forwards;
    }
@@ -148,12 +150,12 @@ header{
         margin: 0;
     }
     p:nth-of-type(1){
-        animation:leftlogo 1s linear 0s 1 normal;
+        animation:leftlogo 1s linear .2s 1 normal;
         animation-fill-mode: forwards;
         color: $color_blue_3;
     }
     p:nth-of-type(2){
-        animation:rightlogo 1s linear 0s 1 normal;
+        animation:rightlogo 1s linear .2s 1 normal;
         color: $color_blue_2;
         font-weight: lighter;
     }
@@ -167,7 +169,27 @@ header{
         font-weight: bolder;
     }
 }
-
+.vaccineanimated{
+    img{
+        margin-bottom: -5rem;
+        width: 180px;
+        opacity: 0;
+        animation: imganimate 2s linear .2s 1 normal;
+        animation-fill-mode: forwards;
+        transition: all .5s;
+       
+    }
+}
+@keyframes imganimate{
+    from{
+        opacity: 0;
+        // transform: translateY(-100%)
+    }
+    to{
+        opacity: 1;
+        // transform: translateY(0);
+    }
+}
 @keyframes rightlogo{
     from{
         transform: translateX(100%);
@@ -177,13 +199,18 @@ header{
     }
 }
 @keyframes bottomanimation{
-    from{
+    0%{
         transform: translateX(-100%);
     }
-    to{
+    50%{
+       
+        font-weight: bolder;
+    }
+    100%{
         transform: translateX(0);
         font-weight: bolder;
     }
+       
 }
 @keyframes bottomanimate2{
     from{

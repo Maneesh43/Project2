@@ -603,6 +603,10 @@ header {
 
 /*  */
 /* Index.html layout */
+.indexheader, .navhidden {
+  display: none;
+}
+
 .indexhome {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -656,8 +660,8 @@ header {
   margin-top: -20px;
   text-transform: uppercase;
   font-size: .95rem;
-  -webkit-animation: bottomanimation 2s linear 0s 1 normal,bottomanimate2 1s linear 0s;
-          animation: bottomanimation 2s linear 0s 1 normal,bottomanimate2 1s linear 0s;
+  -webkit-animation: bottomanimation 2s linear .2s 1 normal,bottomanimate2 1s linear .2s;
+          animation: bottomanimation 2s linear .2s 1 normal,bottomanimate2 1s linear .2s;
   color: #469FA6;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
@@ -684,16 +688,16 @@ header {
 }
 
 .logoanimate p:nth-of-type(1) {
-  -webkit-animation: leftlogo 1s linear 0s 1 normal;
-          animation: leftlogo 1s linear 0s 1 normal;
+  -webkit-animation: leftlogo 1s linear .2s 1 normal;
+          animation: leftlogo 1s linear .2s 1 normal;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   color: #469FA6;
 }
 
 .logoanimate p:nth-of-type(2) {
-  -webkit-animation: rightlogo 1s linear 0s 1 normal;
-          animation: rightlogo 1s linear 0s 1 normal;
+  -webkit-animation: rightlogo 1s linear .2s 1 normal;
+          animation: rightlogo 1s linear .2s 1 normal;
   color: #4695BD;
   font-weight: lighter;
 }
@@ -722,6 +726,36 @@ header {
   }
 }
 
+.vaccineanimated img {
+  margin-bottom: -5rem;
+  width: 180px;
+  opacity: 0;
+  -webkit-animation: imganimate 2s linear .2s 1 normal;
+          animation: imganimate 2s linear .2s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@-webkit-keyframes imganimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes imganimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes rightlogo {
   from {
     -webkit-transform: translateX(100%);
@@ -745,11 +779,14 @@ header {
 }
 
 @-webkit-keyframes bottomanimation {
-  from {
+  0% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  to {
+  50% {
+    font-weight: bolder;
+  }
+  100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     font-weight: bolder;
@@ -757,11 +794,14 @@ header {
 }
 
 @keyframes bottomanimation {
-  from {
+  0% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  to {
+  50% {
+    font-weight: bolder;
+  }
+  100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     font-weight: bolder;

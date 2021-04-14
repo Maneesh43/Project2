@@ -25,12 +25,12 @@ function gettodaysdata(){
 // getting todays cases
     let a=fetchdata("https://disease.sh/v3/covid-19/all").then(function(value){
     console.log(value);
-    document.querySelector(".cardstoday").innerHTML=`<table><caption>Covid-19 Statistics</caption><tr><td>Total covid-19 cases till date:</td><td> ${(value.cases).toLocaleString()} </td></tr>
+    document.querySelector(".cardstoday").innerHTML=`<table><caption>COVID-19 statistics (Worldwide)</caption><tr><td>Total covid-19 cases:</td><td> ${(value.cases).toLocaleString()} </td></tr>
     <tr><td>Cases Today:</td> <td>${value.todayCases.toLocaleString()}</td></tr>
     <tr><td>Cases Active: </td><td>${value.active.toLocaleString()}</td></tr>
     <tr><td>People Recovered:</td> <td>${value.recovered.toLocaleString()}</td></tr>
     <tr><td>People recovered today:</td> <td>${value.todayRecovered.toLocaleString()}</td></tr>
-    <tr><td>Total number of tests till date:</td> <td>${value.tests.toLocaleString()}</td></tr>
+    <tr><td>Total number of tests:</td> <td>${value.tests.toLocaleString()}</td></tr>
     </table>`
 })
 }
