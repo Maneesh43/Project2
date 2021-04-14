@@ -542,6 +542,10 @@ header {
           box-shadow: 0 1px 4px 0px #ccc;
 }
 
+header h2 {
+  color: white;
+}
+
 header h1 {
   text-align: center;
 }
@@ -688,8 +692,8 @@ header {
 }
 
 .logoanimate p:nth-of-type(1) {
-  -webkit-animation: leftlogo 1s linear .2s 1 normal;
-          animation: leftlogo 1s linear .2s 1 normal;
+  -webkit-animation: leftlogo 2s ease-out .2s 1 normal;
+          animation: leftlogo 2s ease-out .2s 1 normal;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   color: #469FA6;
@@ -710,6 +714,7 @@ header {
   50% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    font-weight: bold;
   }
   100% {
     font-weight: bolder;
@@ -724,6 +729,7 @@ header {
   50% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    font-weight: bold;
   }
   100% {
     font-weight: bolder;
@@ -849,6 +855,13 @@ header {
 .bodyhome {
   -webkit-animation: sloppy .3s ease-in-out 1;
           animation: sloppy .3s ease-in-out 1;
+}
+
+.headerhome h2 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  color: #4270B3;
 }
 
 .footerhome {
@@ -1784,6 +1797,11 @@ h1, h2, h3, h4, h5, h6 {
 .animatefaq {
   -webkit-animation: sloppy 1s ease-in-out 1;
           animation: sloppy 1s ease-in-out 1;
+}
+
+.inheader button {
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 /* 17.Maps==========================================================*/

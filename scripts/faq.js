@@ -77,10 +77,12 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 let f=document.querySelector(".faqb");
+f.style.fontWeight="bolder";
 let p=document.querySelector(".precautionsb");
 let m=document.querySelector(".mythsb");
 
 let f1=document.querySelector(".faqs");
+
 let p1=document.querySelector(".precautions");
 let m1=document.querySelector(".myths");
 
@@ -88,18 +90,36 @@ p.addEventListener("click",()=>{
 f1.style.display="none";
 m1.style.display="none";
 p1.style.display="block";
+[f,m].forEach(item=>{
+  item.style.fontWeight="normal";
+})
+p.style.fontWeight="bolder";
 })
 
 f.addEventListener("click",()=>{
   p1.style.display="none";
   m1.style.display="none";
   f1.style.display="block";
+
+
+  [p,m].forEach(item=>{
+    item.style.fontWeight="normal";
+  })
+  f.style.fontWeight="bolder";
+
 })
 
 m.addEventListener("click",()=>{
   f1.style.display="none";
   p1.style.display="none";
   m1.style.display="block";
+
+
+
+  [f,p].forEach(item=>{
+    item.style.fontWeight="normal";
+  })
+  m.style.fontWeight="bolder";
 })
 
 
