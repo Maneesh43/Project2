@@ -22,7 +22,17 @@
 <body>
     <header class="loginheader">
       
-        <nav></nav>
+        <nav><div class="navhidden">
+            <div class="dropbtn" aria-label="Menu" ><i class="fas fa-bars" aria-hidden="true"></i></div>
+            <div id="mysidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn">&times;</a>
+              <a href="home.html">Home</a>
+              <a href="profile.html">Profile</a>
+              <a href="#" id="signouthere">Signout</a>
+              <a href="#" class="pwabanner">Install PWA</a>
+            </div>
+          </div>
+        </nav>
         <div class="logoarea"></div>
         <div id="snackbar">Some text some message..</div>
     </header>

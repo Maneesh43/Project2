@@ -1,4 +1,4 @@
-const cacheName = "lifecache-v8";
+const cacheName = "lifecache-v9";
 var filesToCache = ['./pages/offline.html', './pages/faqoffline.html', './style.css', './scripts/offlinefaq.js', './scripts/offline.js',
 
   'https://kit.fontawesome.com/5149b952aa.js',
@@ -34,6 +34,7 @@ var filesToCache = ['./pages/offline.html', './pages/faqoffline.html', './style.
   './assets/logo/logo192.png',
   './assets/logo/logo512.png',
   './assets/logo/logomain.png',
+  './assets/logo/logoanimated.png',
   './assets/pwa-assets/android/android-launchericon-48-48.png',
   './assets/pwa-assets/android/android-launchericon-72-72.png',
   './assets/pwa-assets/android/android-launchericon-96-96.png',
