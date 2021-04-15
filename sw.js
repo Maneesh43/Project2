@@ -1,4 +1,4 @@
-const cacheName = "lifecache-v3";
+const cacheName = "lifecache-v4";
 var filesToCache = ['./pages/offline.html', './pages/faqoffline.html', './style.css', './scripts/offlinefaq.js', './scripts/offline.js',
 
   'https://kit.fontawesome.com/5149b952aa.js',

@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
     // alert("login fail");
     // console.log("login failed");
-    toaster("Login failed");
+    // toaster("Login failed");
   }
 });
 
@@ -98,6 +98,7 @@ firebase
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
+    // toaster(errorMessage);
     // The email of the user's account used.
     var email = error.email;
     // The firebase.auth.AuthCredential type that was used.
