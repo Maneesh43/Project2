@@ -18,7 +18,7 @@
 /* 18.Offline  */
 /* 19.Custom Fonts   */
 /* 19.Custom Fonts=============================*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&family=Noto+Sans+JP&family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&family=Noto+Sans+JP&family=Roboto:wght@400;700&display=swap");
 /* 1.Variables==================================================================== */
 /* 1.colors */
 /* 2.fonts */
@@ -1193,7 +1193,7 @@ main .hide {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 0 18px;
-  background-color: white;
+  background-color: #412f2f;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-out;
@@ -1635,6 +1635,7 @@ main i {
   width: 80%;
   left: 50%;
   top: 50%;
+  background-color: white;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   margin-bottom: 1rem;
@@ -1646,6 +1647,7 @@ main i {
   .passwordchangepopup {
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
+    background-color: transparent;
   }
 }
 
@@ -1664,11 +1666,11 @@ main i {
 
 /* 12.Typography==================================================================== */
 * {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-style: normal;
 }
 
@@ -1791,7 +1793,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.wrapperupdates .vaccinecand h3 {
+.wrapperupdates .vaccinecand h2 {
   color: #4695BD;
   font-size: 1.4rem;
 }
@@ -1800,7 +1802,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.wrapperupdates .cardsvaccine h3 {
+.wrapperupdates .cardsvaccine h2 {
   color: #4695BD;
   font-family: "Noto Sans JP",sans-serif;
   font-size: 1.4rem;
@@ -1874,12 +1876,13 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 
 .faqspage main {
   height: 100vh;
+  width: 100%;
   overflow-y: auto;
 }
 

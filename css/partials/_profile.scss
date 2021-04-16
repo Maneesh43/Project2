@@ -220,9 +220,11 @@ position: fixed;
 width: 80%;
 left: 50%;
 top: 50%;
+background-color:$color_white;
 transform: translate(-50%, -50%);
 @supports(backdrop-filter:blur(10px)){
     backdrop-filter: blur(20px);
+    background-color: transparent;
 }
 margin-bottom: 1rem;
 @include borderr;

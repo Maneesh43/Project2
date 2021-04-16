@@ -299,7 +299,7 @@ function changepasswordnow(){
 document.querySelector('#switch-1').addEventListener("change",function(event){
 
   if(event.target.checked){
-    setnotifications();
+    displayNotification();
     
 }else{
   disablenotifications();

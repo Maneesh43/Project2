@@ -1,85 +1,47 @@
+var intervalvariable;
+const img='../assets/pwa-assets/android/android-launchericon-144-144.png';
+const healthdata = [  'Clean your hands often. Use soap and water, or an alcohol-based hand rub.'
+                ,'Maintain a safe distance from anyone who is coughing or sneezing.'
+                ,'Wear a mask when physical distancing is not possible.'
+                ,'Don’t touch your eyes, nose or mouth.'
+                ,'Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.'
+                ,'Stay home if you feel unwell.'
+                ,'If you have a fever, cough and difficulty breathing, seek medical attention.'];
 
-var img = '../assets/pwa-assets/android/android-launchericon-144-144.png';
-var title = "Cherry";
-var text = 'HEY! Your task "' + title + '" is now overdue.';
-const array = ['Clean your hands often. Use soap and water, or an alcohol-based hand rub.'
-    , 'Maintain a safe distance from anyone who is coughing or sneezing.'
-    , 'Wear a mask when physical distancing is not possible.'
-    , 'Don’t touch your eyes, nose or mouth.'
-    , 'Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.'
-    , 'Stay home if you feel unwell.'
-    , 'If you have a fever, cough and difficulty breathing, seek medical attention.'];
-var intervalIndex;
-let notification;
-// notificationBtn.addEventListener('click', askNotificationPermission);
-function askNotificationPermission() {
-    // function to actually ask the permissions
-    function handlePermission(permission) {
-        // set the button to shown or hidden, depending on what the user answers
-        if (Notification.permission === 'denied' || Notification.permission === 'default') {
-            // notificationBtn.disabled = false;
-            navigator.serviceWorker.register('../sw.js');
-        } else {
-            // notificationBtn.disabled = true;
-        }
+
+  function displayNotification() {
+    if (window.Notification && Notification.permission === "granted") {
+      notification();
     }
-    // Let's check if the browser supports notifications
-    if (!('Notification' in window)) {
-        console.log("This browser does not support notifications.");
+    // If the user hasn't told if he wants to be notified or not
+    // Note: because of Chrome, we are not sure the permission property
+    // is set, therefore it's unsafe to check for the "default" value.
+    else if (window.Notification && Notification.permission !== "denied") {
+      Notification.requestPermission(status => {
+        if (status === "granted") {
+          notification();
+        } else {
+          alert("You denied or dismissed permissions to notifications.");
+        }
+      });
     } else {
-        if (checkNotificationPromise()) {
-            Notification.requestPermission()
-                .then((permission) => {
-                    handlePermission(permission);
-                })
-        } else {
-            Notification.requestPermission(function (permission) {
-                handlePermission(permission);
-            });
-        }
+      // If the user refuses to get notified
+      alert(
+        "You denied permissions to notifications. Please go to your browser or phone setting to allow notifications."
+      );
     }
-
-
-}
-function setnotifications() {
-    intervalIndex = setInterval(() => {
-        let randomNo = Math.floor(Math.random() * array.length);
+  }
+  function disablenotifications(){
+      clearInterval(intervalvariable);
+  }
+  function notification() {
+    // const options = {
+    //     body: "Testing Our Notification",
+    //     icon: "../assets/pwa-assets/android/android-launchericon-144-144.png"
+    //   };
+      intervalvariable=setInterval(() => {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            registrations[0].showNotification('Health alerts', { body: array[randomNo], icon: img });
+            registrations[0].showNotification("Health Notifications",{body: healthdata[Math.floor(Math.random()* healthdata.length)], icon: img} );
           });
-
-    //     notification = new Notification('Health Notifications', { body: array[randomNo], icon: img });
-    }, 1000);
-    // navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    //     registrations[0].showNotification(title, options);
-    //   });
-    console.log(intervalIndex);
-    if (notification) {
-        notification.addEventListener("click", (event) => {
-            // event.preventDefault();
-            window.open("https://lifeline.wmdd.ca");
-        })
-    }
+      }, 5000);
 }
-function disablenotifications() {
-    // clearInterval=null;
-    // console.log(intervalIndex);
-    clearInterval(intervalIndex);
-}
-function checkNotificationPromise() {
-    console.log('inside checkNotification promise block');
-    try {
-        Notification.requestPermission().then();
-    } catch (e) {
-        return false;
-    }
-    return true;
-}
-
-
-
-
-
-
-
-

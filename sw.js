@@ -1,6 +1,8 @@
-const cacheName = "lifecache-v4";
+const cacheName = "lifecache-v1";
 var filesToCache = ['./pages/offline.html', './pages/faqoffline.html', './style.css', './scripts/offlinefaq.js', './scripts/offline.js',
 
+
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js',
   'https://kit.fontawesome.com/5149b952aa.js',
   'https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@700&display=swap',
   './assets/favicons/android-chrome-192x192.png',

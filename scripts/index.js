@@ -30,7 +30,7 @@ document.querySelector('#login-page').addEventListener('click',()=>{
 //redirect page redirect here//
 
 document.querySelector('#register-page').addEventListener('click',()=>{
-  window.location.href='pages/register.html';
+  window.location.href='pages/registration.html';
 })
 
 

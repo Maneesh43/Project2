@@ -5,6 +5,7 @@ let userrname = document.querySelector('.username');
 let vaccinecenter = document.querySelector('.vaccinecenter');
 let vaccinedate = document.querySelector('.vaccinedate');
 let userdata = null;
+let useremail;
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
@@ -24,6 +25,18 @@ firebase.auth().onAuthStateChanged(function (user) {
     window.location.replace('../index.html');
   }
 });
+
+
+// Getting user data from database
+
+function getuserdatafromdb(userdata){
+  // console.log(userdata);
+  let dt=userdata.created.toDate();
+  // console.log(new Date(dt.setDate(dt.getDate()+7)));
+  let updateddate=new Date(dt.setDate(dt.getDate()+7));
+  vaccinedate.innerHTML = `<b style="margin:5px 0 5px 0">Vaccination date:</b> <p style="justify-self:center;margin:5px 0 5px 0">${updateddate.toDateString()} </p>`;
+}
+
 // Signout
 document.querySelector('#signouthere').addEventListener('click', () => {
   signout();
@@ -33,16 +46,14 @@ document.querySelector('#signouthere').addEventListener('click', () => {
 function loadinfo(user) {
   // console.log(user);
   if (sessstorage.getItem("is_doc") && (sessstorage.getItem("is_doc_data"))) {
-    let a = sessionstorages.getItem("time_created");
-    var date = new Date(a);
-    var newDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7);
-    // console.log(newDate);
+    // let a = sessionstorages.getItem("time_created");
+    // console.log(a);
     userdata = JSON.parse(sessstorage.getItem("is_doc_data"));
     // userrname.textContent=user.name;
     // console.log(userdata);
     userrname.innerHTML = `<p style="grid-column:1/-1;justify-self:center;margin-bottom:5px";>${userdata.name}</p>`;
     vaccinecenter.innerHTML = `<b style="margin:5px 0 5px 0">Vaccine Center:</b> <p style="justify-self:center;margin:5px 0 5px 0">${userdata.vaccinecenter}<a class="navigateuser"><i class="fas fa-location-arrow direction" style="margin-left:5px;"></i></a></p>`;
-    vaccinedate.innerHTML = `<b style="margin:5px 0 5px 0">Vaccination date:</b> <p style="justify-self:center;margin:5px 0 5px 0">${newDate.toDateString()} </p>`;
+     
     // console.log(userdata);
 
     document.querySelector(".navigateuser").addEventListener("click", () => {
