@@ -1008,6 +1008,10 @@ main .wrapperhome .cards h3 {
   color: #4695BD;
 }
 
+.vaccine_register_wrapper #name {
+  margin-top: 1rem;
+}
+
 .vaccine_register_wrapper .select {
   padding: .9rem;
   -webkit-appearance: none;

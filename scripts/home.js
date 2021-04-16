@@ -53,6 +53,9 @@ function loadinfo(user) {
     // console.log(userdata);
     userrname.innerHTML = `<p style="grid-column:1/-1;justify-self:center;margin-bottom:5px";>${userdata.name}</p>`;
     vaccinecenter.innerHTML = `<b style="margin:5px 0 5px 0">Vaccine Center:</b> <p style="justify-self:center;margin:5px 0 5px 0">${userdata.vaccinecenter}<a class="navigateuser"><i class="fas fa-location-arrow direction" style="margin-left:5px;"></i></a></p>`;
+    console.log(document.querySelector('.registercard'));
+    document.querySelector('.registercard').classList.add("hidelabel");
+
      
     // console.log(userdata);
 

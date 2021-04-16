@@ -81,3 +81,10 @@ self.addEventListener('fetch', (event) => {
     }
   }());
 });
+
+
+self.addEventListener('notificationclick', function (event) {
+  event.notification.close();
+  console.log(event);
+  clients.openWindow("https://lifeline.wmdd.ca");
+});

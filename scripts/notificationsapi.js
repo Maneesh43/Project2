@@ -41,7 +41,8 @@ const healthdata = [  'Clean your hands often. Use soap and water, or an alcohol
     //   };
       intervalvariable=setInterval(() => {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            registrations[0].showNotification("Health Notifications",{body: healthdata[Math.floor(Math.random()* healthdata.length)], icon: img} );
+           registrations[0].showNotification("Health Notifications",{body: healthdata[Math.floor(Math.random()* healthdata.length)], icon: img} );
+
           });
       }, 5000);
 }
