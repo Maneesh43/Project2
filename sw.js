@@ -1,6 +1,9 @@
-const cacheName = "lifecache-v3";
+const cacheName = "lifecache-v1";
+// Caching files
 var filesToCache = ['./pages/offline.html', './pages/faqoffline.html', './style.css', './scripts/offlinefaq.js', './scripts/offline.js',
 
+
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js',
   'https://kit.fontawesome.com/5149b952aa.js',
   'https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@700&display=swap',
   './assets/favicons/android-chrome-192x192.png',
@@ -37,6 +40,8 @@ var filesToCache = ['./pages/offline.html', './pages/faqoffline.html', './style.
 
 ];
 
+// In install event adding all files to cache
+
 self.addEventListener('install', event => {
 
   event.waitUntil((async () => {
@@ -48,6 +53,7 @@ self.addEventListener('install', event => {
 
 });
 
+// In install event deleting previous caches.
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => {
@@ -60,7 +66,7 @@ self.addEventListener('activate', event => {
 });
 
 // Fetch
-
+// Intercepting fetch requests appropriately,if cache hit content is served from cache else from network if both fail returning custom offline page.
 self.addEventListener('fetch', (event) => {
 
 
@@ -78,4 +84,11 @@ self.addEventListener('fetch', (event) => {
 
     }
   }());
+});
+
+// Notification event listener when user clicks on notifications.
+self.addEventListener('notificationclick', function (event) {
+  event.notification.close();
+  console.log(event);
+  clients.openWindow("https://lifeline.wmdd.ca");
 });

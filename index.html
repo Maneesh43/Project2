@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
@@ -21,17 +20,18 @@
 
 <body class="indexhome">
   <header class="indexheader">
-    <nav><div class="navmenuwrapper">
-      <div class="dropbtn" aria-label="Menu" ><i class="fas fa-bars" aria-hidden="true"></i></div>
-      <div id="mysidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn">&times;</a>
-        <a href="home.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="#" id="signouthere">Signout</a>
-        <a href="#" class="pwabanner">Install PWA</a>
+    <nav>
+      <div class="navmenuwrapper">
+        <div class="dropbtn"><i class="fas fa-bars"></i></div>
+        <div id="mysidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn">&times;</a>
+          <a href="home.html">Home</a>
+          <a href="profile.html">Profile</a>
+          <a href="#" id="signouthere">Signout</a>
+          <a href="#" class="pwabanner">Install PWA</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   </header>
 
   <main>
@@ -45,18 +45,24 @@
       <div class="formarea formareaindex">
         <div class="mainlogo">
           <!-- <img src="assets/logo/logomain.png" alt="mainlogo"> -->
-          <span class="vaccineanimated"><img src="assets/logo/logoanimated.png"></span>
+          <span class="vaccineanimated"><img src="assets/logo/logoanimated.png" alt="vaccinelogo"></span>
 
-          <span class="logoanimate"><p>Life</p><p>line</p></span>
-          <span class="logobottomanimate"><p>vaccine rollout planner</p></span>
+          <span class="logoanimate">
+            <p>Life</p>
+            <p>line</p>
+          </span>
+          <span class="logobottomanimate">
+            <p>vaccine rollout planner</p>
+          </span>
 
 
         </div>
         <div class="wrapperbuttons">
-        <!-- <span class="headingmain"><h2>Life</h2><p>line</p></span> -->
-        <button type="button" id="login-page" class="button login-button">Login</button>
+          <!-- <span class="headingmain"><h2>Life</h2><p>line</p></span> -->
+          <button type="button" id="login-page" class="button login-button">Login</button>
 
-        <button type="button" id="register-page" class="button register-button">Register</button></div>
+          <button type="button" id="register-page" class="button register-button">Register</button>
+        </div>
 
         <div class="socialinfo">
           <i>or signin with</i>
@@ -66,11 +72,11 @@
           <!-- <button type="button" id="google-signin" class="button google-signin">
             sign
             in</button> -->
-            <image src="assets/images/google.png" id="google-signin" class="g-signin">
-        
-            <image src="assets/images/facebook.png" class="fb-login" id="fblogin">
+          <img src="assets/images/google.png" id="google-signin" class="g-signin" alt="google-sigin-logo">
 
-<!-- <button class="button" id="forgot">forgot password</button> -->
+          <img src="assets/images/facebook.png" class="fb-login" id="fblogin" alt="facebook-signin-logo">
+
+          <!-- <button class="button" id="forgot">forgot password</button> -->
 
         </div>
         <!-- <button type="button" id="sign-out" class="button">signout</button> -->
@@ -90,7 +96,7 @@
     <script src="scripts/misc.js"></script>
     <script src="scripts/projectscript.js"></script>
     <script src="scripts/index.js"></script>
-   
+
   </main>
   <!-- <footer></footer> -->
 </body>

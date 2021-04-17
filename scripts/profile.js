@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // User Profile data
+// Setting user data in the page when he did not register.
 function getuserprofile() {
   // console.log(userinfo.email);
 
@@ -64,6 +65,8 @@ function getuserprofile() {
   });
 }
 
+
+// Setting user data if he has registered.
 function setuserdata(datauser) {
   // console.log(datauser);
   document.querySelector('.loader').classList.add("hide");
@@ -299,7 +302,7 @@ function changepasswordnow(){
 document.querySelector('#switch-1').addEventListener("change",function(event){
 
   if(event.target.checked){
-    setnotifications();
+    displayNotification();
     
 }else{
   disablenotifications();

@@ -357,6 +357,9 @@ main .wrapperhome{
     h2{
         color: $color_blue_2;
     }
+    #name{
+        margin-top: 1rem;
+    }
     .select{
         padding: .9rem;
         -webkit-appearance: none;
@@ -538,7 +541,7 @@ main .wrapperhome{
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 0 18px;
-    background-color: white;
+    background-color: rgb(65, 47, 47);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

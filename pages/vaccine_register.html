@@ -11,12 +11,12 @@
     <link rel="manifest" href="../app.webmanifest">
 
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
-  <link rel="manifest" href="../assets/favicons/site.webmanifest">
-  <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
 
 
     <title>Vaccine Register</title>
@@ -27,19 +27,19 @@
 
         <div class="headerarea">
             <div class="backbutton"><i class="fas fa-chevron-left"></i></div>
-            <h2>Vaccine registration form</h2>
+            <h2>Vaccine registration</h2>
             <nav>
                 <div class="navmenuwrapper">
-                    <div class="dropbtn"><i class="fas fa-bars" aria-label="Menu" aria-hidden="true"></i></div>
+                    <div class="dropbtn"><i class="fas fa-bars"></i></div>
                     <div id="mysidenav" class="sidenav">
-                      <a href="javascript:void(0)" class="closebtn">&times;</a>
-                      <a href="home.html">Home</a>
-                      <a href="profile.html">Profile</a>
-                      <a href="javascript:void(0)" id="signouthere">Signout</a>
-                      <a href="javascript:void(0);" class="pwabanner">Install PWA</a>
-                      
+                        <a href="javascript:void(0)" class="closebtn">&times;</a>
+                        <a href="home.html">Home</a>
+                        <a href="profile.html">Profile</a>
+                        <a href="javascript:void(0)" id="signouthere">Signout</a>
+                        <a href="javascript:void(0);" class="pwabanner">Install PWA</a>
+
                     </div>
-                  </div>
+                </div>
             </nav>
 
             <div id="snackbar">Some text some message..</div>
@@ -50,62 +50,62 @@
 
 
     <main>
-     
+
         <div class="wrapper vaccine_register_wrapper">
 
 
 
-            <h2>Vaccine Registration form</h2>
+            <!-- <h2>Vaccine Registration form</h2> -->
 
             <label for="name" class="hidelabel">Enter your Full name</label>
             <input type="text" id="name" placeholder="please enter your fullname" class="input vaccine_register_input">
 
             <div class="personaldetails">
                 <div class="agediv">
-                <label for="age" class="hidelabel">Enter your age</label>
-                <input type="number" id="age" class="input vaccine_register_input" placeholder="please enter your age"
-                    min="0" max="150">
+                    <label for="age" class="hidelabel">Enter your age</label>
+                    <input type="number" id="age" class="input vaccine_register_input"
+                        placeholder="please enter your age" min="0" max="150">
                 </div>
 
                 <div class="genderdiv">
-                <label for="sex" class="hidelabel">Enter your gender</label>
-                <select name="selectsex" id="sex" class="select">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
+                    <label for="sex" class="hidelabel">Enter your gender</label>
+                    <select name="selectsex" id="sex" class="select">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
             </div>
 
-        <div class="radiobuttons">
-            <div class="diseaseselect ">
-                <!-- <p>Did you have any chronic diseases such as Diabetes,Heart issues..?</p> -->
-                <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label>
-                <select name="selectdisease" id="diseaseinfo" class="select">
-                    <option value="yes">Yes</option>
-                    <option value="No" selected>No</option>
-                </select>
-                <!-- <div class="radiogroups">
+            <div class="radiobuttons">
+                <div class="diseaseselect ">
+                    <!-- <p>Did you have any chronic diseases such as Diabetes,Heart issues..?</p> -->
+                    <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label>
+                    <select name="selectdisease" id="diseaseinfo" class="select">
+                        <option value="yes">Yes</option>
+                        <option value="No" selected>No</option>
+                    </select>
+                    <!-- <div class="radiogroups">
                 <input type="radio" name="radioselect" value="yes" id="yesselect">
                 <label for="yesselect">Yes<span class="check"></span></label>
                 <input type="radio" name="radioselect" value="No" id="noselect">
                 <label for="noselect">No<span class="check"></span></label>
                 </div> -->
-            </div>
-            <div class="diseaseprev">
-                <label for="diseaseinfoprevious" class="showlabel">Did you get a vaccine shot previously?</label>
-                <select name="selectdiseaseprevious" id="diseaseinfoprevious" class="select">
-                    <option value="yes">Yes</option>
-                    <option value="No" selected>No</option>
-                </select>
+                </div>
+                <div class="diseaseprev">
+                    <label for="diseaseinfoprevious" class="showlabel">Did you get a vaccine shot previously?</label>
+                    <select name="selectdiseaseprevious" id="diseaseinfoprevious" class="select">
+                        <option value="yes">Yes</option>
+                        <option value="No" selected>No</option>
+                    </select>
 
-                <!-- <p>Is this your first vaccine ?</p> -->
-                <!-- <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label>
+                    <!-- <p>Is this your first vaccine ?</p> -->
+                    <!-- <label for="diseaseinfo" class="showlabel">Do you have any chronic diseases</label>
                 <select name="selectdisease" id="diseaseinfo" class="select">
                     <option value="yes">Yes</option>
                     <option value="No" selected>No</option>
                 </select> -->
-                <!-- <div class="radiogroups">
+                    <!-- <div class="radiogroups">
                 <input type="radio" name="radioselect" value="yes" id="yesselectprev">
                 <label for="yesselectprev">Yes<span class="check"></span></label>
                 <input type="radio" name="radioselect" value="No" id="noselectprev">
@@ -113,14 +113,15 @@
                 </div> -->
 
 
+                </div>
             </div>
-        </div>
 
 
             <div class="locationdiv">
                 <label for="locationtext" class="hidelabel">Enter your location</label>
                 <input type="text" id="locationtext" class="input vaccine_register_location_input">
-                <button type="button" id="locateme" class="button vaccine_regiser_button"><i class="fas fa-search-location"></i></button>
+                <button type="button" id="locateme" class="button vaccine_regiser_button"><i
+                        class="fas fa-search-location"></i></button>
 
             </div>
 

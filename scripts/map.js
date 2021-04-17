@@ -3,12 +3,17 @@ let userinfo;
 var a1=[];
 is_doc=false;
 var counter=0;
+
+// If user in session storage get his data from session storage
 if(sessionstoragem.getItem("loginuser")){
     let loginuser=sessionstoragem.getItem("loginuser")
     // console.log(JSON.parse(loginuser));
     userinfo=JSON.parse(loginuser);
     // console.log(userinfo);
 }else{
+
+
+    // If user data doesn't exist in session storage get his data from database.
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
@@ -20,18 +25,22 @@ if(sessionstoragem.getItem("loginuser")){
         } else {
           // No user is signed in.
         //   console.log("no user");
+        // User not authenticated ask him to signin.
           window.location.replace("../index.html");
         }
       });
 }
 if(sessionstoragem.getItem("is_doc")){
     // alert("doc exists");
+    // set is_doc to true if user data exists in session storage
     is_doc=true;
 }else{
     // alert("doc doesn't exist");
+    // Document doesn't exist 
 }
-// PWA
 
+
+// PWA Initialization
 document.addEventListener("DOMContentLoaded",()=>{
     pwainit('../sw.js');
   })
@@ -41,17 +50,16 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.querySelector('.closebtn').addEventListener("click",closeNav); 
   
   
-  // PWA banner
-  
-  
   var deferredPrompt; 
   
+//   Before install event listener for Service worker
   window.addEventListener('beforeinstallprompt', function (e) { 
     deferredPrompt = e; 
     showAddToHomeScreen(deferredPrompt);
     // console.log(deferredPrompt);
    }); 
   
+//    If users browser supports pwa and before install event fired then show install pwa option in nav bar.
    function showAddToHomeScreen() { 
      var a2hsBtn = document.querySelector(".pwabanner"); 
     //  console.log(a2hsBtn);
@@ -60,6 +68,7 @@ document.addEventListener("DOMContentLoaded",()=>{
      a2hsBtn.addEventListener("click", addToHomeScreen); 
     } 
   
+    // Show install pwa prompt
     function addToHomeScreen() { 
       var a2hsBtn = document.querySelector(".pwabanner");  
       a2hsBtn.style.display = 'none'; // Show the prompt 
@@ -82,14 +91,17 @@ document.addEventListener("DOMContentLoaded",()=>{
         
       })
   
-  
+// Back button
   document.querySelector(".backbutton i").addEventListener("click",()=>{
     window.history.back();
+
+    // Go to previous page
   })
   
 
 
-//   Map js
+//Map js
+// Map Initialization and rendering
 
 let map;
 let infoWindow;
@@ -202,12 +214,7 @@ function callback(results, status) {
             var lng=results[i].geometry.location.lng();
             maploc.push([lat,lng]);
             list.innerHTML += `<li class="vaccinecenter"><span>${results[i].name}</span> <span><button type="button" class="button mapbutton">Book appointment</button></span><span class="center"></span><span></li>`;
-            // let mapaddress=document.getElementsByClassName("center");
-            // console.log(mapaddress)
-        //  let viewdetails=document.querySelectorAll(".bdetails");
-        //  for(i1=0;i1<viewdetails.length;i++){
-        //      console.log(maploc[i1]);
-        //  }
+          
                
 
             
@@ -228,7 +235,6 @@ function callback(results, status) {
                             sessionstoragem.setItem("vaccinecenter",item.name);
                             var vaccinecenterupdate = db.collection("userdata").doc(userinfo.email);
 
-                    // Set the "capital" field of the city 'DC'
                     return vaccinecenterupdate.update({
                         vaccinecenter:vaccinecentername,
                     })
@@ -255,19 +261,7 @@ function callback(results, status) {
                 })
             })
         }
-        // let l=document.querySelectorAll(".center");
-        // console.log(maploc)
-        // let mapaddress=[];
-        // for(i=0;i<l.length;i++){
-        //     let a =reverse_geocode(maploc[i][0],maploc[i][1]).then((value)=>{
-        //         // console.log(value);
-        //         mapaddress.push((value.results[0].formatted_address).toString());
-        //         // setdata(value.results[0].formatted_address);
-        //     });
-        //     // console.log(i);
-        //     console.log(mapaddress);
-      
-        // }
+       
     }
 }
 
@@ -297,18 +291,9 @@ function clearResults(markers) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-// function initAutocomplete() {
-//     console.log('inside initAutocomplete');
-// }
+// Initializing maps 
 
 
-// event listners
-// document.querySelector(".mapbutton").forEach(function(item){
-//     item.addEventListener("click",function(item){
-//         console.log(this.value);
-//     })
-// })
 
 
 

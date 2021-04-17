@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script
-          src="https://kit.fontawesome.com/5149b952aa.js"
-          crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="manifest" href="../app.webmanifest">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/5149b952aa.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../app.webmanifest">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
   <link rel="manifest" href="../assets/favicons/site.webmanifest">
@@ -20,39 +19,40 @@
   <meta name="msapplication-TileColor" content="#ffc40d">
   <meta name="theme-color" content="#ffffff">
 
-<title>Home page</title>
+  <title>Home page</title>
 
 </head>
 
 
 <body class="bodyhome">
-  
-  
-    <header>
 
-      <div id="snackbar"></div>
-        <div class="headerarea headerhome">
-            <div class="logoarea"></div>
-            <!-- <h2>Home</h2> -->
-            <!-- <div class="head"><h2>Lifeline</h2></div> -->
-            <nav><div class="navmenuwrapper">
-                <div class="dropbtn" aria-label="Menu" ><i class="fas fa-bars" aria-hidden="true"></i></div>
-                <div id="mysidenav" class="sidenav">
-                  <a href="javascript:void(0)" class="closebtn">&times;</a>
-                  <a href="home.html">Home</a>
-                  <a href="profile.html">Profile</a>
-                  <a href="#" id="signouthere">Signout</a>
-                  <a href="#" class="pwabanner">Install PWA</a>
-                </div>
-              </div>
-            </nav>
 
+  <header>
+
+    <div id="snackbar"></div>
+    <div class="headerarea headerhome">
+      <div class="logoarea"></div>
+      <!-- <h2>Home</h2> -->
+      <!-- <div class="head"><h2>Lifeline</h2></div> -->
+      <nav>
+        <div class="navmenuwrapper">
+          <div class="dropbtn"><i class="fas fa-bars"></i></div>
+          <div id="mysidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <a href="home.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" id="signouthere">Signout</a>
+            <a href="#" class="pwabanner">Install PWA</a>
+          </div>
         </div>
+      </nav>
+
+    </div>
 
 
 
 
-            <!-- <div class="carousel">
+    <!-- <div class="carousel">
                 <div class="carousel homehome" data-flickity='{ "autoPlay": 1500 }'>
                 <div class="carousel-cell"><a href="../pages/vaccine_register.html">Register for Vaccine</a>
                 </div>
@@ -62,65 +62,67 @@
                 <div class="carousel-cell"> <a href="#">Vaccine</a></div>
               </div> 
            </div> -->
-      
-    </header>
-  
-    <main>
-        <div class="loader show"></div>
-        <div class="ad2hs-prompt">
-          <button class=a2hsBtn>Install PWA</button>
-          <p>&times;</p>
-        </div>
-  <div class="wrapperhome hide">
 
-    <div class="cards card2">
-      <h3>Welcome,</h3>
-      <div class="username homecard1"></div>
-      <div class="vaccinecenter homecard1"></div>
+  </header>
+
+  <main>
+    <div class="loader show"></div>
+    <div class="ad2hs-prompt">
+      <button class=a2hsBtn>Install PWA</button>
+      <p>&times;</p>
+    </div>
+    <div class="wrapperhome hide">
+
+      <div class="cards card2">
+        <h3>Welcome,</h3>
+        <div class="username homecard1"></div>
+        <div class="vaccinecenter homecard1"></div>
         <div class="vaccinedate homecard1"></div>
       </div>
-<div class="cards card3">
-  <h3>Register for vaccine</h3>
-  <a href="vaccine_register.html">
-    <p>Register here</p>
-  </a>
-</div>
+      <div class="cards card3 registercard">
+        <h3>Register for vaccine</h3>
+        <a href="vaccine_register.html">
+          <p>Register here</p>
+        </a>
+      </div>
 
-<div class="cards card1">
-    <h3>Self assesment</h3>
-    <p>Take a quick self assesment <a href="/pages/self_assesment.html">here</a></p>
-</div>
+      <div class="cards card1">
+        <h3>Self assesment</h3>
+        <p>Take a quick self assesment <a href="/pages/self_assesment.html">here</a></p>
+      </div>
 
 
 
-  </div>
-    </main>
-    <footer class="footerhome ">
-        <ul>
-            <li title="Home">
+    </div>
+  </main>
+  <footer class="footerhome ">
+    <ul>
+      <li title="Home">
 
-              
-              <a href="../pages/home.html" class="current">Home<i class="fas fa-home"></i></a></li>
-            <li><a href="../pages/map.html">Map<i class="fas fa-map-marker-alt"></i></a>
-            
-            
-            </li>
-            <li><a href="../pages/updates.html">Updates<i class="fas fa-info"></i></a></li>
-            <li><a href="../pages/faq.html">Faq's<i class="fas fa-question"></i></a></li>
-        </ul>
-    </footer>
 
-   
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+        <a href="../pages/home.html" class="current">Home<i class="fas fa-home"></i></a>
+      </li>
+      <li><a href="../pages/map.html">Map<i class="fas fa-map-marker-alt"></i></a>
+
+
+      </li>
+      <li><a href="../pages/updates.html">Updates<i class="fas fa-info"></i></a></li>
+      <li><a href="../pages/faq.html">Faq's<i class="fas fa-question"></i></a></li>
+    </ul>
+  </footer>
+
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
-         
-         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
-         <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-         <script src="../scripts/projectscript.js"></script>
-         <script src="../scripts/misc.js"></script>
-    
-         <script src="../scripts/home.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+  <script src="../scripts/projectscript.js"></script>
+  <script src="../scripts/misc.js"></script>
+
+  <script src="../scripts/home.js"></script>
 
 </body>
+
 </html>
