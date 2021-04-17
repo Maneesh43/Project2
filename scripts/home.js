@@ -7,32 +7,34 @@ let vaccinedate = document.querySelector('.vaccinedate');
 let userdata = null;
 let useremail;
 
+
+// Authentication event listener
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    // User is signed in.
-    // alert("success");
-    // console.log(user.email);
+    //If user login is successfull disabling the loader and showing body content
     useremail = user.email;
     document.querySelector(".loader").classList.toggle("hide");
     document.querySelector(".wrapperhome").classList.toggle("hide");
     // console.log(user);
+    // Loading user data from database
     loadinfo(user);
     is_doc_available(useremail);
   } else {
-    // No user is signed in.
-    // alert("user not logged in");
-    // console.log("User not signed in")
+  //  If user not authenticated redirecting him to index page
     window.location.replace('../index.html');
   }
 });
 
 
-// Getting user data from database
+// Getting user data from database.
 
 function getuserdatafromdb(userdata){
   // console.log(userdata);
+
+  // Converting date to Dateobject
   let dt=userdata.created.toDate();
   // console.log(new Date(dt.setDate(dt.getDate()+7)));
+  // Getting date after 7 days 
   let updateddate=new Date(dt.setDate(dt.getDate()+7));
   vaccinedate.innerHTML = `<b style="margin:5px 0 5px 0">Vaccination date:</b> <p style="justify-self:center;margin:5px 0 5px 0">${updateddate.toDateString()} </p>`;
 }
@@ -43,45 +45,48 @@ document.querySelector('#signouthere').addEventListener('click', () => {
   window.sessionStorage.clear();
 
 })
+
+// Loads userdata into the page
 function loadinfo(user) {
   // console.log(user);
   if (sessstorage.getItem("is_doc") && (sessstorage.getItem("is_doc_data"))) {
-    // let a = sessionstorages.getItem("time_created");
-    // console.log(a);
+
+    // Parsing string to json
     userdata = JSON.parse(sessstorage.getItem("is_doc_data"));
-    // userrname.textContent=user.name;
-    // console.log(userdata);
+
     userrname.innerHTML = `<p style="grid-column:1/-1;justify-self:center;margin-bottom:5px";>${userdata.name}</p>`;
     vaccinecenter.innerHTML = `<b style="margin:5px 0 5px 0">Vaccine Center:</b> <p style="justify-self:center;margin:5px 0 5px 0">${userdata.vaccinecenter}<a class="navigateuser"><i class="fas fa-location-arrow direction" style="margin-left:5px;"></i></a></p>`;
     console.log(document.querySelector('.registercard'));
+
+    // Hiding register card if user has already registered.
     document.querySelector('.registercard').classList.add("hidelabel");
 
      
-    // console.log(userdata);
 
+    // Adding maps api to navigate user to his vaccination center.
     document.querySelector(".navigateuser").addEventListener("click", () => {
       let alert = window.confirm("Proceeding will take you to an external app.");
       let attributedata = document.querySelector('.navigateuser');
+      // Setting attributes for anchor tag to enable navigation to the destination.
       if (alert && ((attributedata.previousSibling.textContent).split(" ").join("")).toLowerCase() !== "notselected") {
         attributedata.setAttribute("href", `https://www.google.com/maps/dir/?api=1&destination=${attributedata.previousSibling.textContent}`);
       } else {
-        // return false;
+
         toaster("Location not set.")
       }
     })
 
 
   } else {
-    // console.log(getUsernameFromEmail(authuser));
-    // console.log(user);
+    // User has not registered.
     userrname.innerHTML = `<p style="grid-column:1/-1;justify-self:center";>${getUsernameFromEmail(user.email)}</p>`;
     vaccinedate.innerHTML = ``;
 
 
   }
 }
-// PWA
 
+// PWA Initialization code
 document.addEventListener("DOMContentLoaded", () => {
   pwainit('../sw.js');
 })
@@ -97,21 +102,18 @@ document.querySelector('.closebtn').addEventListener("click", closeNav);
 
 
 
-// document.querySelector('.ad2hs-prompt p').addEventListener("click",()=>{
-//   document.querySelector('.ad2hs-prompt').style.display="none";
-// })
-// setTimeout(function(){
-// document.querySelector('.ad2hs-prompt').style.display="none";
-// },(5*1000));
+// PWA Install option in nav bar
 
 var deferredPrompt;
 
+// Before install event 
 window.addEventListener('beforeinstallprompt', function (e) {
   deferredPrompt = e;
   showAddToHomeScreen(deferredPrompt);
   // console.log(deferredPrompt);
 });
 
+// Making banner visible if user didnt install PWA and PWA is supported by the browser.
 function showAddToHomeScreen() {
   var a2hsBtn = document.querySelector(".pwabanner");
   //  console.log(a2hsBtn);
@@ -120,6 +122,8 @@ function showAddToHomeScreen() {
   a2hsBtn.addEventListener("click", addToHomeScreen);
 }
 
+
+// Showing PWA Install prompt
 function addToHomeScreen() {
   var a2hsBtn = document.querySelector(".pwabanner");
   a2hsBtn.style.display = 'none'; // Show the prompt 
@@ -129,7 +133,7 @@ function addToHomeScreen() {
       // console.log('User accepted the A2HS prompt'); 
     }
     else {
-      // console.log('User dismissed the A2HS prompt'); 
+      // 'User dismissed the A2HS prompt; 
     }
     deferredPrompt = null;
   });

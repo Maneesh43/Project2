@@ -1,5 +1,5 @@
 
-
+// JS for offline page
 function toaster(errormsg,bgcolor,fgcolor){
   var x = document.getElementById("snackbar");
 
@@ -15,7 +15,7 @@ function toaster(errormsg,bgcolor,fgcolor){
 
 
 
-
+// Checking if browser is online
 document.querySelector("#retry").addEventListener("click",()=>{
 
   // window.location.replace("home.html");

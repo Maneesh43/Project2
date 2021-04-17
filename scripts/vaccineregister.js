@@ -15,34 +15,19 @@ var db = firebase.firestore();
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        // User is signed in.
-        // alert("success");
-        // console.log(user);
+       
         useremail = user.email;
     } else {
-        // No user is signed in.
-        //   alert("user not logged in");
+       
         toaster("User not logged in");
         window.location.replace('../index.html');
     }
 });
 
-// console.log(useremail);
-
-//   var db = firebase.firestore();
-//   var docRef = db.collection("userdata").doc(useremail);
-//   docRef.get().then((doc) => {
-//     if (doc.exists) {
-//       // console.log("Document data:", doc.data());
-//       setuserdata(doc);
-//     } else {
-
-//       // doc.data() will be undefined in this case
-//       console.log("No such document!");
-//     }});
 
 
-//  Geolocation api
+
+//  Geolocation api to get location of user.
 let locatevalue = document.querySelector("#locationtext");
 document.querySelector('#locateme').addEventListener('click', getLocation);
 
@@ -57,13 +42,7 @@ function getLocation() {
             locatevalue.value = values.results[0].formatted_address;
             console.log(values);
         });
-        // console.log(reverse_geocode(latitude,longitude).then(function(value){
-        //     console.log(value);
-        // }));
-
-        //  status.textContent = '';
-        //  mapLink.href = `https:www.openstreetmap.org#map=18${latitude}${longitude}`;
-        //  mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+       
     }
 
     function error() {
@@ -90,7 +69,7 @@ document.querySelector('#diseaseinfoprevious').addEventListener('change', () => 
 
 // console.log(latitude);
 
-
+// Creating user object with data from input fields
 class Userobjectdata {
     constructor(username, useremail, userage, usersex, userischronic, userhasprevious, latitude, longitude) {
         this.username = username,
@@ -121,7 +100,7 @@ sessstorage.setItem("vaccinecenter","Not booked");
                 // locations(latitude,longitude);
                 var locationupdate = db.collection("userdata").doc(useremail);
 
-                // Set the "capital" field of the city 'DC'
+                
                 return locationupdate.update({
                     userlocationlatitude: latitude,
                     userlocationlongitude:longitude
@@ -170,7 +149,7 @@ sessstorage.setItem("vaccinecenter","Not booked");
     let confirmreg;
     let register_stat
     if ((is_empty(username)) && is_empty(userage)) {
-
+        // Checking if user has entered all input fields
         toaster("All fields must be filled to complete registration.")
         register_stat = false;
     } else {
@@ -204,7 +183,7 @@ sessstorage.setItem("vaccinecenter","Not booked");
 
 
 
-
+// Writing into db
         db.collection("userdata").doc(useremail).set({
             email: useremail,
             name: username,
@@ -234,7 +213,7 @@ sessstorage.setItem("vaccinecenter","Not booked");
             .catch((error) => {
                 console.error("Error writing document: ", error);
             });
-
+// Calculate priority value using user profile data
         function prioritycalc() {
             // console.log("update")
             // console.log(userdataobject);
@@ -276,7 +255,7 @@ document.querySelector('#signouthere').addEventListener('click', () => {
     signout();
 })
 
-// Autocomplete
+//Maps places Autocomplete Api
 
 const inputField = document.getElementById("locationtext");
 
@@ -289,7 +268,6 @@ const options = {
 };
 const autocomplete = new google.maps.places.Autocomplete(inputField, options);
 
-// geocoding api
 
 
 

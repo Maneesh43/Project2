@@ -3,7 +3,7 @@
 
 
 
-// Async function 
+// Async function to get data from disease.sh api
 async function fetchdata(a){
     let response=await fetch(a).then(response=>response.json()).then(function(myjson){
         return myjson;
@@ -65,7 +65,7 @@ function vaccine_coverage(){
     })
 }
 
-// Vaccine Candidates
+// Vaccine Candidates data
 function vaccinecandidates(){
     let container=document.querySelector(".vaccinedata");
     let select=document.querySelector("#vaccinecandidate");
@@ -127,8 +127,6 @@ document.querySelector('.closebtn').addEventListener("click",closeNav);
 
 
 // PWA banner
-
-
 var deferredPrompt; 
 
 window.addEventListener('beforeinstallprompt', function (e) { 

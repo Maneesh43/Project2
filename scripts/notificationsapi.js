@@ -31,6 +31,8 @@ const healthdata = [  'Clean your hands often. Use soap and water, or an alcohol
       );
     }
   }
+
+  // Disable notifications
   function disablenotifications(){
       clearInterval(intervalvariable);
   }
@@ -39,6 +41,8 @@ const healthdata = [  'Clean your hands often. Use soap and water, or an alcohol
     //     body: "Testing Our Notification",
     //     icon: "../assets/pwa-assets/android/android-launchericon-144-144.png"
     //   };
+
+    // Sending a notification every 5 seconds
       intervalvariable=setInterval(() => {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
            registrations[0].showNotification("Health Notifications",{body: healthdata[Math.floor(Math.random()* healthdata.length)], icon: img} );

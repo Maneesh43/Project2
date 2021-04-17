@@ -5,7 +5,7 @@ document.querySelector('#register').addEventListener('click',()=>{
 
 let useremail=document.querySelector('#useremail').value;
 // console.log(useremail);
-
+// Authentication event handler
 let userpassword=document.querySelector("#userpassword").value;
 firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
   .then((userCredential) => {
@@ -37,13 +37,14 @@ firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
 
 
 var deferredPrompt; 
-
+// Before install event listener
 window.addEventListener('beforeinstallprompt', function (e) { 
   deferredPrompt = e; 
   showAddToHomeScreen(deferredPrompt);
   // console.log(deferredPrompt);
  }); 
 
+// ADding install pwa option if users browser suppports it 
  function showAddToHomeScreen() { 
    var a2hsBtn = document.querySelector(".pwabanner"); 
   //  console.log(a2hsBtn);
@@ -52,6 +53,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
    a2hsBtn.addEventListener("click", addToHomeScreen); 
   } 
 
+  // Showing PWA install prompt
   function addToHomeScreen() { 
     var a2hsBtn = document.querySelector(".pwabanner");  
     a2hsBtn.style.display = 'none'; // Show the prompt 
