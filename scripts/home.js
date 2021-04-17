@@ -88,7 +88,7 @@ function loadinfo(user) {
 
 // PWA Initialization code
 document.addEventListener("DOMContentLoaded", () => {
-  pwainit('../sw.js');
+  pwainit('./sw.js');
 })
 
 

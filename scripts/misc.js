@@ -1,7 +1,6 @@
-// Creating a sessionstorage instance
+
+
 sessionstorages = window.sessionStorage;
-
-
 
 
 
@@ -12,18 +11,15 @@ function toaster(errormsg, bgcolor, fgcolor) {
 
   // Add the "show" class to DIV
   x.className = "show";
-  // When called setting toaster visibility status to show. 
 
   // After 3 seconds, remove the show class from DIV
   x.textContent = errormsg;
   x.style.backgroundColor = bgcolor;
   x.style.color = fgcolor;
-  // Auto dismiss toaster after 3 seconds.
   setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
 
 // Username extractor
-// Extracts username from e-mail address
 function getUsernameFromEmail(email) {
   var domainArray = email.split('@')
   var domain = domainArray[domainArray.length - 1]
@@ -36,8 +32,7 @@ function getUsernameFromEmail(email) {
 
 
 
-// Validator
-// Validates email and converts to lowercase.
+// Email address Validator
 
 function is_email(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -49,7 +44,7 @@ function is_email(email) {
 }
 
 
-// Returns true if given string length is <= 0
+// Checks if string is empty.
 function is_empty(length) {
 
 
@@ -64,20 +59,19 @@ function is_empty(length) {
 
 
 // checking if valid image
-// Validates image
-// Checks if image is valid
-
 function validateAndUpload(input) {
-
+  // var URL = window.URL || window.webkitURL;
+  // var file = input.files[0];
 
   var image = new Image();
 
   image.onload = function () {
     if (this.width) {
-      /
+      //  console.log('Image has width, I think it is real image');
+      //TODO: upload to backend
     };
 
-   
+    // image.src = URL.createObjectURL(file);
   }
 }
 
@@ -87,28 +81,29 @@ function signout() {
   firebase.auth().signOut().then(() => {
     // alert("signed out");
     toaster("Signed Out!", "lightgreen");
+    // Sign-out successful.
     window.location.replace("../index.html");
-  
+    // alert("sign out");
     var deletingAll = browser.history.deleteAll()
-  // Deleting all session storage entries
+    // console.log(browser.history());
     window.sessionStorage.clear();
   }).catch((error) => {
-    
+    // An error happened.
+    // alert("sign-out failed");
     toaster("Failed to signout");
   });
 }
 
 
-// PWA Initialization code
-// Registers PWA
-
+// PWA initialization
 function pwainit(a) {
   // does the browser support service workers?
   if ('serviceWorker' in navigator) {
     // fires when the service worker is ready
     navigator.serviceWorker.ready.then(reg => {
       // we have an active service worker working for us
-    
+      // console.log(`Service Worker ready (Scope: ${reg.scope})`);
+      // do something interesting, if you want...
 
     });
     // then register our service worker
@@ -128,9 +123,6 @@ function pwainit(a) {
 }
 
 // DOC exists in table.
-
-// Checks if user has already registered
-// if yes,writing his data into session storage 
 function is_doc_available(a) {
   var db = firebase.firestore();
 
@@ -184,8 +176,7 @@ async function reverse_geocode(latitude, longitude) {
 
 
 }
-
-// Function which converts address to latitudes and longitudes
+// Converting address to latitudes and longitudes
 async function geocode(location) {
   let response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
     params: {
@@ -197,6 +188,7 @@ async function geocode(location) {
       let lat = response.data.results[0].geometry.location;
       //     console.log(response);
       return lat;
+      // hello(lat);
 
     }).catch((error) => {
       // console.log(error);
@@ -207,8 +199,7 @@ async function geocode(location) {
 }
 
 
-// Snapshot listener to check if userdata has changed.
-// If changed notify and update /set that data in the sessionstorage.
+// Snapshot listener to check if user data is updated.
 function is_doc_updated(a) {
   // console.log(a);
   var db = firebase.firestore();
