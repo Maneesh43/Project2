@@ -42,7 +42,7 @@ if(sessionstoragem.getItem("is_doc")){
 
 // PWA Initialization
 document.addEventListener("DOMContentLoaded",()=>{
-    pwainit('../sw.js');
+    pwainit('./sw.js');
   })
   
   // sidenav
